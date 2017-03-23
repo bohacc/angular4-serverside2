@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>@@PRODUCT_NAME@@</title>
+  <style media="print,screen">
+    BODY {
+      width: 1000px;
+      padding: 40px;
+      font-family: "Open Sans",sans-serif;
+      font-size: 16px;
+      line-height: 1.4;
+      margin: 0 auto;
+    }
+    .cleaner{
+      float: none;
+      clear: both;
+      line-height: 0;
+      height: 0;
+    }
+    .c1of3 {
+      width: 333px;
+      float: left;
+    }
+    .c2of3 {
+      width: 333px;
+      float: left;
+    }
+    .c3of3 {
+      width: 334px;
+      float: left;
+    }
+    .product .info{
+      width: 670px;
+      float: left;
+    }
+    .product .product-name{
+      color: #0062ab;
+      font-size: 26px;
+      font-weight: 700;
+    }
+    .product .info .mcled-asist{
+      font-weight: 700;
+    }
+    .product .picture{
+      width: 330px;
+      float: left;
+    }
+    .picture IMG{
+      width: 330px;
+      height: 330px;
+      /*border: 1px solid #c0c0c0;*/
+    }
+    .parameters-name{
+      color: #0062ab;
+    }
+    .parameters{
+      font-size: 14px;
+    }
+    .parameters .value{
+      font-size: 14px;
+      color: #0062ab;
+    }
+    .header{
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: solid 1px #0062ab;
+      line-height: 32px;
+    }
+    .header IMG{
+      height: 32px;
+    }
+    .footer{
+      margin-top: 20px;
+      padding-top: 8px;
+      border-top: solid 1px #0062ab;
+      line-height: 20px;
+    }
+    .footer .address{
+      width: 400px;
+      float: left;
+      text-align: left;
+    }
+    .footer .info{
+      width: 200px;
+      float: left;
+      text-align: center;
+    }
+    .footer .logo{
+      width: 400px;
+      float: left;
+      text-align: right;
+    }
+    .footer .logo IMG{
+      height: 20px;
+    }
+    .cleaner{
+
+    }
+    .separator{
+      height: 20px;
+    }
+
+  </style>
+</head>
+<body>
+<div class="header">
+  <img src="@@BASE_URL@@/images/logo_new.png" alt="McLED logo" title="McLED logo"></div>
+</div>
+<div class="product">
+  <div class="product-name">@@SHORT_NAME@@</div>
+  <div class="cleaner">&nbsp;</div>
+  <div class="info">
+    <div class="product-code">@@Kód produktu@@: <strong>@@PRODUCT_CODE@@</strong></div>
+    <div class="product-catnumber">@@Typ produktu@@: <strong>@@PRODUCT_CATNUMBER@@</strong></div>
+    <!--TODO: Zakomentované níže zobrazit jen na CZ WEBu-->
+    <!--<div class="product-price">@@Cena@@: <strong>@@PRODUCT_PRICE@@ @@CURRENCY@@ @@bez DPH@@</strong></div>
+    <div class="product-availability">@@Dostupnost@@: <strong>@@PRODUCT_AVAILABILITY@@</strong></div>-->
+
+    <div class="separator">&nbsp;</div>
+    <div class="mcled-asist">
+      <div class="asist-name">@@McLED Asist@@</div>
+      <div class="asist-phone">@@tel.: +420 220 184 886@@</div>
+      <div class="asist-email">@@support@mcled.cz@@</div>
+    </div>
+    <div class="separator">&nbsp;</div>
+    <div class="product-name-long">@@Popis@@: <strong>@@PRODUCT_NAME_LONG@@</strong></div>
+  </div>
+  <div class="picture">
+    <img src="@@BASE_URL@@@@IMAGE_FILE_NAME@@" alt="@@PRODUCT_NAME@@" title="@@PRODUCT_NAME@@">
+  </div>
+</div>
+<div class="cleaner">&nbsp;</div>
+<div class="description">
+  @@DESCRIPTION@@
+</div>
+<div class="parameters-name">@@Parametry@@:</div>
+<div class="parameters">

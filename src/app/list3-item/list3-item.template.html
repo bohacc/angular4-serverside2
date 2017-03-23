@@ -1,0 +1,19 @@
+<div class="prefers" *ngIf="item.news">
+  <div class="state_1">{{'Novinka' | translate}}</div>
+</div>
+<div class="prefers" *ngIf="item.action">
+  <div class="state_2">{{'Akce' | translate}}</div>
+</div>
+<a [routerLink]="[item.redirect]" class="image">
+  <div>
+    <img src="{{item.imgMediumFile}}" alt="{{item.name}}" />
+  </div>
+</a>
+<h3 class="title">
+  <a [routerLink]="[item.redirect]">
+    {{item.name}}
+  </a>
+</h3>
+<div class="info">
+  <a [routerLink]="[item.redirect]" class="detail"></a>
+</div>

@@ -1,0 +1,116 @@
+<section>
+  <h1 class="sr-only">Explore Stitch</h1>
+  <article>
+    <section class="new-contain">
+      <h1 class="sr-only">What's new at Stitch?</h1>
+      <slider [id]="'main'" [slides]="mainSlides" [options]="mainSliderOptions"></slider>
+    </section>
+  </article>
+</section>
+<section class="container">
+  <h5>Explore</h5>
+  <main class="row">
+    <div class="col-md-9 swiper-container swiper-explore">
+      <ul class="swiper-wrapper">
+        <li class="swiper-slide">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="card">
+                <img class="card-img" src="https://placehold.it/555x320" alt="Card image">
+                <div class="card-img-overlay">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img class="card-img-top" src="https://placehold.it/262x140" alt="Card image cap">
+                <div class="card-block">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="swiper-slide">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="card">
+                <img class="card-img" src="https://placehold.it/555x320" alt="Card image">
+                <div class="card-img-overlay">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img class="card-img-top" src="https://placehold.it/262x140" alt="Card image cap">
+                <div class="card-block">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="swiper-slide">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="card">
+                <img class="card-img" src="https://placehold.it/555x320" alt="Card image">
+                <div class="card-img-overlay">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img class="card-img-top" src="https://placehold.it/262x140" alt="Card image cap">
+                <div class="card-block">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-3">
+      <div class="swiper-pagination swiper-explore-pagination"></div>
+    </div>
+  </main>
+</section>
+<section class="container">
+  <h5>Recommended</h5>
+  <main class="row">
+    <div class="col-md-3" *ngFor="let project of recommended">
+      <div class="card">
+        <img class="card-img-top" [src]="project.bannerUrl" alt="Project banner image." height="140">
+        <div class="card-block">
+          <h4 class="card-title">{{ project.name }}</h4>
+          <p class="card-text">{{ project.desc }}</p>
+          <p class="card-text"><small class="text-muted">{{ project.created }}</small></p>
+        </div>
+      </div>
+    </div>
+  </main>
+</section>
+<section class="container">
+  <h5>Recommended</h5>
+  <main class="row">
+    <card [data]="tempProject1" [type]="'featured'" class="col-md-6"></card>
+    <card [data]="tempProject2" [type]="'default'" class="col-md-3"></card>
+    <card [data]="tempProject3" [type]="'default'" class="col-md-3"></card>
+  </main>
+</section>

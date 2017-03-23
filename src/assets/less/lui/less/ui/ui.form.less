@@ -1,0 +1,788 @@
+/*
+
+FORMS
+
+*/
+
+.lui_form {
+	hr {
+		margin: 15px 0;
+		border: 0;
+		border-top: 2px solid #e2e2e2;
+	}
+
+	.item {
+		.lui.clear.after();
+		padding: 7.5px 0;
+		margin: 0 -15px;
+
+		.label {
+			display: block;
+			//text-align: right;
+			padding: 7px 15px;
+			font-size: 16px;
+			color: #31434f;
+
+			&.nospace {
+				padding-left: 0;
+				padding-right: 0;
+			}
+
+			&.required:after {
+				color: @color_delete;
+				content:" *";
+			}
+		}
+		
+		div {
+			
+			.make.block-label {
+				text-align: left;
+				padding: 7px 0;
+			}
+			
+			@media (max-width:@grid_xs_end){
+				&.col-xs-12 .label {
+					.make.block-label();
+				}
+			}
+			@media (min-width:@grid_sm_start) and (max-width:@grid_sm_end){
+				&.col-sm-12 .label {
+					.make.block-label();
+				}
+			}
+			@media (min-width:@grid_md_start) and (max-width:@grid_md_end){
+				&.col-md-12 .label {
+					.make.block-label();
+				}
+			}
+			@media (min-width:@grid_lg_start) and (max-width:@grid_lg_end){
+				&.col-lg-12 .label {
+					.make.block-label();
+				}
+			}
+			@media (min-width:@grid_xl_start) and (max-width:@grid_xl_end){
+				&.col-xl-12 .label {
+					.make.block-label();
+				}
+			}
+			@media (min-width:@grid_hd_start) and (max-width:@grid_hd_end){
+				&.col-hd-12 .label {
+					.make.block-label();
+				}
+			}
+			@media (min-width:@grid_2k_start){
+				&.col-2k-12 .label {
+					.make.block-label();
+				}
+			}
+		}
+
+		div.info {
+			padding: 11px 15px;
+			font-size: 12px;
+			color: gray;
+			padding-left: 0;
+
+			@media (max-width:@grid_xs_end){
+				&.col-xs-12 {
+					padding-left: 15px;
+					padding-top: 4px;
+				}
+			}
+			@media (min-width:@grid_sm_start){
+				&.col-sm-12 {
+					padding-left: 15px;
+					padding-top: 4px;
+				}
+			}
+			@media (min-width:@grid_md_start){
+				&.col-md-12 {
+					padding-left: 15px;
+					padding-top: 4px;
+				}
+			}
+			@media (min-width:@grid_lg_start){
+				&.col-lg-12 {
+					padding-left: 15px;
+					padding-top: 4px;
+				}
+			}
+			@media (min-width:@grid_xl_start){
+				&.col-xl-12 {
+					padding-left: 15px;
+					padding-top: 4px;
+				}
+			}
+			@media (min-width:@grid_hd_start){
+				&.col-hd-12 {
+					padding-left: 15px;
+					padding-top: 4px;
+				}
+			}
+			@media (min-width:@grid_2k_start){
+				&.col-2k-12 {
+					padding-left: 15px;
+					padding-top: 4px;
+				}
+			}
+		}
+
+		.input {
+			&.postfix,
+			&.prefix {
+				position: relative;
+			}
+
+			.lui_postfix {
+				.lui.box-sizing.border-box();
+				position: absolute;
+				top: 0;
+				right: 0px;
+				display: block;
+				padding: 0 7px;
+				float: right;
+				line-height: 50px;
+				height: 50px;
+				background: #f2f2f2;
+				border: 1px solid #e2e2e2;
+				border-left: 0;
+				font-size: 13px;
+				color: gray;
+				border-radius: 0 3px 3px 0;
+			}
+
+			.lui_prefix {
+				.lui.box-sizing.border-box();
+				position: absolute;
+				top: 0;
+				left:  0px;
+				display: block;
+				padding: 0 7px;
+				float: left;
+				line-height:50px;
+				height: 50x;
+				background: #f2f2f2;
+				border: 1px solid #e2e2e2;
+				border-right: 0;
+				font-size: 16px;
+				color: gray;
+				border-radius: 3px 0 0 3px;
+			}
+
+			input {
+				width: 100%;
+				height: 50px;
+				border: 1px solid #d1e2f1;
+				padding: 10px;
+				font-family: inherit;
+				font-size: 16px;
+				color: #555555;
+				outline: none;
+
+				&:focus {
+					color: black;
+					border-color: #c0c0c0;
+				}
+
+				&[disabled],
+				&[readonly]{
+					background:#f7f7f7;
+					cursor: text;
+					color: #5a5a5a;
+
+					&:focus {
+						color: #5a5a5a;
+					}
+				}
+			}
+
+			&.postfix input {
+				border-radius: 3px 0 0 3px;
+			}
+
+			&.prefix input {
+				border-radius: 0 3px 3px 0;
+			}
+
+			textarea {
+				width: 100%;
+				max-width: 100%;
+				max-height: 500px;
+				height: 50px;
+				border: 1px solid #d1e2f1;
+				padding: 10px;
+				font-family: inherit;
+				font-size: 13px;
+				color: #555555;
+				outline: none;
+
+				&[disabled]{
+					background:#f2f2f2;
+				}
+
+				&[readonly]{
+					background:#f2f2f2;
+					cursor: text;
+				}
+
+				&:focus {
+					color: black;
+					border-color: #c0c0c0;
+				}
+			}
+
+			select {
+				width: 100%;
+				height: 50px;
+				border: 1px solid #d1e2f1;
+				padding: 9px;
+				font-family: inherit;
+				font-size: 13px;
+				color: #555555;
+				cursor: pointer;
+				outline: none;
+
+				&:focus {
+					color: black;
+					border-color: #c0c0c0;
+				}
+			}
+		}
+	}
+}
+
+/*
+
+UI INPUT RANGE (number from-to)
+
+*/
+.lui_input_range {
+	.lui.box-sizing.border-box();
+	position: relative;
+	height: 37px;
+	border: 1px solid #e2e2e2;
+    border-radius: 3px;
+
+	.range {
+		width: 100%;
+		height: 37px;
+
+		.ranger {
+			.lui.box-sizing.border-box();
+			position: absolute;
+			top:-1px;
+			width: 20px;
+			height: 37px;
+			border: 1px solid #e2e2e2;
+			background: #f2f2f2;
+			cursor: pointer;
+			border-radius: 3px;
+
+			&:before {
+				position: absolute;
+				top: 10px;
+				bottom: 10px;
+				left: 50%;
+				margin-left: -2px;
+				width: 2px;
+				content: "";
+				border-left: 1px solid rgba(0,0,0,0.1);
+				border-right: 1px solid rgba(0,0,0,0.1);
+			}
+
+			&:hover {
+				background: #ececec;
+			}
+
+			&:hover:after {
+				position: absolute;
+				top: -20px;
+				left: 50%;
+				display: inline-block;
+				background: rgba(0,0,0,0.8)
+			}
+
+			&:active {
+				background:#34aaed;
+				border-color: #258dc7;
+
+				&:before {
+					border-left: 1px solid rgba(255,255,255,0.3);
+					border-right: 1px solid rgba(255,255,255,0.3);
+				}
+			}
+		}
+	}
+}
+
+/*
+
+UI CHECKBOX (standalone style - can be used everywhere)
+
+*/
+.lui_check {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	height: 30px;
+	padding-left: 30px;
+
+	&.space {
+		margin-bottom: 10px;
+	}
+
+	@media (max-width:767px){
+		height: 40px;
+		padding-left: 40px;
+	}
+
+	input {
+		opacity: 0;
+		position: absolute;
+		width: 0;
+		height: 0;
+	}
+
+	/* SPAN MUST USED AT ALL TIME */
+	span {
+		line-height: 30px;
+		margin-right: 5px;
+		color: #555555;
+		font-size: 16px;
+
+		@media (max-width:767px){
+			line-height: 40px;
+		}
+
+		&:before {
+			.lui.box-sizing.border-box();
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			font-family: FontAwesome;
+			font-weight: normal;
+			font-size: 19px;
+			content: "\f096";
+			color: #e2e2e2;
+
+			@media (max-width:767px){
+				width: 40px;
+				height: 40px;
+				line-height: 40px;
+				font-size: 22px;
+				top: -1px;
+			}
+
+			&:hover {
+				color: gray;
+			}
+		}
+	}
+
+	&:hover span:before {
+		color: gray;
+	}
+
+	input:checked ~ span:before {
+		content: "\f14a";
+		color: #2c2c2c;
+	}
+
+	input:focus ~ span {
+		background: rgba(0,0,0,0.05);
+
+		/*&:before {
+			content: "\f14a";
+		}*/
+	}
+
+	&.confirm input:checked ~ span:before {
+		color: @color_confirm;
+	}
+
+	&.error input:checked ~ span:before {
+		color: @color_delete;
+	}
+
+	&.warning input:checked ~ span:before {
+		color: @color_edit;
+	}
+
+	&.info input:checked ~ span:before {
+		color: @color_info;
+	}
+}
+
+.lui_form .item .lui_check {
+	margin-left: -7px;
+}
+
+/*
+
+UI CHECK LIST
+// if you need more checks in 1 form item
+*/
+.lui_check_list {
+	padding: 8px 0;
+
+	&.inline {
+		.lui.clear.after();
+		padding: 0 0 8px 0;
+	}
+
+	& > div {
+		margin: -8px 0;
+	}
+
+	&.inline > div {
+		float: left;
+		margin: 0 20px -8px 0;
+	}
+}
+
+/*
+
+UI RADIO (standalone style - can be used everywhere)
+// basicaly same as lui_checkbox
+
+*/
+.lui_radio {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	height: 30px;
+	padding-left: 30px;
+
+	@media (max-width:767px){
+		height: 40px;
+		padding-left: 40px;
+	}
+
+	input {
+		opacity: 0;
+		position: absolute;
+		width: 0;
+		height: 0;
+	}
+
+	/* SPAN MUST USED AT ALL TIME */
+	span {
+		line-height: 30px;
+		margin-right: 5px;
+		color: #555555;
+		font-size: 13px;
+
+		@media (max-width:767px){
+			line-height: 40px;
+		}
+
+		&:before {
+			.lui.box-sizing.border-box();
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			font-family: FontAwesome;
+			font-weight: normal;
+			font-size: 19px;
+			content: "\f10c";
+			color: #e2e2e2;
+
+			@media (max-width:767px){
+				width: 40px;
+				height: 40px;
+				line-height: 40px;
+				font-size: 22px;
+				top: -1px;
+			}
+
+			&:hover {
+				color: gray;
+			}
+		}
+	}
+
+	&:hover span:before {
+		color: #2c2c2c;
+	}
+
+	input:checked ~ span:before {
+		content: "\f192";
+		color: #2c2c2c;
+	}
+
+	input:focus ~ span {
+		background: rgba(0,0,0,0.05);
+
+		/*&:before {
+			content: "\f192";
+		}*/
+	}
+
+	&.confirm input:checked ~ span:before {
+		color: @color_confirm;
+	}
+
+	&.error input:checked ~ span:before {
+		color: @color_delete;
+	}
+
+	&.warning input:checked ~ span:before {
+		color: @color_edit;
+	}
+
+	&.info input:checked ~ span:before {
+		color: @color_info;
+	}
+}
+
+.lui_form .item .lui_radio {
+	margin-left: -7px;
+}
+
+/*
+
+UI RADIO LIST
+// if you need more checks in 1 form item
+*/
+.lui_radio_list {
+	padding: 8px 0;
+
+	&.inline {
+		.lui.clear.after();
+		padding: 0 0 8px 0;
+		
+	}
+
+	& > div {
+		margin: -8px 0;
+	}
+
+	&.inline > div {
+		float: left;
+		margin: 0 20px -8px 0;
+	}
+}
+
+
+
+
+/*
+
+CUSTOM JQUERY UI SELECT
+
+*/
+.ui-widget.ui-selectmenu-button {
+	position: relative;
+	display: block;
+	height: 40px;
+	line-height: 38px;
+	
+	cursor: pointer;
+	background: white;
+	width: 100%
+	height: 37px;
+	border: 1px solid #d1e2f1;
+	padding: 0 45px 0 9px;
+	font-family: inherit;
+	font-size: 16px;
+	color: #505050;
+	cursor: pointer;
+	outline: none;
+
+	&:focus {
+		color: black;
+		border-color: #c0c0c0;
+	}
+
+	&[disabled],
+	&[readonly] {
+		background:#f7f7f7;
+		color: #5a5a5a;
+		cursor: default;
+
+		&:focus {
+			color: #5a5a5a;
+		}
+	}
+
+	&.ui-selectmenu-disabled {
+		background:#f7f7f7;
+		cursor: text;
+		color: #5a5a5a;
+		cursor: default;
+		pointer-events: none;
+	}
+
+	& > .ui-icon {
+		display: inline-block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		line-height: 38px;
+		width: 38px;
+		background: url(/images/theme/lines_blue.png) #1a7cc6;
+		text-align: center;
+		color: white;
+		
+		&:before {
+			font-family: FontAwesome;
+			content: "\f0d7";
+		}
+	}
+
+	& > .ui-selectmenu-text {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	&.ui-state-focus {
+		& > .ui-icon {
+			.lui.transform.rotate(180deg);
+		}
+	}
+}
+
+// SELECT DROPDOWN
+
+// WRAPPER
+.ui-js-dropdown {
+	position: relative;
+	z-index: 20;
+	
+	& > .inside {
+		position: absolute;
+	}
+}
+
+.ui-selectmenu-menu {
+	display: none;
+	border: 1px solid silver;
+	background: white;
+
+	&.ui-selectmenu-open {
+		display: block;
+	}
+
+	& > ul {
+		display: block;
+		max-width: 100%;
+		list-style: none;
+		padding: 0;
+		margin: 0 !important;
+
+		& > li {
+			display: block;
+			max-width: 100%;
+			padding: 7px 10px;
+			font-size: 14px;
+			cursor: pointer;
+			white-space: normal;
+			color: #2e2e2e;
+
+			&:hover {
+				background: rgba(0,0,0,0.05);
+			}
+
+			.ui-state-active {
+				color: #108de6;
+			}
+		}
+	}
+}
+
+/* MESSAGES */
+.ui_message {
+	position: relative;
+	margin: 5px 0;
+	font-size: 14px;
+}
+
+.ui_message:after {
+	display: block;
+	width: 100%;
+	content: "";
+	clear: both;
+}
+
+.ui_message.confirm {
+	background: @default_ui_message_confirm_bg;
+	color: @default_ui_message_confirm_color;
+}
+
+.ui_message.error {
+	background: @default_ui_message_error_bg;
+	color: @default_ui_message_error_color;
+}
+
+.ui_message.warning {
+	background: @default_ui_message_warning_bg;
+	color: @default_ui_message_warning_color;
+}
+
+.ui_message.info {
+	background: @default_ui_message_info_bg;
+	color: @default_ui_message_info_color;
+}
+
+.ui_message.confirm,
+.ui_message.warning,
+.ui_message.error,
+.ui_message.info {
+	padding: 15px 35px 15px 15px;
+}
+
+	.ui_message header {}
+
+		.ui_message header > * {
+			font-size: 22px !important;
+			font-weight: bold !important;
+			margin: 0 !important;
+			padding: 0 !important;
+			color: inherit !important;
+		}
+
+	.ui_message > p {
+		line-height: 145%;
+		padding: 7px 0 0 0;
+		
+	}
+
+	.ui_message > footer {
+		padding-top: 15px;
+	}
+
+	.ui_message > footer .ui_button:first-of-type {
+		margin-left: 0;
+	}
+
+
+/*
+
+FORM LABEL INFO 
+
+*/
+.required_label_info {
+	padding: 10px 0;
+
+	&.inline {
+		display: inline-block;
+		padding: 0 10px;
+	}
+
+	
+	span {
+		font-weight: bold;
+		color: #e60d0d;
+	}
+}

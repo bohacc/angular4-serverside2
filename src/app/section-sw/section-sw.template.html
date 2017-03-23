@@ -1,0 +1,8 @@
+<section-object
+  pos="{{pos}}"
+  object-id="{{o.objectID}}"
+  object-type="{{o.objectType}}"
+  src="{{o.fileName}}"
+  [args]="o"
+  *ngFor="let o of objects.content | myFilterArray:'position':pos">
+</section-object>

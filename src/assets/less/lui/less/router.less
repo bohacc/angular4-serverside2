@@ -1,0 +1,95 @@
+
+
+/*
+	MIXINS
+	- must be included BEFORE everything else
+	- mixins are part of CORE, they are used across whole framework
+	- You dont need to remove them to save CSS size, they wont be in compiled CSS unless they are used somewhere
+*/
+@import "mixins/mixin.clear.less";
+@import "mixins/mixin.gradient.less";
+@import "mixins/mixin.filter.less";
+@import "mixins/mixin.border-radius.less";
+@import "mixins/mixin.box-sizing.less";
+@import "mixins/mixin.user-select.less";
+@import "mixins/mixin.animation.less";
+@import "mixins/mixin.transform.less";
+@import "mixins/mixin.transition.less";
+@import "mixins/mixin.flexbox.less";
+
+
+/*
+	BASIC CSS RESET TO GET RID OF SOME STUFF
+*/
+@import "reset.less";
+
+
+/*
+	FONT AWESOME IS ICON FONT, AND ITS AWESOME!
+	- used as button's icons and more
+*/
+@import "ui/ui.fontawesome.less"; // must stay as first UI component
+
+
+/*
+	GRID LAYOUT
+	- this is CORE of LUI
+	- some UI elements may work without it, but whole framework is based on it
+*/
+@import "ui/ui.grid.less";
+
+/*
+	BUTTON
+	- just some buttons
+	- using FontAwesome icons
+*/
+// DEFAULT BACKGROUND COLORS
+@btn_color_default:		silver;
+@btn_color_confirm:		#00ab61;
+@btn_color_info:		#0062ab;
+@btn_color_edit:		#f2cb4f;
+@btn_color_delete:		#e60d0d;
+@btn_color_dark:		#373737;
+@btn_color_light:		#efefef;
+@btn_mobile_height:		42px;
+@import "ui/ui.button.less";
+
+/*
+	FORMS
+	- default styles for forms
+*/
+@default_ui_message_confirm_bg: 	#cdf6bf;
+@default_ui_message_confirm_color: 	#11420e;
+
+@default_ui_message_error_bg: 		#f6bfbf;
+@default_ui_message_error_color: 	#420e0e;
+
+@default_ui_message_warning_bg: 	#f6e6bf;
+@default_ui_message_warning_color: 	#42360e;
+
+@default_ui_message_info_bg: 		#bfe6f6;
+@default_ui_message_info_color: 	#0e3542;
+
+@default_ui_form_required_color: 	#AE0000;
+@import "ui/ui.form.less";
+
+/*
+	PAGEBAR
+	- mobile friendly pagebar
+*/
+@pgb_default_bg:	#f2f2f2; // LIGHT VERSION
+@pgb_dark_bg:		#515a5e; // DARK VERSION
+@import "ui/ui.pagebar.less";
+
+/*
+	RESPONSIVE TABLE
+	- for "lists" of data, mobile friendly
+*/
+@import "ui/ui.table.less";
+
+/*
+	BOX
+	- simple box for your content, which you can close or open
+*/
+@box_default:	#34aaed;
+@import "ui/ui.box.less";

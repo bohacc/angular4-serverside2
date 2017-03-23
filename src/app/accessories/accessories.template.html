@@ -1,0 +1,34 @@
+<div class="products_list">
+  <div class="row stretch">
+    <!-- //// -->
+    <div class="col-xs-12 col-md-6 col-xl-3 item" *ngFor="let item of items">
+      <a [routerLink]="item.redirect" class="image">
+        <div>
+          <img src="/files/{{item.imgMediumFile}}" alt="{{item.name}}" />
+        </div>
+      </a>
+      <h3 class="title">
+        <a [routerLink]="item.redirect">
+          {{item.name}}
+        </a>
+      </h3>
+      <div class="price">
+        <div class="primary accessory">
+          {{item.priceVat | number: formatNumber1}} {{item.currency}}/{{item.unit}}
+        </div>
+        <div class="secondary">
+          {{item.price | number: formatNumber1}} {{item.currency}} {{'bez DPH' | translate}}
+        </div>
+        <div class="store positive fa_b_check">
+          {{item.availability}}
+        </div>
+      </div>
+      <div class="ui_input_number short">
+        <input type="text" [(ngModel)]="item.amount" />
+        <button type="button" class="minus" (click)="minus(item)">-</button>
+        <button type="button" class="plus" (click)="plus(item)">+</button>
+      </div>
+    </div>
+    <!-- //// -->
+  </div>
+</div>

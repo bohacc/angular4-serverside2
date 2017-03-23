@@ -1,0 +1,83 @@
+<div class="site_header">
+  <!-- SHOP CATEGORIES ON MOBILE -->
+  <div id="shop_cats_mobile" class="shop_cats_mobile">
+    <shop-categories-at [typeShowing]="'showCatsMobile'"></shop-categories-at>
+  </div>
+
+  <!-- LOGO, CONTACT, BASKET -->
+  <div class="container">
+    <div class="row part_top a-right">
+      <div class="col-12">
+        <login-header></login-header>
+      </div>
+    </div>
+    <div class="row part_middle va-middle fill">
+      <div class="col-xs-12 col-md-4 col-lg-5 logo_wrap">
+        <a [routerLink]="['/']" class="logo">
+          <img src="/images/logo_new_at.png" alt="" />
+        </a>
+      </div>
+      <div class="col-xs-12 col-md-4 col-xl-3 ml-xl-1">
+        <div class="contact">
+          {{'Infolinka' | translate}}
+          <a href="tel:244001528">{{'220 184 800' | translate}}</a>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4 col-lg-3">
+        <a routerLink="{{'/basket' | translate}}" class="basket_box fa_a_shopping-cart">
+          <div class="price">
+            <span>{{'Celkem' | translate}}: </span><strong>{{store.priceAmount | number:'1.2-2'}} {{store.currency}}</strong>
+          </div>
+          <div class="count">
+            {{store.amount}}
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- LOGO, CONTACT, BASKET END -->
+  <!-- HEADER MENU + SEARCH -->
+  <div class="site_menu">
+    <div class="container">
+      <div class="row part_foot">
+        <div class="col-12 ml-xl-3">
+          <div class="row va-center">
+            <div class="col-11 menu_wrap">
+              <ul class="menu">
+                <li>
+                  <a routerLink="{{'/news' | translate}}">{{'NEWS' | translate}}</a>
+                </li>
+                <li>
+                  <a routerLink="{{'/about-us' | translate}}">{{'ABOUT_US' | translate}}</a>
+                </li>
+                <!--<li>
+                  <a routerLink="{{'/reference' | translate}}">{{'REFERENCE' | translate}}</a>
+                </li>-->
+                <li>
+                  <a routerLink="{{'/download' | translate}}">{{'DOWNLOAD' | translate}}</a>
+                </li>
+                <li>
+                  <a routerLink="{{'/contact' | translate}}">{{'CONTACT' | translate}}</a>
+                </li>
+                <li>
+                  <a routerLink="{{'/login' | translate}}">{{'B2B' | translate}}</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-1 col-xs-12">
+              <div class="search_area">
+                <form name="search" (ngSubmit)="onSubmit()">
+                  <div class="input">
+                    <input type="text" name="searchStr" placeholder="{{'Zadejte hledaný výraz' | translate}}" [(ngModel)]="searchStr"/>
+                  </div>
+                  <button type="submit" class="search_button fa_b_search" title="{{'Vyhledávání' | translate}}"></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- HEADER MENU + SEARCH END -->
+</div>

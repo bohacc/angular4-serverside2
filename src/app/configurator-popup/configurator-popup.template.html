@@ -1,0 +1,85 @@
+<div class="product_detail_config_popup" [ngClass]="{opened: isOpen}">
+  <div class="bgr event_close_config_popup" (click)="close()"></div>
+  <div class="window">
+    <button class="close fa_b_times event_close_config_popup" (click)="close()"></button>
+    <div class="container fluid max_lg">
+      <section class="item">
+        <header data-num="1">
+          <h2 class="title">{{'Zvolte jednostranné nebo oboustranné napájení LED pásku' | translate}}</h2>
+          <p>{{'Při délkách pásku nad' | translate}} <strong>4 m</strong> {{'doporučujeme zvolit oboustranné napájení' | translate}}</p>
+        </header>
+        <div class="data">
+          <div class="radio_area">
+            <label class="item hide_second_power_cable">
+              <input type="radio" [value]="1" name="power" [(ngModel)]="typeAB" />
+              <div>
+                <span>{{'Jednostranné napájení' | translate}}</span> - {{'maximální délka LED pásku' | translate}} <strong>{{options.maxValue}} {{options.unit}}</strong>
+              </div>
+            </label>
+            <label class="item show_second_power_cable">
+              <input type="radio" [value]="2" name="power" [(ngModel)]="typeAB" />
+              <div>
+                <span>{{'Oboustranné napájení' | translate}}</span> - {{'maximální délka LED pásku' | translate}} <strong>{{options.maxValue2}} {{options.unit}}</strong>
+              </div>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <section class="item">
+        <header data-num="2">
+          <h2 class="title">{{'Zvolte délku pásku' | translate}} <span>- {{'pásek lze zkracovat po modulech' | translate}} {{options.step}} {{options.unit}}</span></h2>
+        </header>
+        <div class="data">
+          <!-- SLIDER START -->
+          <slider-cmp [min]="options.minValue" [max]="(typeAB == 1 ? options.maxValue : options.maxValue2)"
+                      [defaultValue]="options.defaultValue"
+                      [step]="options.step" [postfix]="(' ' + options.unit)" [round]="true"
+                      [name]="translate('Zvolená délka')"
+                      (onChange)="onChange($event)"></slider-cmp>
+          <!-- SLIDER END -->
+        </div>
+        <div class="desc">
+          <p>{{'Zohledněte délky koncovek, délku LED pásku, prostor pro vstup vodiče do profilu a pro připojení vodiče k LED pásku' | translate}}</p>
+          <img src="/images/configurator/foot_lenght.jpg" alt="{{'Délka pásku' | translate}}">
+        </div>
+      </section>
+      <section class="item">
+        <header data-num="3">
+          <h2 class="title">{{'Zvolte délku napájecího vodiče LED pásku' | translate}}</h2>
+          <p>{{'Celková maximální doporučená délka napájecího vodiče (průřez 0,5 mm2) je pro tento typ LED pásku' | translate}} <strong>10 m</strong></p>
+        </header>
+        <div class="data">
+          <!-- SLIDER START -->
+          <slider-cmp [min]="options.minValueA" [max]="options.maxValueA" [defaultValue]="options.defaultValueA"
+                      [step]="options.stepA" [postfix]="(' ' + options.unitA)" [round]="true"
+                      [name]="'<strong>' + translate('Přívod') + ' &quot;A&quot;</strong> - ' + translate('Zvolená délka')"
+                      (onChange)="onChangeA($event)"></slider-cmp>
+          <!-- SLIDER END -->
+        </div>
+        <div class="desc">
+          <img src="/images/configurator/foot_power.jpg" alt="{{'Délka napájení' | translate}}">
+        </div>
+      </section>
+      <section class="item secondary_power_cable" [ngClass]="{opened: (typeAB == 2)}">
+        <header class="nonum">
+          <h2 class="title">{{'Druhý napájecí vodič' | translate}}</h2>
+        </header>
+        <div class="data">
+          <!-- SLIDER START -->
+          <slider-cmp [min]="options.minValueB" [max]="options.maxValueB" [defaultValue]="options.defaultValueB"
+                      [step]="options.stepB" [postfix]="(' ' + options.unitB)" [round]="true"
+                      [name]="'<strong>' + translate('Přívod') + ' &quot;B&quot;</strong> - ' + translate('Zvolená délka')"
+                      (onChange)="onChangeB($event)"></slider-cmp>
+          <!-- SLIDER END -->
+        </div>
+        <div class="desc">
+          <img src="/images/configurator/foot_power2.jpg" alt="{{'Délka napájení' | translate}}">
+        </div>
+      </section>
+      <div class="configurator_confirm">
+        <button class="event_close_config_popup" (click)="finish()">{{'Zvolit' | translate}}</button>
+      </div>
+    </div>
+  </div>
+</div>

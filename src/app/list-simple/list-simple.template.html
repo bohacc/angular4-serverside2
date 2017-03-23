@@ -1,0 +1,10 @@
+<div class="products_list">
+    <div class="stretch" [ngClass]="{row: products.length>0, empty_row: products.length==0}">
+        <div *ngIf="products.length==0">{{notFoundText}}</div>
+
+        <div class="col-xs-12 col-md-3 item" *ngFor="let item of products">
+            <list-item [item]="item"></list-item>
+        </div>
+    </div>
+</div>
+<div class="space cleaner">&nbsp;</div>

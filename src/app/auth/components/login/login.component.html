@@ -1,0 +1,45 @@
+<section class="container-fluid auth-contain">
+  <h1 class="sr-only">Log In</h1>
+  <div class="row">
+    <article class="col-sm-12 col-md-6 col-lg-5 col-xl-4">
+      <loading *ngIf="loading"></loading>
+      <section *ngIf="!loading" class="form-contain">
+        <div class="logo-contain">
+          <a class="logo" routerLink="/discover">
+            <span class="sr-only">Stitch</span>
+          </a>
+        </div>
+        <div class="error-contain" *ngIf="error">
+          <p class="text-danger">{{ error }}</p>
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <div class="form-group">
+            <label for="email" class="sr-only">Email Address</label>
+            <div class="input-group">
+              <div class="input-group-addon"><i class="icon-mail"></i></div>
+              <input type="email" class="form-control" id="login-email" name="email" formControlName="email" placeholder="awesome@email.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password" class="sr-only">Password</label>
+            <div class="input-group">
+              <div class="input-group-addon"><i class="icon-ellipsis"></i></div>
+              <input type="password" class="form-control" id="login-password" name="password" formControlName="password" placeholder="$up3r$3cr3tp@$$w0rd" required>
+            </div>
+          </div>
+          <div class="error-block">
+            <!--<p class="help-block text-danger" *ngIf="formErrors.email">{{ formErrors.email }}</p>-->
+            <!--<p class="help-block text-danger" *ngIf="formErrors.password">{{ formErrors.password }}</p>-->
+          </div>
+          <button type="submit" class="btn btn-default btn-block">Log in</button>
+        </form>
+        <div class="nav-text">
+          <a routerLink="/signup">Don't have an account? Sign up here.</a>
+        </div>
+      </section>
+    </article>
+    <aside class="hidden-sm col-sm-12 col-md-6 col-lg-7 col-xl-8">
+      <slider [id]="'main'" [slides]="slides" [options]="sliderOptions"></slider>
+    </aside>
+  </div>
+</section>

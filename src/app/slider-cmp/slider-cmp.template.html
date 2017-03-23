@@ -1,0 +1,20 @@
+<div class="slider_area" #slider=sliderDirective slider (onChangeValue)="onChangeValue($event)" [min]="min" [max]="max"
+     [defaultValue]="defaultValueTmp" [step]="step" [postfix]="postfix" [round]="round">
+  <div class="head">
+    <div class="min">{{min}} {{postfix}}</div>
+    <div class="max">{{max}} {{postfix}}</div>
+    <button class="minus amount_decrease" (click)="minus()">-</button>
+    <button class="plus amount_increase" (click)="plus()">+</button>
+    <div class="range scissors">
+      <div class="slider_lenght"></div>
+    </div>
+  </div>
+  <div class="foot">
+    <div class="label" [innerHTML]="name"></div>
+    <div class="input">
+      <input type="text" class="amount_lenght" [(ngModel)]="value" readonly />
+      <button class="minus amount_decrease" (click)="minus()">-</button>
+      <button class="plus amount_increase" (click)="plus()">+</button>
+    </div>
+  </div>
+</div>

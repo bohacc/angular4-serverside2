@@ -1,0 +1,22 @@
+<!--SIMPLE TYPE 1 -->
+<ng-template [ngIf]="cat===0">
+  <div class="item" *ngFor="let item of defaultItems; let i = index">
+    <div class="title">
+      {{item.name}}
+    </div>
+    <div class="values">
+      <div class="select" select-box [items]="items[i].items" [defaultItem]="defaultItem" (onSelectItem)="onSelectItemComboBox(item.par, $event)">
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<!-- CUSTOM TYPE 2-9 -->
+<list-filter-basic-custom-2 class="n-custom-filter" *ngIf="cat===2347" (onSelectItem)="onSelectItem($event)"></list-filter-basic-custom-2>
+<list-filter-basic-custom-3 class="n-custom-filter" *ngIf="cat===2345" (onSelectItem)="onSelectItem($event)"></list-filter-basic-custom-3>
+<list-filter-basic-custom-4 class="n-custom-filter" *ngIf="cat===2346" (onSelectItem)="onSelectItem($event)"></list-filter-basic-custom-4>
+<list-filter-basic-custom-5 class="n-custom-filter" *ngIf="cat===2348" (onSelectItem)="onSelectItem($event)"></list-filter-basic-custom-5>
+<list-filter-basic-custom-6 class="n-custom-filter" *ngIf="cat===2343" (onSelectItem)="onSelectItem($event)"></list-filter-basic-custom-6>
+<list-filter-basic-custom-7 class="n-custom-filter" *ngIf="cat===2344" (onSelectItem)="onSelectItem($event)"></list-filter-basic-custom-7>
+<list-filter-basic-custom-8 class="n-custom-filter" *ngIf="cat===2349" (onSelectItem)="onSelectItem($event)"></list-filter-basic-custom-8>
+<list-filter-basic-custom-9 class="n-custom-filter" *ngIf="cat===2342" (onSelectItem)="onSelectItem($event)"></list-filter-basic-custom-9>

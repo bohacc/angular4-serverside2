@@ -1,0 +1,21 @@
+<div class="site_order_content">
+  <!-- DEV ONLY -->
+  <form method="post" (ngSubmit)="onSubmit()">
+    <div class="container fluid nospace">
+      <div class="row va_top">
+        <div class="col-xs-12 col-xl-8">
+          <div class="order_payment_delivery">
+            <shipping-and-payment (onSelect)="orderSideBar.refresh(); onFilled($event)"></shipping-and-payment>
+          </div>
+        </div>
+        <div class="col-xs-12 col-xl-4">
+          <order-side-bar #orderSideBar></order-side-bar>
+        </div>
+      </div>
+    </div>
+    <div class="order_actions">
+      <a routerLink="{{'/personal-data' | translate}}" class="lui_button prev light fa_b_chevron-left mobile_big">{{'Zpět' | translate}}</a>
+      <button type="submit" [disabled]="!filled" *ngIf="filled" class="lui_button next bold info fa_a_chevron-right mobile_big">{{'Pokračovat' | translate}}</button>
+    </div>
+  </form>
+</div>

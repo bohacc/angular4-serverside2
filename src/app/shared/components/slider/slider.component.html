@@ -1,0 +1,10 @@
+<div [id]="id+'-swiper'" class="swiper-container">
+  <ul class="swiper-wrapper">
+    <li class="swiper-slide" *ngFor="let slide of slides">
+      <section [innerHTML]="slide"></section>
+    </li>
+  </ul>
+  <div [id]="id+'-swiper-pagination'" class="swiper-pagination"></div>
+  <div [id]="id+'-swiper-button-prev'" class="swiper-button-prev"></div>
+  <div [id]="id+'-swiper-button-next'" class="swiper-button-next"></div>
+</div>

@@ -1,0 +1,752 @@
+<div class="site_subpage_content n-space-top n-space-bottom">
+    <h1 class="page_title">Barcelo</h1>
+    <div class="vertical_gallery_area">
+        <div class="vertical_gallery_preview">
+            <div>
+                <img src="/examples/product_image_full_test_1_full.jpg" alt="" />
+            </div>
+        </div>
+        <div class="vertical_gallery_list">
+            <a class="arrow left"></a>
+            <a class="arrow right"></a>
+            <div class="content">
+                <!-- ALL IMAGES -->
+                <div class="active">
+                    <img src="/examples/product_image_full_test_1.jpg" data-full-src="/examples/product_image_full_test_1_full.jpg" alt="" />
+                </div>
+                <div>
+                    <img src="/examples/product_image_full_test_2.jpg" data-full-src="/examples/product_image_full_test_2_full.jpg" alt="" />
+                </div>
+                <div>
+                    <img src="/examples/product_image_full_test_3.jpg" data-full-src="/examples/product_image_full_test_3_full.jpg" alt="" />
+                </div>
+                <div>
+                    <img src="/examples/product_image_full_test_4.jpg" data-full-src="/examples/product_image_full_test_4_full.jpg" alt="" />
+                </div>
+                <div>
+                    <img src="/examples/product_image_full_test_1.jpg" data-full-src="/examples/product_image_full_test_1_full.jpg" alt="" />
+                </div>
+                <div>
+                    <img src="/examples/product_image_full_test_2.jpg" data-full-src="/examples/product_image_full_test_2_full.jpg" alt="" />
+                </div>
+                <div>
+                    <img src="/examples/product_image_full_test_3.jpg" data-full-src="/examples/product_image_full_test_3_full.jpg" alt="" />
+                </div>
+                <div>
+                    <img src="/examples/product_image_full_test_4.jpg" data-full-src="/examples/product_image_full_test_4_full.jpg" alt="" />
+                </div>
+                <!-- ALL IMAGES END -->
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="ui_tabs make_tabs" tabs>
+        <ul>
+            <li><a href="#tabs-1">Popis</a></li>
+            <li><a href="#tabs-2">E-shop</a></li>
+            <li><a href="#tabs-3">Ke stažení</a></li>
+        </ul>
+        <!-- //// -->
+        <div id="tabs-1">
+            <p>
+                Nunc sodales mauris eget massa vulputate fringilla. Etiam pretium nec orci et porttitor. Nunc lobortis felis et porta aliquet. Pellentesque ac semper ipsum. Etiam blandit leo nec pulvinar efficitur. Aenean nec euismod turpis, vitae fermentum mauris.
+            </p>
+            <p>
+                Phasellus vitae aliquet ipsum. Curabitur sodales mauris non sapien ornare, vitae placerat quam varius. Vivamus sodales scelerisque nunc, vel consequat erat dapibus eget. Morbi sagittis, tortor vitae semper tincidunt, nulla justo elementum ante, sit amet commodo tortor diam sit amet ligula. Ut non dui sed nunc ullamcorper interdum.
+            </p>
+            <ul>
+                <li>Mauris ligula orci, consequat sed faucibus non, aliquam eget justo.</li>
+                <li>Suspendisse non erat dignissim, varius mauris eu, condimentum mauris. Fusce vulputate ac nisi ut efficitur.</li>
+                <li>Proin id elit tellus. Fusce ut faucibus augue, sit amet hendrerit ex. In hac habitasse platea dictumst. Proin vitae malesuada nibh.</li>
+                <li>Donec pharetra lobortis auctor. Donec imperdiet hendrerit elementum. Proin tempor dolor id magna rutrum pharetra. </li>
+            </ul>
+        </div>
+        <!-- //// -->
+        <div id="tabs-2">
+            <div class="bgr_wrapper">
+                <!-- SHOP FILTER -->
+                <div class="shop_filter in_tab">
+                    <div class="switch" tabs-switch>
+                        <a class="item active" data-tab="tab_1">
+                            <div>
+                                Základní filtr
+                            </div>
+                        </a>
+                        <a class="item" data-tab="tab_2">
+                            <div>
+                                Rozšířený filtr
+                            </div>
+                        </a>
+                    </div>
+                    <div class="content">
+                        <div class="tab_1 inside opened">
+                            <!-- ACTUAL FILTER CONTENT -->
+                            <div class="item">
+                                <div class="title">
+                                    Patice
+                                </div>
+                                <div class="values">
+                                    <div class="checklist">
+                                        <label class="option">
+                                            <input type="checkbox" />
+                                            <div class="value">
+                                                <div class="image">
+                                                    <div>
+                                                        <img src="/images/filter/filter_e27.png" alt="e27" />
+                                                    </div>
+                                                </div>
+                                                E27
+                                            </div>
+                                        </label>
+                                        <label class="option">
+                                            <input type="checkbox" />
+                                            <div class="value">
+                                                <div class="image">
+                                                    <div>
+                                                        <img src="/images/filter/filter_e14.png" alt="e27" />
+                                                    </div>
+                                                </div>
+                                                E14
+                                            </div>
+                                        </label>
+                                        <label class="option">
+                                            <input type="checkbox" />
+                                            <div class="value">
+                                                <div class="image">
+                                                    <div>
+                                                        <img src="/images/filter/filter_gu10.png" alt="e27" />
+                                                    </div>
+                                                </div>
+                                                GU10
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="title center">
+                                    Výška [mm]
+                                </div>
+                                <div class="values">
+                                    <div class="slider">
+                                        <input type="text" class="min" id="height_amount_min" readonly />
+                                        <input type="text" class="max" id="height_amount_max" readonly />
+                                        <div id="slider_amount"></div>
+                                    </div>
+                                    <script>
+                                        $(function() {
+                                            $("#slider_amount").slider({
+                                                range: true,
+                                                min: 0,
+                                                max: 500,
+                                                values: [75, 300],
+                                                slide: function(event, ui) {
+                                                    $("#height_amount_min").val(ui.values[0]);
+                                                    $("#height_amount_max").val(ui.values[1]);
+                                                }
+                                            });
+                                            $("#height_amount_min").val($("#slider_amount").slider("values", 0));
+                                            $("#height_amount_max").val($("#slider_amount").slider("values", 1));
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                            <!-- //////////////// -->
+                            <div class="item">
+                                <div class="title">
+                                    SMD chip
+                                </div>
+                                <div class="values">
+                                    <div class="checklist">
+                                        <label class="option">
+                                            <input type="checkbox" />
+                                            <div class="value">
+                                                3525
+                                            </div>
+                                        </label>
+                                        <label class="option">
+                                            <input type="checkbox" />
+                                            <div class="value">
+                                                5050
+                                            </div>
+                                        </label>
+                                        <label class="option">
+                                            <input type="checkbox" />
+                                            <div class="value">
+                                                335
+                                            </div>
+                                        </label>
+                                        <label class="option">
+                                            <input type="checkbox" />
+                                            <div class="value">
+                                                2835
+                                            </div>
+                                        </label>
+                                        <label class="option">
+                                            <input type="checkbox" />
+                                            <div class="value">
+                                                5730
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //////////////// -->
+                            <div class="item">
+                                <div class="title">
+                                    Počet LED / m
+                                </div>
+                                <div class="values">
+                                    <div class="checklist">
+                                        <label class="option">
+                                            <input type="checkbox" />
+                                            <div class="value">
+                                                30
+                                            </div>
+                                        </label>
+                                        <label class="option">
+                                            <input type="checkbox" />
+                                            <div class="value">
+                                                60
+                                            </div>
+                                        </label>
+                                        <label class="option">
+                                            <input type="checkbox" />
+                                            <div class="value">
+                                                72
+                                            </div>
+                                        </label><label class="option">
+                                        <input type="checkbox" />
+                                        <div class="value">
+                                            120
+                                        </div>
+                                    </label>
+                                        <label class="option">
+                                            <input type="checkbox" />
+                                            <div class="value">
+                                                240
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //////////////// -->
+                            <div class="item">
+                                <div class="title">
+                                    Napájení
+                                </div>
+                                <div class="values">
+                                    <div class="checklist">
+                                        <label class="option">
+                                            <input type="checkbox" />
+                                            <div class="value">
+                                                12V
+                                            </div>
+                                        </label>
+                                        <label class="option">
+                                            <input type="checkbox" />
+                                            <div class="value">
+                                                24V
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //////////////// -->
+                            <hr />
+                            <!-- //////////////// -->
+                            <div class="item">
+                                <div class="title">
+                                    Napájení
+                                </div>
+                                <div class="values">
+                                    <div class="checklist">
+                                        <label class="option">
+                                            <input type="checkbox" />
+                                            <div class="value color k3000">
+                                                3000K
+                                            </div>
+                                        </label>
+                                        <label class="option">
+                                            <input type="checkbox" />
+                                            <div class="value color k4000">
+                                                4000K
+                                            </div>
+                                        </label>
+                                        <label class="option">
+                                            <input type="checkbox" />
+                                            <div class="value color k6500">
+                                                6500K
+                                            </div>
+                                        </label>
+                                        <label class="option">
+                                            <input type="checkbox" />
+                                            <div class="value color rgb">
+                                                RGB
+                                            </div>
+                                        </label>
+                                        <label class="option">
+                                            <input type="checkbox" />
+                                            <div class="value color rgbw">
+                                                RGB+W
+                                            </div>
+                                        </label>
+                                        <label class="option">
+                                            <input type="checkbox" />
+                                            <div class="value color red">
+                                                R
+                                            </div>
+                                        </label>
+                                        <label class="option">
+                                            <input type="checkbox" />
+                                            <div class="value color green">
+                                                G
+                                            </div>
+                                        </label>
+                                        <label class="option">
+                                            <input type="checkbox" />
+                                            <div class="value color blue">
+                                                B
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //////////////// -->
+                            <div class="item">
+                                <div class="title">
+                                    Příkon [W/m]
+                                </div>
+                                <div class="values">
+                                    <div class="checklist">
+                                        <label class="option">
+                                            <input type="checkbox" />
+                                            <div class="value">
+                                                3,5
+                                            </div>
+                                        </label>
+                                        <label class="option">
+                                            <input type="checkbox" />
+                                            <div class="value">
+                                                4,8
+                                            </div>
+                                        </label>
+                                        <label class="option">
+                                            <input type="checkbox" />
+                                            <div class="value">
+                                                9,6
+                                            </div>
+                                        </label>
+                                        <label class="option">
+                                            <input type="checkbox" />
+                                            <div class="value">
+                                                16,2
+                                            </div>
+                                        </label>
+                                        <label class="option">
+                                            <input type="checkbox" />
+                                            <div class="value">
+                                                20,4
+                                            </div>
+                                        </label>
+                                        <label class="option">
+                                            <input type="checkbox" />
+                                            <div class="value">
+                                                28,6
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //////////////// -->
+                            <div class="item">
+                                <div class="title">
+                                    Výška
+                                </div>
+                                <div class="values">
+                                    <div class="select">
+                                        <select class="make_lui_select" make-lui-select>
+                                            <option>Lorem ipsum 1</option>
+                                            <option>Lorem ipsum 2</option>
+                                            <option>Lorem ipsum 3</option>
+                                            <option>Lorem ipsum 4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //////////////// -->
+                            <div class="item">
+                                <div class="title">
+                                    Šířka
+                                </div>
+                                <div class="values">
+                                    <div class="select">
+                                        <select class="make_lui_select" make-lui-select>
+                                            <option>Lorem ipsum 1</option>
+                                            <option>Lorem ipsum 2</option>
+                                            <option>Lorem ipsum 3</option>
+                                            <option>Lorem ipsum 4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab_2 inside">
+                            rozšířené filtry
+                        </div>
+                    </div>
+                </div>
+                <!-- SHOP FILTER END -->
+                <!-- SHOP ORDER BY -->
+                <div class="shop_orderby">
+                    <div class="item">
+                        Řazení
+                        <div class="select">
+                            <select class="make_lui_select" make-lui-select>
+                                <option>Výchozí</option>
+                                <option>Lorem ipsum 2</option>
+                                <option>Lorem ipsum 3</option>
+                                <option>Lorem ipsum 4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <ul>
+                            <li>
+                                <label>
+                                    <input type="checkbox" name="" />
+									<span>
+										Skladem
+									</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" name="" />
+									<span>
+										Novinky
+									</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" name="" />
+									<span>
+										Akce
+									</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item">
+                        Zobrazit
+                        <div class="select small">
+                            <select class="make_lui_select" make-lui-select>
+                                <option>24</option>
+                                <option>48</option>
+                                <option>64</option>
+                            </select>
+                        </div>
+                        z <strong>349</strong> položek
+                    </div>
+                </div>
+                <!-- SHOP ORDER BY END -->
+            </div>
+
+            <!-- PRODUCT LIST -->
+            <div class="products_list">
+                <div class="row stretch">
+                    <!-- //// -->
+                    <div class="col-xs-12 col-md-6 col-xl-3 item">
+                        <div class="prefers">
+                            <div class="state_1">Novinka</div>
+                        </div>
+                        <a [routerLink]="['/']" class="image">
+                            <div>
+                                <img src="https://placekitten.com/420/420" alt="" />
+                            </div>
+                        </a>
+                        <h3 class="title">
+                            <a [routerLink]="['/']">
+                                LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm
+                            </a>
+                        </h3>
+                        <div class="price">
+                            <div class="primary">
+                                1 999 Kč/ks
+                            </div>
+                            <div class="secondary">
+                                1 899 Kč bez DPH
+                            </div>
+                            <div class="store positive fa_b_check">
+                                Skladem
+                            </div>
+                        </div>
+                        <a [routerLink]="['/']" class="buy"></a>
+                    </div>
+                    <!-- //// -->
+                    <div class="col-xs-12 col-md-6 col-xl-3 item">
+                        <div class="prefers">
+                            <div class="state_2">Akce</div>
+                        </div>
+                        <a [routerLink]="['/']" class="image">
+                            <div>
+                                <img src="https://placekitten.com/420/420" alt="" />
+                            </div>
+                        </a>
+                        <h3 class="title">
+                            <a [routerLink]="['/']">
+                                LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm
+                            </a>
+                        </h3>
+                        <div class="price">
+                            <div class="primary">
+                                19 999 Kč/ks
+                            </div>
+                            <div class="secondary">
+                                19 899 Kč bez DPH
+                            </div>
+                            <div class="store negative fa_b_times">
+                                Na dotaz
+                            </div>
+                        </div>
+                        <a [routerLink]="['/']" class="buy"></a>
+                    </div>
+                    <!-- //// -->
+                    <div class="col-xs-12 col-md-6 col-xl-3 item">
+                        <a [routerLink]="['/']" class="image">
+                            <div>
+                                <img src="https://placekitten.com/420/420" alt="" />
+                            </div>
+                        </a>
+                        <h3 class="title">
+                            <a [routerLink]="['/']">
+                                LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm
+                            </a>
+                        </h3>
+                        <div class="price">
+                            <div class="primary">
+                                19 999 Kč/ks
+                            </div>
+                            <div class="secondary">
+                                19 899 Kč bez DPH
+                            </div>
+                            <div class="store negative fa_b_times">
+                                Na dotaz
+                            </div>
+                        </div>
+                        <a [routerLink]="['/']" class="buy"></a>
+                    </div>
+                    <!-- //// -->
+                    <div class="col-xs-12 col-md-6 col-xl-3 item">
+                        <a [routerLink]="['/']" class="image">
+                            <div>
+                                <img src="https://placekitten.com/420/420" alt="" />
+                            </div>
+                        </a>
+                        <h3 class="title">
+                            <a [routerLink]="['/']">
+                                LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm
+                            </a>
+                        </h3>
+                        <div class="price">
+                            <div class="primary">
+                                19 999 Kč/ks
+                            </div>
+                            <div class="secondary">
+                                19 899 Kč bez DPH
+                            </div>
+                            <div class="store negative fa_b_times">
+                                Na dotaz
+                            </div>
+                        </div>
+                        <a [routerLink]="['/']" class="buy"></a>
+                    </div>
+                    <!-- //// -->
+                    <div class="col-xs-12 col-md-6 col-xl-3 item">
+                        <div class="prefers">
+                            <div class="state_1">Novinka</div>
+                        </div>
+                        <a [routerLink]="['/']" class="image">
+                            <div>
+                                <img src="https://placekitten.com/420/420" alt="" />
+                            </div>
+                        </a>
+                        <h3 class="title">
+                            <a [routerLink]="['/']">
+                                LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm
+                            </a>
+                        </h3>
+                        <div class="price">
+                            <div class="primary">
+                                1 999 Kč/ks
+                            </div>
+                            <div class="secondary">
+                                1 899 Kč bez DPH
+                            </div>
+                            <div class="store positive fa_b_check">
+                                Skladem
+                            </div>
+                        </div>
+                        <a [routerLink]="['/']" class="buy"></a>
+                    </div>
+                    <!-- //// -->
+                    <div class="col-xs-12 col-md-6 col-xl-3 item">
+                        <div class="prefers">
+                            <div class="state_2">Akce</div>
+                        </div>
+                        <a [routerLink]="['/']" class="image">
+                            <div>
+                                <img src="https://placekitten.com/420/420" alt="" />
+                            </div>
+                        </a>
+                        <h3 class="title">
+                            <a [routerLink]="['/']">
+                                LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm
+                            </a>
+                        </h3>
+                        <div class="price">
+                            <div class="primary">
+                                19 999 Kč/ks
+                            </div>
+                            <div class="secondary">
+                                19 899 Kč bez DPH
+                            </div>
+                            <div class="store negative fa_b_times">
+                                Na dotaz
+                            </div>
+                        </div>
+                        <a [routerLink]="['/']" class="buy"></a>
+                    </div>
+                    <!-- //// -->
+                    <div class="col-xs-12 col-md-6 col-xl-3 item">
+                        <a [routerLink]="['/']" class="image">
+                            <div>
+                                <img src="https://placekitten.com/420/420" alt="" />
+                            </div>
+                        </a>
+                        <h3 class="title">
+                            <a [routerLink]="['/']">
+                                LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm
+                            </a>
+                        </h3>
+                        <div class="price">
+                            <div class="primary">
+                                19 999 Kč/ks
+                            </div>
+                            <div class="secondary">
+                                19 899 Kč bez DPH
+                            </div>
+                            <div class="store negative fa_b_times">
+                                Na dotaz
+                            </div>
+                        </div>
+                        <a [routerLink]="['/']" class="buy"></a>
+                    </div>
+                    <!-- //// -->
+                    <div class="col-xs-12 col-md-6 col-xl-3 item">
+                        <a [routerLink]="['/']" class="image">
+                            <div>
+                                <img src="https://placekitten.com/420/420" alt="" />
+                            </div>
+                        </a>
+                        <h3 class="title">
+                            <a [routerLink]="['/']">
+                                LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm
+                            </a>
+                        </h3>
+                        <div class="price">
+                            <div class="primary">
+                                19 999 Kč/ks
+                            </div>
+                            <div class="secondary">
+                                19 899 Kč bez DPH
+                            </div>
+                            <div class="store negative fa_b_times">
+                                Na dotaz
+                            </div>
+                        </div>
+                        <a [routerLink]="['/']" class="buy"></a>
+                    </div>
+                    <!-- //// -->
+                </div>
+            </div>
+        </div>
+        <!-- //// -->
+        <div id="tabs-3">
+            <div class="downloads_list simple">
+                <div class="item">
+                    <div class="icon">
+                        <div>
+                            <img src="/images/theme/files/file_doc.png" alt="Soubor .doc" />
+                        </div>
+                    </div>
+                    <h2 class="filename">
+                        <a [routerLink]="['/']">Lorem ipsum dolor <small>(doc / 3MB)</small></a>
+                    </h2>
+                </div>
+                <div class="item">
+                    <div class="icon">
+                        <div>
+                            <img src="/images/theme/files/file_docx.png" alt="Soubor .docx" />
+                        </div>
+                    </div>
+                    <h2 class="filename">
+                        <a [routerLink]="['/']">Lorem ipsum dolor <small>(docx / 3MB)</small></a>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('.vertical_gallery_list .content').slick({
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                dots: false,
+                arrows: true,
+                prevArrow: $('.vertical_gallery_list .arrow.left'),
+                nextArrow: $('.vertical_gallery_list .arrow.right'),
+                autoplay: false,
+                vertical: true,
+                autoplaySpeed: 5500,
+                responsive: [
+                    {
+                        breakpoint: 1300,
+                        settings: {
+                            slidesToShow: 4,
+                            slidesToScroll: 1,
+                            vertical: false,
+                        }
+                    },
+                    {
+                        breakpoint: 991,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1,
+                            vertical: false,
+                        }
+                    },
+                    {
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1,
+                            vertical: false,
+                        }
+                    },
+                    {
+                        breakpoint: 500,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1,
+                            vertical: false,
+                        }
+                    }
+                ]
+            });
+
+        });
+    </script>
+</div>

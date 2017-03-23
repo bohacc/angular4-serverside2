@@ -1,0 +1,127 @@
+.swiper-container {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  padding: 0;
+  list-style: none;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  -ms-transition-property: -ms-transform;
+  transition-property: transform;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.swiper-slide {
+  -webkit-flex-shrink: 0;
+  -ms-flex: 0 0 auto;
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.swiper-pagination {
+  position: absolute;
+  text-align: center;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  z-index: 10;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+}
+
+:host >>> .swiper-pagination-bullet {
+  width: 60px;
+  height: 3px;
+  display: inline-block;
+  border-radius: 10px;
+  background: #fff;
+  opacity: .2;
+}
+
+:host >>> .swiper-pagination-bullet:hover {
+  opacity: .4;
+}
+
+:host >>> .swiper-pagination-clickable .swiper-pagination-bullet {
+  cursor: pointer;
+}
+
+:host >>> .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 5px;
+}
+
+:host >>> .swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  background: #39f;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  width: 35px;
+  height: 65px;
+  margin-top: -22px;
+  z-index: 10;
+  cursor: pointer;
+  opacity: 0;
+  -moz-background-size: 35px 65px;
+  -webkit-background-size: 35px 65px;
+  background-size: 35px 65px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.swiper-container:hover .swiper-button-prev,
+.swiper-container:hover .swiper-button-next {
+  opacity: 0.2;
+}
+
+.swiper-container:hover .swiper-button-prev:hover,
+.swiper-container:hover .swiper-button-next:hover {
+  opacity: 0.4;
+}
+
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDkuNTQgMTE1OCI+PHRpdGxlPmFuZ2xlLWxlZnQ8L3RpdGxlPjxwYXRoIGQ9Ik03Mi4yNSw2NDAuNzUsNjEyLjczLDEwMC4yN0M2MjAuODMsOTIuMTcsNjMzLjEsODgsNjQxLjE5LDg4YzQsMCwxMy42NywxLjkxLDE5LjgxLDdzOC43NywxMy4zNiw4Ljc3LDE3LjQxYzAsMTIuMjctNC4xNywyMC4zNi0xMi4yNywyOC40NkwxMzMuMzMsNjY1bDUyNC4xNyw1MjguMWM3LjUsNi44NywxMi4yNywxNi4xOSwxMi4yNywyNC4yOSwwLDUuODYtMywxNS4wOS04Ljc3LDIwLjU4LTYuMyw2LTE1LjU4LDgtMTkuODEsOC04LjEsMC0yMC4zNi00LjE3LTI4LjQ2LTEyLjI3TDcyLjUsNjkzLjVDNjQuNCw2ODUuNCw2MC4yMyw2NzcuMyw2MC4yMyw2NjUsNjAuMjMsNjU2Ljk0LDY0LjQsNjQ4LjYsNzIuMjUsNjQwLjc1WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTYwLjIzIC04OCkiIHN0eWxlPSJmaWxsOiNmZmYiLz48L3N2Zz4=");
+  left: 10px;
+  right: auto;
+}
+
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDkuNTQgMTE1OCI+PHRpdGxlPmFuZ2xlLXJpZ2h0PC90aXRsZT48cGF0aCBkPSJNNjY5Ljc3LDY2NWMwLDEyLjI3LTQuMTcsMjAuMzYtMTIuMjcsMjguNDZMMTE3LjI3LDEyMzMuNzNjLTguMSw4LjEtMjAuMzYsMTIuMjctMjguNDYsMTIuMjctNC4yMywwLTEzLjUxLTItMTkuODEtOC01Ljc3LTUuNDktOC43Ny0xNC43MS04Ljc3LTIwLjU4LDAtOC4xLDQuNzctMTcuNDIsMTIuMjctMjQuMjlMNTk2LjY3LDY2NSw3Mi41LDE0MC44N2MtOC4xLTguMS0xMi4yNy0xNi4xOS0xMi4yNy0yOC40NiwwLTQsMi42NC0xMi4zMiw4Ljc3LTE3LjQxczE1Ljc2LTcsMTkuODEtN2M4LjEsMCwyMC4zNiw0LjE3LDI4LjQ2LDEyLjI3TDY1Ny43NSw2NDAuNzVDNjY1LjYsNjQ4LjYsNjY5Ljc3LDY1Ni45NCw2NjkuNzcsNjY1WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTYwLjIzIC04OCkiIHN0eWxlPSJmaWxsOiNmZmYiLz48L3N2Zz4=");
+  right: 10px;
+  left: auto;
+}

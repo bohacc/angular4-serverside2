@@ -1,0 +1,28 @@
+<section>
+  <h2>{{'Vyberte způsob platby' | translate}}</h2>
+  <div class="content">
+    <label class="item" *ngFor="let item of paymentObj.records">
+      <input type="radio" name="payment" [value]="item.code"
+             [(ngModel)]="selectedPayment"
+             [disabled]="(!item.editable || isProcess || !isOpen)"
+             (ngModelChange)="selectItem(item)"
+      >
+      <div>
+        <div class="name">
+          {{item.name | translate}} <span class="info" title="{{item.name}}"></span>
+        </div>
+        <!--PRICE WITHOUT VAR FOR AT-->
+        <div class="price" *ngIf="item.priceVat &&  item.priceVat!='0' && store.isAustria">
+          {{item.price | number:formatNumber1}} {{item.currency}}
+        </div>
+        <!--PRICE-->
+        <div class="price" *ngIf="item.priceVat &&  item.priceVat!='0' && !store.isAustria">
+          {{item.priceVat | number:formatNumber1}} {{item.currency}}
+        </div>
+        <div class="price" *ngIf="!item.priceVat || item.priceVat=='0'">
+          {{'zdarma' | translate}}
+        </div>
+      </div>
+    </label>
+  </div>
+</section>

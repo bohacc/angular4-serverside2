@@ -1,0 +1,70 @@
+<div class="site_subpage_content n-space-top n-space-bottom">
+  <h1 class="page_title">{{category.name}}</h1>
+  <div class="vertical_gallery_area">
+    <div class="vertical_gallery_preview">
+      <div>
+        <img src="{{category.imgBig1File}}" alt="{{category.name}}" />
+      </div>
+    </div>
+    <div class="vertical_gallery_list">
+      <a class="arrow left"></a>
+      <a class="arrow right"></a>
+      <div class="content" carousel-vertical>
+        <!-- ALL IMAGES -->
+        <div class="active">
+          <img src="{{category.imgBig1File}}" [attr.data-full-src]="'' + category.imgBig1File" alt="{{category.name}}" />
+        </div>
+        <div>
+          <img src="{{category.imgBig2File}}" [attr.data-full-src]="'' + category.imgBig2File" alt="{{category.name}}" />
+        </div>
+        <div>
+          <img src="{{category.imgBig3File}}" [attr.data-full-src]="'' + category.imgBig3File" alt="{{category.name}}" />
+        </div>
+        <div>
+          <img src="{{category.imgBig4File}}" [attr.data-full-src]="'' + category.imgBig4File" alt="{{category.name}}" />
+        </div>
+        <div>
+          <img src="{{category.imgBig5File}}" [attr.data-full-src]="'' + category.imgBig5File" alt="{{category.name}}" />
+        </div>
+        <div>
+          <img src="{{category.imgBig6File}}" [attr.data-full-src]="'' + category.imgBig6File" alt="{{category.name}}" />
+        </div>
+        <div>
+          <img src="{{category.imgBig7File}}" [attr.data-full-src]="'' + category.imgBig7File" alt="{{category.name}}" />
+        </div>
+        <div>
+          <img src="{{category.imgBig8File}}" [attr.data-full-src]="'' + category.imgBig8File" alt="{{category.name}}" />
+        </div>
+        <!-- ALL IMAGES END -->
+      </div>
+    </div>
+  </div>
+  <br />
+  <div class="ui_tabs make_tabs">
+    <ul class="ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header">
+      <li class="ui-tabs-tab ui-state-default ui-tab ui-corner-top" [ngClass]="{'ui-state-active ui-tabs-active': tabsState==1, 'ui-state-hover': tabsStateHover==1}"
+          on-mouseover="setHoverIn(1)" on-mouseout="setHoverOut()">
+        <a href="javascript:void(0);" class="ui-tabs-anchor" (click)="setTabState(1)">{{'Popis' | translate}}</a>
+      </li>
+      <li class="ui-tabs-tab ui-state-default ui-tab ui-corner-top" [ngClass]="{'ui-state-active ui-tabs-active': tabsState==2, 'ui-state-hover': tabsStateHover==2}"
+          on-mouseover="setHoverIn(2)" on-mouseout="setHoverOut()">
+        <a href="javascript:void(0);" class="ui-tabs-anchor" (click)="setTabState(2)">{{'E-shop' | translate}}</a>
+      </li>
+      <li class="ui-tabs-tab ui-state-default ui-tab ui-corner-top" [ngClass]="{'ui-state-active ui-tabs-active': tabsState==3, 'ui-state-hover': tabsStateHover==3}"
+          on-mouseover="setHoverIn(3)" on-mouseout="setHoverOut()">
+        <a href="javascript:void(0);" class="ui-tabs-anchor" (click)="setTabState(3)">{{'Ke stažení' | translate}}</a>
+      </li>
+    </ul>
+    <!-- //// -->
+    <div id="tabs-1" [ngClass]="{hide: !(tabsState==1)}" [innerHtml]="(category.description || '')" class="ui-tabs-panel ui-corner-bottom ui-widget-content">
+    </div>
+    <!-- //// -->
+    <div id="tabs-2" [ngClass]="{hide: !(tabsState==2)}" class="n-white ui-tabs-panel ui-corner-bottom ui-widget-content">
+      <div class="n-tab-background"></div>
+      <list [asListType]="2"></list>
+    </div>
+    <div id="tabs-3" [ngClass]="{hide: !(tabsState==3)}" class="ui-tabs-panel ui-corner-bottom ui-widget-content">
+      <attachments [id]="category.id" [type]="'document_product_zatrideni_eshop'" [tableName]="'zatrideni_produktu'"></attachments>
+    </div>
+  </div>
+</div>

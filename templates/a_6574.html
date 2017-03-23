@@ -1,0 +1,372 @@
+<div class="site_subpage_content n-space-bottom">
+    <!-- SHOP FILTER -->
+    <div class="shop_filter">
+        <div class="switch" tabs-switch>
+            <a class="item active" data-tab="tab_1">
+                <div>
+                    Základní filtr
+                </div>
+            </a>
+            <a class="item" data-tab="tab_2">
+                <div>
+                    Rozšířený filtr
+                </div>
+            </a>
+        </div>
+        <div class="content">
+            <div class="tab_1 inside opened">
+                <!-- ACTUAL FILTER CONTENT -->
+                <div class="item">
+                    <div class="title">
+                        Patice
+                    </div>
+                    <div class="values">
+                        <div class="checklist">
+                            <label class="option">
+                                <input type="checkbox" />
+                                <div class="value">
+                                    <div class="image">
+                                        <div>
+                                            <img src="/images/filter/filter_e14.png" alt="e14" />
+                                        </div>
+                                    </div>
+                                    E14
+                                </div>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" />
+                                <div class="value">
+                                    <div class="image">
+                                        <div>
+                                            <img src="/images/filter/filter_e27.png" alt="e27" />
+                                        </div>
+                                    </div>
+                                    E27
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- //////////////// -->
+                <div class="item">
+                    <div class="title">
+                        Barvy
+                    </div>
+                    <div class="values">
+                        <div class="checklist">
+                            <label class="option">
+                                <input type="checkbox" />
+                                <div class="value color k2700">
+                                    2700K
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- //////////////// -->
+                <div class="item">
+                    <div class="title">
+                        Náhrada za
+                    </div>
+                    <div class="values">
+                        <div class="select">
+                            <select class="make_lui_select" make-lui-select>
+                                <option>40W</option>
+                                <option>60W</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab_2 inside">
+                rozšířené filtry
+            </div>
+        </div>
+    </div>
+    <!-- SHOP FILTER END -->
+    <!-- SHOP ORDER BY -->
+    <div class="shop_orderby">
+        <div class="item">
+            Řazení
+            <div class="select">
+                <select class="make_lui_select" make-lui-select>
+                    <option>Výchozí</option>
+                    <option>Lorem ipsum 2</option>
+                    <option>Lorem ipsum 3</option>
+                    <option>Lorem ipsum 4</option>
+                </select>
+            </div>
+        </div>
+        <div class="item">
+            <ul>
+                <li>
+                    <label>
+                        <input type="checkbox" name="" />
+						<span>
+							Skladem
+						</span>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" name="" />
+						<span>
+							Novinky
+						</span>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" name="" />
+						<span>
+							Akce
+						</span>
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <div class="item">
+            Zobrazit
+            <div class="select small">
+                <select class="make_lui_select" make-lui-select>
+                    <option>24</option>
+                    <option>48</option>
+                    <option>64</option>
+                </select>
+            </div>
+            z <strong>349</strong> položek
+        </div>
+    </div>
+    <!-- SHOP ORDER BY END -->
+
+    <!-- PRODUCT LIST -->
+    <div class="products_list">
+        <div class="row stretch">
+            <div class="col-xs-12 col-md-6 col-xl-3 item">
+                <div class="prefers">
+                    <div class="state_1">Novinka</div>
+                </div>
+                <a [routerLink]="['/']" class="image">
+                    <div>
+                        <img src="/images/example/120.001.61_0_L.jpg" alt="" />
+                    </div>
+                </a>
+                <h3 class="title">
+                    <a [routerLink]="['/']">
+                        LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm
+                    </a>
+                </h3>
+                <div class="price">
+                    <div class="primary">
+                        1 999 Kč/ks
+                    </div>
+                    <div class="secondary">
+                        1 899 Kč bez DPH
+                    </div>
+                    <div class="store positive fa_b_check">
+                        Skladem
+                    </div>
+                </div>
+                <a [routerLink]="['/']" class="buy"></a>
+            </div>
+            <div class="col-xs-12 col-md-6 col-xl-3 item">
+                <div class="prefers">
+                    <div class="state_2">Akce</div>
+                </div>
+                <a [routerLink]="['/']" class="image">
+                    <div>
+                        <img src="/images/example/121.183.10_0_L.jpg" alt="" />
+                    </div>
+                </a>
+                <h3 class="title">
+                    <a [routerLink]="['/']">
+                        LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm
+                    </a>
+                </h3>
+                <div class="price">
+                    <div class="primary">
+                        19 999 Kč/ks
+                    </div>
+                    <div class="secondary">
+                        19 899 Kč bez DPH
+                    </div>
+                    <div class="store negative fa_b_times">
+                        Na dotaz
+                    </div>
+                </div>
+                <a [routerLink]="['/']" class="buy"></a>
+
+            </div>
+            <div class="col-xs-12 col-md-6 col-xl-3 item">
+                <a [routerLink]="['/']" class="image">
+                    <div>
+                        <img src="/images/example/121.255.10_0_L.jpg" alt="" />
+                    </div>
+                </a>
+                <h3 class="title">
+                    <a [routerLink]="['/']">
+                        LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm
+                    </a>
+                </h3>
+                <div class="price">
+                    <div class="primary">
+                        19 999 Kč/ks
+                    </div>
+                    <div class="secondary">
+                        19 899 Kč bez DPH
+                    </div>
+                    <div class="store negative fa_b_times">
+                        Na dotaz
+                    </div>
+                </div>
+                <a [routerLink]="['/']" class="buy"></a>
+            </div>
+            <div class="col-xs-12 col-md-6 col-xl-3 item">
+                <a [routerLink]="['/']" class="image">
+                    <div>
+                        <img src="/images/example/121.353.10_0_L.jpg" alt="" />
+                    </div>
+                </a>
+                <h3 class="title">
+                    <a [routerLink]="['/']">
+                        LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm
+                    </a>
+                </h3>
+                <div class="price">
+                    <div class="primary">
+                        19 999 Kč/ks
+                    </div>
+                    <div class="secondary">
+                        19 899 Kč bez DPH
+                    </div>
+                    <div class="store negative fa_b_times">
+                        Na dotaz
+                    </div>
+                </div>
+                <a [routerLink]="['/']" class="buy"></a>
+            </div>
+            <div class="col-xs-12 col-md-6 col-xl-3 item">
+                <div class="prefers">
+                    <div class="state_1">Novinka</div>
+                </div>
+                <a [routerLink]="['/']" class="image">
+                    <div>
+                        <img src="/images/example/121.370.10_0_L.jpg" alt="" />
+                    </div>
+                </a>
+                <h3 class="title">
+                    <a [routerLink]="['/']">
+                        LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm
+                    </a>
+                </h3>
+                <div class="price">
+                    <div class="primary">
+                        1 999 Kč/ks
+                    </div>
+                    <div class="secondary">
+                        1 899 Kč bez DPH
+                    </div>
+                    <div class="store positive fa_b_check">
+                        Skladem
+                    </div>
+                </div>
+                <a [routerLink]="['/']" class="buy"></a>
+            </div>
+            <div class="col-xs-12 col-md-6 col-xl-3 item">
+                <div class="prefers">
+                    <div class="state_2">Akce</div>
+                </div>
+                <a [routerLink]="['/']" class="image">
+                    <div>
+                        <img src="/images/example/121.625_0_L.jpg" alt="" />
+                    </div>
+                </a>
+                <h3 class="title">
+                    <a [routerLink]="['/']">
+                        LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm
+                    </a>
+                </h3>
+                <div class="price">
+                    <div class="primary">
+                        19 999 Kč/ks
+                    </div>
+                    <div class="secondary">
+                        19 899 Kč bez DPH
+                    </div>
+                    <div class="store negative fa_b_times">
+                        Na dotaz
+                    </div>
+                </div>
+                <a [routerLink]="['/']" class="buy"></a>
+
+            </div>
+            <div class="col-xs-12 col-md-6 col-xl-3 item">
+                <a [routerLink]="['/']" class="image">
+                    <div>
+                        <img src="/images/example/126.368.10_0_L.jpg" alt="" />
+                    </div>
+                </a>
+                <h3 class="title">
+                    <a [routerLink]="['/']">
+                        LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm
+                    </a>
+                </h3>
+                <div class="price">
+                    <div class="primary">
+                        19 999 Kč/ks
+                    </div>
+                    <div class="secondary">
+                        19 899 Kč bez DPH
+                    </div>
+                    <div class="store negative fa_b_times">
+                        Na dotaz
+                    </div>
+                </div>
+                <a [routerLink]="['/']" class="buy"></a>
+            </div>
+            <div class="col-xs-12 col-md-6 col-xl-3 item">
+                <a [routerLink]="['/']" class="image">
+                    <div>
+                        <img src="/images/example/126.688.60.0_0_L.jpg" alt="" />
+                    </div>
+                </a>
+                <h3 class="title">
+                    <a [routerLink]="['/']">
+                        LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm
+                    </a>
+                </h3>
+                <div class="price">
+                    <div class="primary">
+                        19 999 Kč/ks
+                    </div>
+                    <div class="secondary">
+                        19 899 Kč bez DPH
+                    </div>
+                    <div class="store negative fa_b_times">
+                        Na dotaz
+                    </div>
+                </div>
+                <a [routerLink]="['/']" class="buy"></a>
+            </div>
+        </div>
+    </div>
+    <!-- PRODUCT LIST END -->
+    <!-- PAGEBAR -->
+    <div class="site_pagebar">
+        <button class="more">Načíst další</button>
+        <ul class="pages">
+            <li><a href="javascript:void(0);">Předchozí</a></li>
+            <li><a href="javascript:void(0);">1</a></li>
+            <li><span>..</span></li>
+            <li><a href="javascript:void(0);">18</a></li>
+            <li><a href="javascript:void(0);">19</a></li>
+            <li><a href="javascript:void(0);" class="active">20</a></li>
+            <li><a href="javascript:void(0);">21</a></li>
+            <li><a href="javascript:void(0);">22</a></li>
+            <li><span>..</span></li>
+            <li><a href="javascript:void(0);">60</a></li>
+            <li><a href="javascript:void(0);">Další</a></li>
+        </ul>
+    </div>
+    <!-- PAGEBAR END -->
+</div>

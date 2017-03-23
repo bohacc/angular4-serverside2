@@ -1,0 +1,118 @@
+<div class="site_subpage_content n-space-top n-space-bottom">
+  <h1 class="page_title small">{{product.name}}</h1>
+
+  <!-- configurator start -->
+  <!-- POPUP CONFIGURATION -->
+  <configurator-popup [isOpen]="popupShow" (onClose)="close()" *ngIf="type==1"
+                      (onFinish)="onDoneConfiguration($event)"
+                      [options]="configuration"></configurator-popup>
+  <configurator-popup2 [isOpen]="popupShow" (onClose)="close()" *ngIf="type==2"
+                      (onFinish)="onDoneConfiguration($event)"
+                      [options]="configuration"></configurator-popup2>
+  <!-- configurator end -->
+
+  <!-- gallery start -->
+  <!-- POPUP IMAGES -->
+  <!-- gallery stop -->
+
+  <div class="product_detail">
+    <!-- PRODUCT DETAIL HEADER -->
+    <record-part class="product_detail" [product]="product" [type]="2" (onScrollToSelect)="scrollToSelect()"
+                 (onBuy)="buy()" [inConfiguration]="inConfiguration">
+    </record-part>
+    <!-- PRODUCT DETAIL FOOTER -->
+
+    <div class="footer">
+      <h3 class="section_title">
+        {{'Základní délky pásku' | translate}}
+      </h3>
+      <!-- PARAMS TABLE -->
+      <table class="product_params">
+        <thead>
+        <tr>
+          <th>{{'Kód' | translate}}</th>
+          <th>{{'Popis' | translate}}</th>
+          <th class="center">{{'Délka' | translate}}</th>
+          <th class="center">{{'Dostupnost' | translate}}</th>
+          <th class="center">{{'Cena bez DPH' | translate}}</th>
+          <th class="center">{{'Počet' | translate}}</th>
+          <th class="center">{{'Celkem bez DPH' | translate}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- //// -->
+        <tr *ngFor="let item of childs">
+          <td data-title="{{'Kód' | translate}}">{{item.code}}</td>
+          <td data-title="{{'Popis' | translate}}">{{item.name}}</td>
+          <td data-title="{{'Délka' | translate}}" class="center"><strong>{{item.lengthValue}} {{item.unit}}</strong></td>
+          <td data-title="{{'Dostupnost' | translate}}" class="center">{{item.availability}}</td>
+          <td data-title="{{'Cena bez DPH' | translate}}" class="center nowrap"><strong>{{item.price}} {{item.currency}}</strong></td>
+          <td data-title="{{'Počet' | translate}}" class="center">
+            <div class="ui_input_number small">
+              <input type="text" [(ngModel)]="item.amount" />
+              <button type="button" class="minus" (click)="minus(item)">-</button>
+              <button type="button" class="plus" (click)="plus(item)">+</button>
+            </div>
+          </td>
+          <td data-title="{{'Celkem bez DPH' | translate}}" class="center primary nowrap"><strong>{{(item.price * item.amount).toFixed(2)}} {{item.currency}}</strong></td>
+        </tr>
+        <!-- //// -->
+        </tbody>
+      </table>
+      <div *ngIf="childs.length==0">{{'Základní délky pásku nebyly nalezeny' | translate}}</div>
+      <!-- //// -->
+      <div *ngIf="optionsNotComplete">{{'Konfigurace tohoto produktu zatím není dostupná' | translate}}</div>
+      <h3 class="section_title" *ngIf="!optionsNotComplete">
+        {{'Individuální délka pásku a přívodu – zakázková výroba' | translate}}
+        <button class="event_open_config_popup configurator" (click)="open()">{{'Zvolit délku' | translate}}</button>
+      </h3>
+      <table class="product_params" *ngIf="!optionsNotComplete">
+        <thead>
+        <tr>
+          <th>{{'Popis' | translate}}</th>
+          <th class="center" *ngIf="type==1">{{'Pásek' | translate}}</th><th class="center" *ngIf="type==2">{{'Délka' | translate}}</th>
+          <th class="center" *ngIf="type==1">{{'Přívod "A"' | translate}}</th>
+          <th class="center" *ngIf="type==1">{{'Přívod "B"' | translate}}</th>
+          <th class="center">{{'Dostupnost' | translate}}</th>
+          <th class="center">{{'Cena bez DPH' | translate}}</th>
+          <th class="center">{{'Počet' | translate}}</th>
+          <th class="center">{{'Celkem bez DPH' | translate}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td data-title="{{'Popis' | translate}}">{{'Popis' | translate}}</td>
+          <td data-title="{{'Pásek' | translate}}" class="center">
+            <input type="text" [ngModel]="configuration.lengthValue" (click)="open()" class="value amount_lenght event_open_config_popup" readonly />
+          </td>
+          <td data-title="{{'Přívod A' | translate}}" class="center" *ngIf="type==1">
+            <input type="text" [ngModel]="configuration.lengthValueA" (click)="open()" class="value amount_power_lenght event_open_config_popup" readonly />
+          </td>
+          <td data-title="{{'Přívod B' | translate}}" class="center" *ngIf="type==1">
+            <input type="text" [ngModel]="configuration.lengthValueB" (click)="open()" class="value amount_power_sec_lenght event_open_config_popup" readonly />
+          </td>
+          <td data-title="{{'Dostupnost' | translate}}" class="center">{{configuration.availability}}</td>
+          <td data-title="{{'Cena bez DPH' | translate}}" class="center nowrap"><strong>{{configuration.priceComplete | number: formatNumber1}} {{configuration.currency}}</strong></td>
+          <td data-title="{{'Počet' | translate}}" class="center">
+            <div class="ui_input_number small">
+              <input type="text" [(ngModel)]="configuration.amount" />
+              <button type="button" class="minus" (click)="minus(configuration)">-</button>
+              <button type="button" class="plus" (click)="plus(configuration)">+</button>
+            </div>
+          </td>
+          <td data-title="{{'Celkem bez DPH' | translate}}" class="center primary nowrap"><strong>{{(configuration.amount * configuration.priceComplete) | number: '1.2-2'}} {{configuration.currency}}</strong></td>
+        </tr>
+        </tbody>
+      </table>
+      <!-- //// -->
+      <h3 class="related_title">{{'Příslušenství' | translate}}</h3>
+      <div *ngIf="accessories.length==0">{{'Příslušenství nebylo nalezeno' | translate}}</div>
+      <accessories [items]="accessories" (onPlus)="plus($event)" (onMinus)="minus($event)"></accessories>
+      <br />
+      <!-- TABS -->
+      <record-tabs [product]="product"></record-tabs>
+    </div>
+    <!-- //// -->
+    <similar-products [id]="product.id" [count]="4"></similar-products>
+  </div>
+</div>

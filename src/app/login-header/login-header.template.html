@@ -1,0 +1,6 @@
+<ul>
+  <li><a *ngIf="isLogged" routerLink="{{'/registration' | translate}}" class="user fa_b_user" title="{{loginName}}"><span>{{loginName}}</span></a></li>
+  <li><a *ngIf="!isLogged" routerLink="{{'/login' | translate}}" class="fa_b_user" title="Uživatel">{{'Přihlásit se' | translate}}</a></li>
+  <li><a *ngIf="isLogged" href="javascript:void(0);" class="logout fa_b_times" (click)="logout()">{{'Odhlásit' | translate}}</a></li>
+  <!--<li><a [routerLink]="['/']" class="lang cz">{{'Česky' | translate}}</a></li>-->
+</ul>

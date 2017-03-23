@@ -1,0 +1,122 @@
+/*
+
+TABLE
+- Responsive table
+
+*/
+.lui_table {
+	
+	border-collapse: collapse;
+	width: 100%;
+	padding: 5px;
+	overflow: hidden;
+
+	@media (min-width:@grid_lg_start){
+		& when (@responsive = true){
+			background: white;
+			border-radius: 5px;
+		}
+	}
+
+	thead {
+		@media (max-width:@grid_md_end){
+			& when (@responsive = true){
+				display: none;
+			}
+		}
+
+		tr {
+			th {
+				text-align: left;
+				font-size: 14px;
+				padding: 10px;
+				border-bottom: 1px solid #F3F3F3;
+
+				&.options {
+					text-align: right;
+				}
+			}
+		}
+	}
+
+	tbody {
+		tr {
+			border-bottom: 1px solid #F3F3F3;
+
+			@media (max-width:@grid_md_end){
+				& when (@responsive = true){
+					border-bottom-width: 0;
+				}
+			}
+
+			td {
+				padding: 10px;
+				text-align: left;
+
+				/* MOBILE VERSION */
+				@media (max-width:@grid_md_end){
+					& when (@responsive = true){
+						background: #fcfcfc;
+						border: 1px solid #ebebeb;
+						display: block;
+						padding: 15px;
+						margin-bottom: -1px;
+					}
+
+					&:last-child when (@responsive = true){
+						border-bottom-width: 15px;
+					}
+
+					/* LABEL TEXTS ON MOBILE VERSION <3 CSS3 */
+					&:before when (@responsive = true){
+						content:attr(data-title) " ";
+						font-weight: bold;
+					}
+
+					&.block_title:before when (@responsive = true){
+						display: block;
+					}
+				}
+
+				/* TABLET+ */
+				@media (min-width:@grid_lg_start){
+					&.options when (@responsive = true){
+						padding: 6px 10px 0 10px;
+						text-align: right;
+						white-space: nowrap;
+						
+					}
+				}
+
+				&.options when (@responsive = false){
+					padding: 6px 10px 0 10px;
+					text-align: right;
+					white-space: nowrap;
+				}
+			}
+
+			&:nth-child(even) td{
+				background: #f8fbfd;
+			}	
+
+			&:hover > td {
+				background: #f2f6fa;
+			}
+
+			@media (max-width:@grid_md_end){
+				&:nth-child(even) td when (@responsive = true) {
+					background: #fcfcfc;
+				}
+
+				&:hover > td when (@responsive = true) {
+					background: #fcfcfc;
+				}
+
+				&:last-child td:last-child when (@responsive = true){
+					border-bottom: 1px solid #ebebeb;
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,32 @@
+<div class="product_detail_config_popup" [ngClass]="{opened: isOpen}">
+  <div class="bgr event_close_config_popup" (click)="close()"></div>
+  <div class="window">
+    <button class="close fa_b_times event_close_config_popup" (click)="close()"></button>
+    <div class="container fluid max_lg">
+
+
+      <section class="item">
+        <header class="nonum">
+          <h2 class="title">{{'Zvolte délku profilu' | translate}}</h2>
+          <p>{{'Zohledněte délky koncovek, délku LED pásku, prostor pro vstup vodiče do profilu a pro připojení vodiče k LED pásku' | translate}}</p>
+        </header>
+        <div class="data">
+          <!-- SLIDER START -->
+          <slider-cmp [min]="options.minValue" [max]="options.maxValue"
+                      [defaultValue]="options.defaultValue"
+                      [step]="options.step" [postfix]="(' ' + options.unit)" [round]="true"
+                      [name]="translate('Zvolená délka')"
+                      (onChange)="onChange($event)"></slider-cmp>
+          <!-- SLIDER END -->
+        </div>
+        <div class="desc">
+          <img src="/images/configurator/foot_profile_lenght.jpg" alt="{{'Délka pásku' | translate}}">
+        </div>
+      </section>
+
+      <div class="configurator_confirm">
+        <button class="event_close_config_popup" (click)="finish()">{{'Zvolit' | translate}}</button>
+      </div>
+    </div>
+  </div>
+</div>

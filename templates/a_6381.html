@@ -1,0 +1,481 @@
+<div class="site_order_header">
+    <div class="inside">
+        <ul>
+            <li class="completed">1. Košík</li>
+            <li class="completed">2. Doprava a platba</li>
+            <li class="active">3. Osobní údaje</li>
+            <li>4. Shrnutí objednávky</li>
+        </ul>
+    </div>
+</div>
+<div class="site_order_content">
+    <div class="container fluid nospace">
+        <div class="row va_top">
+            <div class="col-xs-12 col-xl-8">
+                <div class="order_user_info">
+                    <!-- //// -->
+                    <section>
+                        <div class="item_opens">
+                            <input type="checkbox" id="open_login">
+                            <label for="open_login">
+                                Už jsem zde nakupoval/a a chci se <strong>přihlásít</strong><br >
+                                <small>Po přihlášení předvyplníma vaše osobní údaje do formuláře níže</small>
+                            </label>
+                            <div class="content">
+                                <br />
+                                <form action="" class="lui_form">
+                                    <div class="item row va-middle">
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                                            <label class="label">E-mail / Login:</label>
+                                        </div>
+                                        <div class="col-xs-12 col-lg-5">
+                                            <div class="input">
+                                                <input type="text" name="login[email]" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item row va-middle">
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                                            <label class="label">Heslo:</label>
+                                        </div>
+                                        <div class="col-xs-12 col-lg-5">
+                                            <div class="input">
+                                                <input type="password" name="login[password]" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item row va-middle">
+                                        <div class="col-xs-12 col-lg-5 ml-lg-3">
+                                            <button type="submit" class="lui_button warning">Přihlásit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <br />
+                            </div>
+                        </div>
+                    </section>
+                    <!-- DEV ONLY -->
+                    <form action="/?page=objednavka_shrnuti&order=1" id="order_form" method="post">
+                        <section>
+                            <h2>Fakturační údaje</h2>
+                            <!-- ///// -->
+                            <div class="lui_form">
+                                <div class="item row va-middle">
+                                    <div class="col-xs-12 col-lg-5 ml-lg-3">
+                                        <div class="item_opens">
+                                            <input type="checkbox" id="want_register" />
+                                            <label for="want_register" class="secondary order_w_register_toggle">
+                                                Chci se zároveň registrovat
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="order_w_register_inputs" style="display:none;">
+                                    <!-- ///// -->
+                                    <div class="item row va-middle">
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                                            <label class="label required">Heslo:</label>
+                                        </div>
+                                        <div class="col-xs-12 col-lg-5">
+                                            <div class="input">
+                                                <input type="text" name="user[password]" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- ///// -->
+                                    <div class="item row va-middle">
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                                            <label class="label required">Potvrdit heslo:</label>
+                                        </div>
+                                        <div class="col-xs-12 col-lg-5">
+                                            <div class="input">
+                                                <input type="text" name="user[password_confirm]" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- ///// -->
+                                </div>
+                                <!-- ///// -->
+                                <div class="item row va-middle">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                                        <label class="label required">Jméno:</label>
+                                    </div>
+                                    <div class="col-xs-12 col-lg-5">
+                                        <div class="input">
+                                            <input type="text" name="invoice[name]" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ///// -->
+                                <div class="item row va-middle">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                                        <label class="label required">Příjmení:</label>
+                                    </div>
+                                    <div class="col-xs-12 col-lg-5">
+                                        <div class="input">
+                                            <input type="text" name="invoice[surname]" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ///// -->
+                                <div class="item row va-middle">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                                        <label class="label required">E-mail:</label>
+                                    </div>
+                                    <div class="col-xs-12 col-lg-5">
+                                        <div class="input">
+                                            <input type="text" name="invoice[email]" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ///// -->
+                                <div class="item row va-middle">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                                        <label class="label required">Telefon:</label>
+                                    </div>
+                                    <div class="col-xs-12 col-lg-5">
+                                        <div class="input">
+                                            <input type="text" name="invoice[phone]" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ///// -->
+                                <div class="item row va-middle">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                                        <label class="label required">Město:</label>
+                                    </div>
+                                    <div class="col-xs-12 col-lg-5">
+                                        <div class="input">
+                                            <input type="text" name="invoice[city]" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ///// -->
+                                <div class="item row va-middle">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                                        <label class="label required">Ulice:</label>
+                                    </div>
+                                    <div class="col-xs-12 col-lg-5">
+                                        <div class="input">
+                                            <input type="text" name="invoice[street]" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ///// -->
+                                <div class="item row va-middle">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                                        <label class="label required">PSČ:</label>
+                                    </div>
+                                    <div class="col-xs-12 col-lg-5">
+                                        <div class="input">
+                                            <input type="text" name="invoice[postal]" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                                <!-- ///// -->
+                                <div class="item row va-middle">
+                                    <div class="col-xs-12">
+                                        <div class="item_opens as_form_item border_top">
+                                            <input type="checkbox" id="company_info">
+                                            <label for="company_info" class="secondary">
+                                                Firemní údaje
+                                            </label>
+                                            <div class="content">
+                                                <!-- ///// -->
+                                                <div class="item row va-middle">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                                                        <label class="label required">Firma:</label>
+                                                    </div>
+                                                    <div class="col-xs-12 col-lg-5">
+                                                        <div class="input">
+                                                            <input type="text" name="company[name]" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- ///// -->
+                                                <div class="item row va-middle">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                                                        <label class="label required">IČ:</label>
+                                                    </div>
+                                                    <div class="col-xs-12 col-lg-5">
+                                                        <div class="input">
+                                                            <input type="text" name="company[ic]" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- ///// -->
+                                                <div class="item row va-middle">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                                                        <label class="label required">DIČ:</label>
+                                                    </div>
+                                                    <div class="col-xs-12 col-lg-5">
+                                                        <div class="input">
+                                                            <input type="text" name="company[dic]" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- ///// -->
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- ///// -->
+                                <div class="item row va-middle">
+                                    <div class="col-xs-12">
+                                        <div class="item_opens as_form_item border_top">
+                                            <input type="checkbox" id="delivery_different">
+                                            <label for="delivery_different" class="secondary">
+                                                Dodací adresa je jiná než fakturační
+                                            </label>
+                                            <div class="content">
+                                                <div class="item row va-middle">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                                                        <label class="label required">Jméno:</label>
+                                                    </div>
+                                                    <div class="col-xs-12 col-lg-5">
+                                                        <div class="input">
+                                                            <input type="text" name="delivery[name]" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- ///// -->
+                                                <div class="item row va-middle">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                                                        <label class="label required">Příjmení:</label>
+                                                    </div>
+                                                    <div class="col-xs-12 col-lg-5">
+                                                        <div class="input">
+                                                            <input type="text" name="delivery[surname]" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- ///// -->
+                                                <div class="item row va-middle">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                                                        <label class="label">Firma:</label>
+                                                    </div>
+                                                    <div class="col-xs-12 col-lg-5">
+                                                        <div class="input">
+                                                            <input type="text" name="delivery[company]" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- ///// -->
+                                                <div class="item row va-middle">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                                                        <label class="label required">Město:</label>
+                                                    </div>
+                                                    <div class="col-xs-12 col-lg-5">
+                                                        <div class="input">
+                                                            <input type="text" name="delivery[city]" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- ///// -->
+                                                <div class="item row va-middle">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                                                        <label class="label required">Ulice:</label>
+                                                    </div>
+                                                    <div class="col-xs-12 col-lg-5">
+                                                        <div class="input">
+                                                            <input type="text" name="delivery[street]" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- ///// -->
+                                                <div class="item row va-middle">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                                                        <label class="label required">PSČ:</label>
+                                                    </div>
+                                                    <div class="col-xs-12 col-lg-5">
+                                                        <div class="input">
+                                                            <input type="text" name="delivery[postal]" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- ///// -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ///// -->
+                                <div class="item row va-middle">
+                                    <div class="col-xs-12">
+                                        <div class="item_opens as_form_item border_top">
+                                            <input type="checkbox" id="newsletter_list" class="newsletter_cats_toggle" checked />
+
+                                            <label for="newsletter_list" class="secondary">
+                                                Souhlasím se zasíláním novinek
+                                            </label>
+                                            <div class="content opened">
+                                                <!-- ///// -->
+                                                <div class="item row va-middle">
+                                                    <div class="col-12">
+                                                        <div class="lui_check_list inline newsletter_cats_inputs">
+                                                            <div>
+                                                                <label class="lui_check space info">
+                                                                    <input type="checkbox" name="newsletter[cat1]" value="1" checked />
+                                                                    <span>Kategorie 1</span>
+                                                                </label>
+                                                            </div>
+                                                            <div>
+                                                                <label class="lui_check space info">
+                                                                    <input type="checkbox" name="newsletter[cat2]" value="1" checked />
+                                                                    <span>Kategorie 2</span>
+                                                                </label>
+                                                            </div>
+                                                            <div>
+                                                                <label class="lui_check space info">
+                                                                    <input type="checkbox" name="newsletter[cat3]" value="1" checked />
+                                                                    <span>Kategorie 3</span>
+                                                                </label>
+                                                            </div>
+                                                            <div>
+                                                                <label class="lui_check space info">
+                                                                    <input type="checkbox" name="newsletter[cat4]" value="1" checked />
+                                                                    <span>Kategorie 4</span>
+                                                                </label>
+                                                            </div>
+                                                            <div>
+                                                                <label class="lui_check space info">
+                                                                    <input type="checkbox" name="newsletter[cat5]" value="1" checked />
+                                                                    <span>Kategorie 5</span>
+                                                                </label>
+                                                            </div>
+                                                            <div>
+                                                                <label class="lui_check space info">
+                                                                    <input type="checkbox" name="newsletter[cat6]" value="1" checked />
+                                                                    <span>Kategorie 6</span>
+                                                                </label>
+                                                            </div>
+                                                            <div>
+                                                                <label class="lui_check space info">
+                                                                    <input type="checkbox" name="newsletter[cat7]" value="1" checked />
+                                                                    <span>Kategorie 7</span>
+                                                                </label>
+                                                            </div>
+                                                            <div>
+                                                                <label class="lui_check space info">
+                                                                    <input type="checkbox" name="newsletter[cat8]" value="1" checked />
+                                                                    <span>Kategorie 8</span>
+                                                                </label>
+                                                            </div>
+                                                            <div>
+                                                                <label class="lui_check space info">
+                                                                    <input type="checkbox" name="newsletter[cat9]" value="1" checked />
+                                                                    <span>Kategorie 9</span>
+                                                                </label>
+                                                            </div>
+                                                            <div>
+                                                                <label class="lui_check space info">
+                                                                    <input type="checkbox" name="newsletter[cat10]" value="1" checked />
+                                                                    <span>Kategorie 10</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- ///// -->
+                            </div>
+                            <!-- ///// -->
+                        </section>
+                        <!-- //// -->
+                        <section>
+                            <h2 class="noborder">Poznámka</h2>
+                            <div class="lui_form">
+                                <div class="item row va-middle">
+                                    <div class="col-xs-12 col-lg-12">
+                                        <div class="input">
+                                            <textarea cols="40" rows="10" name="order[note]" /></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- //// -->
+                        <section>
+                            <div class="required_label_info">Položky označené <span>*</span> je nutné vyplnit</div>
+                        </section>
+                    </form>
+                </div>
+            </div>
+            <!-- //// -->
+            <div class="col-xs-12 col-xl-4">
+                <div class="order_summary">
+                    <h2>Rekapitulace objednávky</h2>
+                    <div class="content">
+                        <div class="item">
+                            <div class="price">250 Kč</div>
+                            <div class="name product" data-count="2x">
+                                <a [routerLink]="['/']">
+                                    LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="price">250 Kč</div>
+                            <div class="name product" data-count="2x">
+                                <a [routerLink]="['/']">
+                                    LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="price">250 Kč</div>
+                            <div class="name product" data-count="200x">
+                                <a [routerLink]="['/']">
+                                    LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="price">500 Kč</div>
+                            <div class="name">
+                                Cena za zboží
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="price">145 Kč</div>
+                            <div class="name">
+                                Doprava: Česká pošta
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="price">0 Kč</div>
+                            <div class="name">
+                                Platba: Kartou online
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="price"><strong>645 Kč</strong></div>
+                            <div class="name">
+                                Celková cena vč. DPH
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //// -->
+        </div>
+    </div>
+    <div class="order_actions">
+        <a [routerLink]="['/doprava-a-platba']" class="lui_button prev light fa_b_chevron-left mobile_big">Zpět</a>
+        <button type="submit" id="form_submit" form="order_form" class="lui_button next bold info fa_a_chevron-right mobile_big">Pokračovat</button>
+        <script type="text/javascript">
+            // FALLBACK
+            $(document).ready(function() {
+                $("#form_submit").click(function() {
+                    $("#order_form").submit();
+                });
+            });
+        </script>
+    </div>
+</div>

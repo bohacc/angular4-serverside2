@@ -1,0 +1,16 @@
+<div class="site_subpage_content  n-space-top n-space-bottom">
+  <h1 class="page_title small">{{product.name3}}</h1>
+
+  <!-- product gallery start -->
+  <!-- POPUP IMAGES -->
+  <!-- product gallery stop -->
+
+  <div class="product_detail">
+    <!-- PRODUCT DETAIL HEADER -->
+    <record-part class="product_detail" [product]="product" [type]="1"></record-part>
+    <!-- PRODUCT DETAIL FOOTER -->
+    <record-tabs [product]="product"></record-tabs>
+    <!-- //// -->
+    <similar-products [id]="product.id" [count]="4"></similar-products>
+  </div>
+</div>

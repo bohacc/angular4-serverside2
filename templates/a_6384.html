@@ -1,0 +1,340 @@
+<div class="site_subpage_content n-space-top n-space-bottom">
+    <h1 class="page_title">Registrace</h1>
+    <form method="post" action="/?page=registrace_dokoncena" class="registration_form">
+        <section>
+            <h2>Přihlašovací údaje</h2>
+            <div class="lui_form">
+                <div class="item row va-middle">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                        <label class="label required">Login:</label>
+                    </div>
+                    <div class="col-xs-12 col-lg-5">
+                        <div class="input">
+                            <input type="text" name="user[login]" />
+                        </div>
+                    </div>
+                </div>
+                <div class="item row va-middle">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                        <label class="label required">Heslo:</label>
+                    </div>
+                    <div class="col-xs-12 col-lg-5">
+                        <div class="input">
+                            <input type="password" name="user[password]" />
+                        </div>
+                    </div>
+                </div>
+                <div class="item row va-middle">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                        <label class="label required">Potvrdit heslo:</label>
+                    </div>
+                    <div class="col-xs-12 col-lg-5">
+                        <div class="input">
+                            <input type="password" name="user[password_confirm]" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Fakturační údaje</h2>
+            <!-- ///// -->
+            <div class="lui_form">
+                <div class="item row va-middle">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                        <label class="label required">Jméno:</label>
+                    </div>
+                    <div class="col-xs-12 col-lg-5">
+                        <div class="input">
+                            <input type="text" name="invoice[name]" />
+                        </div>
+                    </div>
+                </div>
+                <!-- ///// -->
+                <div class="item row va-middle">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                        <label class="label required">Příjmení:</label>
+                    </div>
+                    <div class="col-xs-12 col-lg-5">
+                        <div class="input">
+                            <input type="text" name="invoice[surname]" />
+                        </div>
+                    </div>
+                </div>
+                <!-- ///// -->
+                <div class="item row va-middle">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                        <label class="label required">E-mail:</label>
+                    </div>
+                    <div class="col-xs-12 col-lg-5">
+                        <div class="input">
+                            <input type="text" name="invoice[email]" />
+                        </div>
+                    </div>
+                </div>
+                <!-- ///// -->
+                <div class="item row va-middle">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                        <label class="label">Telefon:</label>
+                    </div>
+                    <div class="col-xs-12 col-lg-5">
+                        <div class="input">
+                            <input type="text" name="invoice[phone]" />
+                        </div>
+                    </div>
+                </div>
+                <!-- ///// -->
+                <div class="item row va-middle">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                        <label class="label">Město:</label>
+                    </div>
+                    <div class="col-xs-12 col-lg-5">
+                        <div class="input">
+                            <input type="text" name="invoice[city]" />
+                        </div>
+                    </div>
+                </div>
+                <!-- ///// -->
+                <div class="item row va-middle">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                        <label class="label">Ulice:</label>
+                    </div>
+                    <div class="col-xs-12 col-lg-5">
+                        <div class="input">
+                            <input type="text" name="invoice[street]" />
+                        </div>
+                    </div>
+                </div>
+                <!-- ///// -->
+                <div class="item row va-middle">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                        <label class="label">PSČ:</label>
+                    </div>
+                    <div class="col-xs-12 col-lg-5">
+                        <div class="input">
+                            <input type="text" name="invoice[postal]" />
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <!-- ///// -->
+                <div class="item row va-middle">
+                    <div class="col-xs-12">
+                        <div class="item_opens as_form_item border_top">
+                            <input type="checkbox" id="company_info">
+                            <label for="company_info" class="secondary">
+                                Firemní údaje
+                            </label>
+                            <div class="content">
+                                <!-- ///// -->
+                                <div class="item row va-middle">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                                        <label class="label">Firma:</label>
+                                    </div>
+                                    <div class="col-xs-12 col-lg-5">
+                                        <div class="input">
+                                            <input type="text" name="company[name]" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ///// -->
+                                <div class="item row va-middle">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                                        <label class="label">IČ:</label>
+                                    </div>
+                                    <div class="col-xs-12 col-lg-5">
+                                        <div class="input">
+                                            <input type="text" name="company[ic]" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ///// -->
+                                <div class="item row va-middle">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                                        <label class="label">DIČ:</label>
+                                    </div>
+                                    <div class="col-xs-12 col-lg-5">
+                                        <div class="input">
+                                            <input type="text" name="company[dic]" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ///// -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- ///// -->
+                <div class="item row va-middle">
+                    <div class="col-xs-12">
+                        <div class="item_opens as_form_item border_top">
+                            <input type="checkbox" id="delivery_different">
+                            <label for="delivery_different" class="secondary">
+                                Dodací adresa je jiná než fakturační
+                            </label>
+                            <div class="content">
+                                <!-- ///// -->
+                                <div class="item row va-middle">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                                        <label class="label">Jméno:</label>
+                                    </div>
+                                    <div class="col-xs-12 col-lg-5">
+                                        <div class="input">
+                                            <input type="text" name="delivery[city]" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ///// -->
+                                <div class="item row va-middle">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                                        <label class="label">Příjmení:</label>
+                                    </div>
+                                    <div class="col-xs-12 col-lg-5">
+                                        <div class="input">
+                                            <input type="text" name="delivery[city]" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ///// -->
+                                <div class="item row va-middle">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                                        <label class="label">Firma:</label>
+                                    </div>
+                                    <div class="col-xs-12 col-lg-5">
+                                        <div class="input">
+                                            <input type="text" name="delivery[city]" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ///// -->
+                                <div class="item row va-middle">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                                        <label class="label">Město:</label>
+                                    </div>
+                                    <div class="col-xs-12 col-lg-5">
+                                        <div class="input">
+                                            <input type="text" name="delivery[city]" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ///// -->
+                                <div class="item row va-middle">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                                        <label class="label">Ulice:</label>
+                                    </div>
+                                    <div class="col-xs-12 col-lg-5">
+                                        <div class="input">
+                                            <input type="text" name="delivery[street]" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ///// -->
+                                <div class="item row va-middle">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                                        <label class="label">PSČ:</label>
+                                    </div>
+                                    <div class="col-xs-12 col-lg-5">
+                                        <div class="input">
+                                            <input type="text" name="delivery[postal]" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ///// -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ///// -->
+                <div class="item row va-middle">
+                    <div class="col-xs-12">
+                        <div class="item_opens as_form_item border_top">
+                            <input type="checkbox" id="newsletter_list" class="newsletter_cats_toggle" checked />
+
+                            <label for="newsletter_list" class="secondary">
+                                Souhlasím se zasíláním novinek
+                            </label>
+                            <div class="content opened">
+                                <!-- ///// -->
+                                <div class="item row va-middle">
+                                    <div class="col-12">
+                                        <div class="lui_check_list inline newsletter_cats_inputs">
+                                            <div>
+                                                <label class="lui_check space info">
+                                                    <input type="checkbox" name="newsletter[cat1]" value="1" checked />
+                                                    <span>Kategorie 1</span>
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <label class="lui_check space info">
+                                                    <input type="checkbox" name="newsletter[cat2]" value="1" checked />
+                                                    <span>Kategorie 2</span>
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <label class="lui_check space info">
+                                                    <input type="checkbox" name="newsletter[cat3]" value="1" checked />
+                                                    <span>Kategorie 3</span>
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <label class="lui_check space info">
+                                                    <input type="checkbox" name="newsletter[cat4]" value="1" checked />
+                                                    <span>Kategorie 4</span>
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <label class="lui_check space info">
+                                                    <input type="checkbox" name="newsletter[cat5]" value="1" checked />
+                                                    <span>Kategorie 5</span>
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <label class="lui_check space info">
+                                                    <input type="checkbox" name="newsletter[cat6]" value="1" checked />
+                                                    <span>Kategorie 6</span>
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <label class="lui_check space info">
+                                                    <input type="checkbox" name="newsletter[cat7]" value="1" checked />
+                                                    <span>Kategorie 7</span>
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <label class="lui_check space info">
+                                                    <input type="checkbox" name="newsletter[cat8]" value="1" checked />
+                                                    <span>Kategorie 8</span>
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <label class="lui_check space info">
+                                                    <input type="checkbox" name="newsletter[cat9]" value="1" checked />
+                                                    <span>Kategorie 9</span>
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <label class="lui_check space info">
+                                                    <input type="checkbox" name="newsletter[cat10]" value="1" checked />
+                                                    <span>Kategorie 10</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ///// -->
+                <div class="item row va-middle">
+                    <div class="col-12">
+                        <button type="submit" class="lui_button warning">Registrovat</button>
+                        <div class="required_label_info inline">Položky označené <span>*</span> je nutné vyplnit</div>
+                    </div>
+                </div>
+            </div>
+            <!-- ///// -->
+        </section>
+    </form>
+</div>

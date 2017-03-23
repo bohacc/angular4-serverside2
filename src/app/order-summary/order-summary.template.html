@@ -1,0 +1,78 @@
+<div class="site_order_content">
+  <div class="container fluid nospace">
+    <div class="row va_top fill">
+      <!-- //// -->
+      <div class="col-xs-12 col-xl-4">
+        <div class="order_summary full_height">
+          <h2>{{'Fakturační údaje' | translate}}</h2>
+          <div class="content">
+            <!--AS PERSON-->
+            <address *ngIf="!user.toCompany">
+              <p>
+                {{user.firstName}} {{user.lastName}}<br *ngIf="user.lastName" />
+                {{user.street}}<br *ngIf="user.street" />
+                {{user.zip}} {{user.city}}<br *ngIf="user.city" />
+                {{user.countryName | translate}}
+              </p>
+              <p>
+                {{user.email}}<br *ngIf="user.email" />
+                {{user.phone}}
+              </p>
+            </address>
+            <!--AS COMPANY-->
+            <address *ngIf="user.toCompany">
+              <p>
+                {{user.companyName}}<br *ngIf="user.companyName" />
+                {{user.firstName}} {{user.lastName}}<br *ngIf="user.lastName" />
+                {{user.street}}<br *ngIf="user.street" />
+                {{user.zip}} {{user.city}}<br *ngIf="user.city" />
+                <span *ngIf="user.regId">{{user.regId}}</span><br *ngIf="user.regId" />
+                <span *ngIf="user.vatId">{{user.vatId}}</span><br *ngIf="user.vatId" />
+                {{user.countryName | translate}}
+              </p>
+              <p>
+                {{user.email}}<br *ngIf="user.email"/>
+                {{user.phone}}<br *ngIf="user.phone" />
+                {{user.webAddr}}
+              </p>
+            </address>
+          </div>
+        </div>
+      </div>
+      <!-- //// -->
+      <div class="col-xs-12 col-xl-4">
+        <div class="order_summary full_height">
+          <h2>{{'Dodací údaje' | translate}}</h2>
+          <div class="content">
+            <address>
+              <p>
+                {{user.companyNameDelivery}}<br *ngIf="user.companyNameDelivery" />
+                {{user.firstNameDelivery}} {{user.lastNameDelivery}}<br *ngIf="user.lastNameDelivery" />
+                {{user.streetDelivery}}<br *ngIf="user.streetDelivery" />
+                {{user.zipDelivery}} {{user.cityDelivery}}
+              </p>
+              <p>
+                {{user.email}}<br *ngIf="user.email" />
+                {{user.phone}}
+              </p>
+            </address>
+          </div>
+        </div>
+      </div>
+      <!-- //// -->
+      <div class="col-xs-12 col-xl-4">
+        <order-side-bar></order-side-bar>
+      </div>
+      <!-- //// -->
+    </div>
+  </div>
+  <p class="order_terms_info">
+    {{'Odesláním objednávky souhlasíte s' | translate}} <a routerLink="{{'/terms-and-conditions' | translate}}" target="_blank">{{'obchodními podmínkami' | translate}}</a> {{'internetového obchodu' | translate}} <strong>{{'www.mcled.cz' | translate}}</strong><br>
+    {{'Dodání do svou pracovních dní při objednávce do 10 hodin.' | translate}}<br>
+    {{'Zboží bude odesláno a fakturováno firmou McLED s.r.o. (Česká republika).' | translate}}
+  </p>
+  <div class="order_actions">
+    <a routerLink="{{'/shipping-and-payment' | translate}}" class="lui_button prev light fa_b_chevron-left mobile_big">{{'Zpět' | translate}}</a>
+    <a href="javascript:void(0);" (click)="order()" class="lui_button next bold info fa_a_chevron-right mobile_big">{{'Odeslat objednávku' | translate}}</a>
+  </div>
+</div>

@@ -1,0 +1,281 @@
+<div class="item">
+  <div class="title">
+    {{'Patice' | translate}}
+  </div>
+  <div class="values">
+    <div class="checklist">
+      <label class="option">
+        <input type="checkbox" (click)="onSelectItem({id: 'MC000001:E27', name: 'E27', val: 'MC000001:E27'})" />
+        <div class="value">
+          <div class="image">
+            <div>
+              <img src="/images/filter/filter_e27.png" alt="e27" />
+            </div>
+          </div>
+          E27
+        </div>
+      </label>
+      <label class="option">
+        <input type="checkbox" />
+        <div class="value">
+          <div class="image">
+            <div>
+              <img src="/images/filter/filter_e14.png" alt="e14" />
+            </div>
+          </div>
+          E14
+        </div>
+      </label>
+      <label class="option">
+        <input type="checkbox" />
+        <div class="value">
+          <div class="image">
+            <div>
+              <img src="/images/filter/filter_gu10.png" alt="gu10" />
+            </div>
+          </div>
+          GU10
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
+<div class="item">
+  <div class="title center">
+    {{'Výška' | translate}} [mm]
+  </div>
+  <div class="values">
+    <div class="slider">
+      <input type="text" class="min" id="height_amount_min" readonly />
+      <input type="text" class="max" id="height_amount_max" readonly />
+      <div id="slider_amount"></div>
+    </div>
+  </div>
+</div>
+<!-- //////////////// -->
+<div class="item">
+  <div class="title">
+    SMD {{'chip' | translate}}
+  </div>
+  <div class="values">
+    <div class="checklist">
+      <label class="option">
+        <input type="checkbox" />
+        <div class="value">
+          3525
+        </div>
+      </label>
+      <label class="option">
+        <input type="checkbox" />
+        <div class="value">
+          5050
+        </div>
+      </label>
+      <label class="option">
+        <input type="checkbox" />
+        <div class="value">
+          335
+        </div>
+      </label>
+      <label class="option">
+        <input type="checkbox" />
+        <div class="value">
+          2835
+        </div>
+      </label>
+      <label class="option">
+        <input type="checkbox" />
+        <div class="value">
+          5730
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
+<!-- //////////////// -->
+<div class="item">
+  <div class="title">
+    {{'Počet' | translate}} LED / m
+  </div>
+  <div class="values">
+    <div class="checklist">
+      <label class="option">
+        <input type="checkbox" />
+        <div class="value">
+          30
+        </div>
+      </label>
+      <label class="option">
+        <input type="checkbox" />
+        <div class="value">
+          60
+        </div>
+      </label>
+      <label class="option">
+        <input type="checkbox" />
+        <div class="value">
+          72
+        </div>
+      </label><label class="option">
+      <input type="checkbox" />
+      <div class="value">
+        120
+      </div>
+    </label>
+      <label class="option">
+        <input type="checkbox" />
+        <div class="value">
+          240
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
+<!-- //////////////// -->
+<div class="item">
+  <div class="title">
+    {{'Napájení' | translate}}
+  </div>
+  <div class="values">
+    <div class="checklist">
+      <label class="option">
+        <input type="checkbox" />
+        <div class="value">
+          12V
+        </div>
+      </label>
+      <label class="option">
+        <input type="checkbox" />
+        <div class="value">
+          24V
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
+<!-- //////////////// -->
+<hr />
+<!-- //////////////// -->
+<div class="item">
+  <div class="title">
+    {{'Napájení' | translate}}
+  </div>
+  <div class="values">
+    <div class="checklist">
+      <label class="option">
+        <input type="checkbox" />
+        <div class="value color k3000">
+          3000K
+        </div>
+      </label>
+      <label class="option">
+        <input type="checkbox" />
+        <div class="value color k4000">
+          4000K
+        </div>
+      </label>
+      <label class="option">
+        <input type="checkbox" />
+        <div class="value color k6500">
+          6500K
+        </div>
+      </label>
+      <label class="option">
+        <input type="checkbox" />
+        <div class="value color rgb">
+          RGB
+        </div>
+      </label>
+      <label class="option">
+        <input type="checkbox" />
+        <div class="value color rgbw">
+          RGB+W
+        </div>
+      </label>
+      <label class="option">
+        <input type="checkbox" />
+        <div class="value color red">
+          R
+        </div>
+      </label>
+      <label class="option">
+        <input type="checkbox" />
+        <div class="value color green">
+          G
+        </div>
+      </label>
+      <label class="option">
+        <input type="checkbox" />
+        <div class="value color blue">
+          B
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
+<!-- //////////////// -->
+<div class="item">
+  <div class="title">
+    {{'Příkon' | translate}} [W/m]
+  </div>
+  <div class="values">
+    <div class="checklist">
+      <label class="option">
+        <input type="checkbox" />
+        <div class="value">
+          3,5
+        </div>
+      </label>
+      <label class="option">
+        <input type="checkbox" />
+        <div class="value">
+          4,8
+        </div>
+      </label>
+      <label class="option">
+        <input type="checkbox" />
+        <div class="value">
+          9,6
+        </div>
+      </label>
+      <label class="option">
+        <input type="checkbox" />
+        <div class="value">
+          16,2
+        </div>
+      </label>
+      <label class="option">
+        <input type="checkbox" />
+        <div class="value">
+          20,4
+        </div>
+      </label>
+      <label class="option">
+        <input type="checkbox" />
+        <div class="value">
+          28,6
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
+<!-- //////////////// -->
+<div class="item">
+  <div class="title">
+    {{'Výška' | translate}}
+  </div>
+  <div class="values">
+    <div class="select" select-box [items]="items" [defaultItem]="defaultItem" (onSelectItem)="onSelectItemComboBox('CODE', $event)">
+    </div>
+  </div>
+</div>
+<!-- //////////////// -->
+<div class="item">
+  <div class="title">
+    {{'Šířka' | translate}}
+  </div>
+  <div class="values">
+    <div class="select" select-box [items]="items" [defaultItem]="defaultItem" (onSelectItem)="onSelectItemComboBox('CODE', $event)">
+    </div>
+  </div>
+</div>

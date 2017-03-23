@@ -1,0 +1,215 @@
+<div class="site_order_header">
+    <div class="inside">
+        <ul>
+            <li class="active">1. Košík</li>
+            <li>2. Doprava a platba</li>
+            <li>3. Osobní údaje</li>
+            <li>4. Shrnutí objednávky</li>
+        </ul>
+    </div>
+</div>
+<div class="site_order_content">
+    <table class="basket_order_products">
+        <thead>
+        <tr>
+            <th colspan="2">Zboží</th>
+            <th>Počet</th>
+            <th>Dostupnost</th>
+            <th><span>Cena za kus</span></th>
+            <th>Sleva</th>
+            <th><span>Cena za kus</span><br /><span>vč.&nbsp;slevy</span></th>
+            <th><span>Cena celkem</span><br /><span>bez DPH vč. slevy</span></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- //// -->
+        <tr>
+            <td class="image">
+                <img src="/images/example/126.688.60.0_0_S.jpg" alt="">
+            </td>
+            <td>
+                <h2>
+                    <a [routerLink]="['/']">LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm</a>
+                </h2>
+            </td>
+            <td data-title="Počet:">
+                <form action="" method="post">
+                    <div class="ui_input_number">
+                        <input type="text" name="1" value="1" />
+                        <button type="button" class="minus">-</button>
+                        <button type="button" class="plus">+</button>
+                    </div>
+                </form>
+            </td>
+            <td data-title="Dostupnost:">
+                <div class="store positive">
+                    Skladem
+                </div>
+            </td>
+            <td data-title="Cena za kus:">
+                163 Kč
+            </td>
+            <td data-title="Sleva:">
+                30%
+            </td>
+            <td data-title="Cena za kus vč. slevy:">
+                121 Kč
+            </td>
+            <td data-title="Cena celkem bez DPH vč. slevy:">
+                <strong>242 Kč</strong>
+            </td>
+            <td>
+                <a [routerLink]="['/']" class="remove fa_b_times" title="Odstranit z košíku"></a>
+            </td>
+        </tr>
+        <!-- //// -->
+        <tr>
+            <td class="image">
+                <img src="/images/example/126.688.60.0_4_S.jpg" alt="">
+            </td>
+            <td>
+                <h2>
+                    <a [routerLink]="['/']">LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm</a>
+                </h2>
+            </td>
+            <td data-title="Počet:">
+                <form action="" method="post">
+                    <div class="ui_input_number">
+                        <input type="text" name="2" value="1" />
+                        <button type="button" class="minus">-</button>
+                        <button type="button" class="plus">+</button>
+                    </div>
+                </form>
+            </td>
+            <td data-title="Dostupnost:">
+                <div class="store positive">
+                    Skladem
+                </div>
+            </td>
+            <td data-title="Cena za kus:">
+                163 Kč
+            </td>
+            <td data-title="Sleva:">
+                30%
+            </td>
+            <td data-title="Cena za kus vč. slevy:">
+                121 Kč
+            </td>
+            <td data-title="Cena celkem bez DPH vč. slevy:">
+                <strong>242 Kč</strong>
+            </td>
+            <td>
+                <a [routerLink]="['/']" class="remove fa_b_times" title="Odstranit z košíku"></a>
+            </td>
+        </tr>
+        <!-- //// -->
+        </tbody>
+    </table>
+    <!-- ///// -->
+    <div class="basket_order_extras">
+        <!-- ///// -->
+        <div class="item">
+            <input type="checkbox" id="add_product">
+            <label for="add_product">Přidat zboží</label>
+            <div class="content">
+                <form action="" method="post" class="lui_form">
+                    <div class="container fluid nospace">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-lg-auto">
+                                <div class="row va-center item">
+                                    <div class="col-xs-12 col-sm-12 col-lg-auto">
+                                        <label class="label nospace sm-block">
+                                            Objednací kód
+                                        </label>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-lg-auto">
+                                        <div class="input">
+                                            <input type="text" name="product_code">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-lg-auto">
+                                <div class="row va-center item">
+                                    <div class="col-xs-12 col-sm-12 col-lg-auto">
+                                        <label class="label nospace sm-block">
+                                            Počet kusů
+                                        </label>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-lg-auto">
+                                        <div class="ui_input_number">
+                                            <input type="text" value="0" />
+                                            <button type="button" class="minus">-</button>
+                                            <button type="button" class="plus">+</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-lg-auto">
+                                <div class="row va-center item">
+                                    <div class="col-12">
+                                        <button type="submit" class="lui_button warning">Přidat do košíku</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- ///// -->
+        <div class="item">
+            <input type="checkbox" id="add_voucher">
+            <label for="add_voucher">Mám slevový poukaz</label>
+            <div class="content">
+                <form action="" method="post" class="lui_form">
+                    <div class="container fluid nospace">
+                        <div class="row va-center item">
+                            <div class="col-xs-12 col-lg-auto">
+                                <label class="label nospace md-block">
+                                    Kód poukazu
+                                </label>
+                            </div>
+                            <div class="col-xs-12 col-lg-auto">
+                                <div class="input">
+                                    <input type="text" name="voucher_code">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-lg-auto">
+                                <div class="row va-center item">
+                                    <div class="col-12">
+                                        <button type="submit" class="lui_button warning">Použít</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <!-- ///// -->
+    </div>
+    <!-- ///// -->
+    <div class="basket_prices_box">
+        <div class="price secondary">
+            Cena celkem bez DPH
+            <span>484 Kč</span>
+        </div>
+        <div class="price primary">
+            Cena celkem s DPH
+            <span>561 Kč</span>
+        </div>
+        <div class="free_delivery">
+            Do dopravy <strong>ZDARMA</strong> zbývá <span>1464 Kč</span>
+        </div>
+    </div>
+    <div class="order_actions">
+        <a [routerLink]="['/']" class="lui_button prev light fa_b_chevron-left mobile_big">Zpět do obchodu</a>
+        <a [routerLink]="['/doprava-a-platba']" class="lui_button next bold info fa_a_chevron-right mobile_big">Pokračovat</a>
+    </div>
+
+</div>

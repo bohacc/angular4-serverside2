@@ -1,0 +1,12 @@
+<div class="newsletter_signup">
+    <h2 class="fa_b_envelope-o">
+        {{'Newsletter' | translate}}
+    </h2>
+    <p>
+        {{'Nechte si zasílat novinky o výhodných akcích' | translate}}
+    </p>
+    <form>
+        <input type="text" name="aemail" [(ngModel)]="aEmail" placeholder="{{'Váš e-mail' | translate}}" />
+        <button type="submit" class="fa_b_paper-plane" (click)="loginNews()"></button>
+    </form>
+</div>

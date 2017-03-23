@@ -1,0 +1,7 @@
+<div *ngIf="isInit">
+  <shipping #shipping (onSelect)="payment.refresh($event); onSelectShipping($event);"
+          [defaultShipping]="defaultShipping"></shipping>
+  <payment #payment (onSelect)="onSelectPayment($event)"
+         [defaultPayment]="defaultPayment"></payment>
+</div>
+<div *ngIf="!isInit">{{'Načítám dopravu a platbu' | translate}}...</div>

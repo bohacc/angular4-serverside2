@@ -1,0 +1,43 @@
+<div class="prefers" *ngIf="item.news">
+  <div class="state_1">{{'Novinka' | translate}}</div>
+</div>
+<div class="prefers" *ngIf="item.action">
+  <div class="state_2">{{'Akce' | translate}}</div>
+</div>
+<a [routerLink]="[item.redirect]" class="image">
+  <div>
+    <img src="{{item.imgMediumFile}}" alt="{{item.name}}" />
+  </div>
+</a>
+<h3 class="title">
+  <a [routerLink]="[item.redirect]">
+    {{item.name}}
+  </a>
+</h3>
+
+<!--LANGUAGE VERSION-->
+<div class="price" *ngIf="!store.isAustria">
+  <div class="primary">
+    {{item.priceVat | number:formatNumber1}} {{item.currency}}/{{item.unit | translate}}
+  </div>
+  <div class="secondary">
+    {{item.price | number:formatNumber1}} {{item.currency}} {{'bez DPH' | translate}}
+  </div>
+  <div class="store" [ngClass]="{positive: item.inStock, 'fa_b_check': item.inStock, negativ: !item.inStock, 'fa_b_time': !item.inStock}">
+    {{item.availability | translate}}
+  </div>
+</div>
+<!--LANGUAGE VERSION AT-->
+<div class="price" *ngIf="store.isAustria">
+  <div class="primary">
+    {{item.price | number:formatNumber1}} {{item.currency}}
+  </div>
+  <div class="secondary">
+    {{'jejich cena bez DPH' | translate}}
+  </div>
+  <div class="store" [ngClass]="{positive: item.inStock, 'fa_b_check': item.inStock, negativ: !item.inStock, 'fa_b_time': !item.inStock}">
+    {{item.availability | translate}}
+  </div>
+</div>
+
+<a href="javascript:void(0);" *ngIf="(store.user.b2b && store.isAustria) || !store.isAustria" class="buy" (click)="buy()"></a>

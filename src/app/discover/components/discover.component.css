@@ -1,0 +1,23 @@
+.card {
+  height: 320px;
+}
+
+.new-contain {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+:host >>> #main-swiper,
+:host >>> #explore-swiper {
+  position: relative;
+}
+
+:host >>> #main-swiper {
+  background-color: #ccc;
+  height: 650px;
+  overflow: hidden;
+}
+
+:host >>> #explore-swiper {
+  height: 340px;
+  overflow: hidden;
+}

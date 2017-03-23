@@ -1,0 +1,548 @@
+<!-- SHOP CATEGORIES - DEV -->
+<div id="shop_cats_full" [ngClass]="{'shop_cats_full': store['showCats']}">
+  <nav class="shop_categories" *ngIf="store[field]" [ngClass]="{opened: menuIsShowMobile('CATS-1')}" menu-set-active
+       (onCollapseAll)="onCollapseAll($event)" (onDefaultAction)="onDefaultAction($event)">
+    <h2 (click)="menuShowItemsMobile('CATS-1')">LED produkty</h2>
+    <ul>
+      <li [ngClass]="{'opened': menuIsShow('/led-svetelne-zdroje')}">
+        <a [routerLink]="['/led-svetelne-zdroje']" class="childs">
+          LED Světelné zdroje
+        </a>
+        <!-- USE ONLY WHEN ITEM HAS SUB-CATEGORIES -->
+        <span class="toggle" (click)="menuShowItems('/led-svetelne-zdroje')"></span>
+        <ul>
+          <li>
+            <a [routerLink]="['/led-zarovky']">LED žárovky</a>
+          </li>
+          <li>
+            <a [routerLink]="['/led-spoty']">LED spoty</a>
+          </li>
+          <li>
+            <a [routerLink]="['/led-svicky']">LED svíčky</a>
+          </li>
+          <li>
+            <a [routerLink]="['/led-kapky']">LED kapky</a>
+          </li>
+          <li>
+            <a [routerLink]="['/led-kapsle']">LED kapsle</a>
+          </li>
+          <li>
+            <a [routerLink]="['/led-globe']">LED globe</a>
+          </li>
+          <li>
+            <a [routerLink]="['/led-reflektory']">LED reflektory</a>
+          </li>
+          <li>
+            <a [routerLink]="['/led-trubice']">LED trubice</a>
+          </li>
+        </ul>
+      </li>
+      <!-- OPENED - SHOW SUB-CATEGORIED; ACTIVE = ACTIVE OR OPENED CATEGORY -->
+      <li [ngClass]="{'opened': menuIsShow('/led-pasky-a-moduly')}">
+        <!-- .childs adds additional padding-right -->
+        <a [routerLink]="['/led-pasky-a-moduly']" class="childs">
+          LED Pásky a moduly
+        </a>
+        <!-- USE ONLY WHEN ITEM HAS SUB-CATEGORIES -->
+        <span class="toggle" (click)="menuShowItems('/led-pasky-a-moduly')"></span>
+        <ul>
+          <li>
+            <a [routerLink]="['/led-pasky']">LED pásky</a>
+          </li>
+          <li>
+            <a [routerLink]="['/led-pasky-sady']">LED pásky sady</a>
+          </li>
+          <li>
+            <a [routerLink]="['/led-pasky-flexibini-pasky']">Flexibilní pásky</a>
+          </li>
+          <li>
+            <a [routerLink]="['/led-pasky-led-moduly']">LED moduly</a>
+          </li>
+          <li>
+            <a [routerLink]="['/led-pasky-zdroje']">Zdroje</a>
+          </li>
+          <li>
+            <a [routerLink]="['/led-pasky-ovladani']">Ovládání</a>
+          </li>
+          <li>
+            <a [routerLink]="['/led-pasky-prislusenstvi']">Příslušenství</a>
+          </li>
+
+        </ul>
+      </li>
+      <li [ngClass]="{'opened': menuIsShow('/profily-pro-led-pasky')}">
+        <a [routerLink]="['/profily-pro-led-pasky']" class="childs">Profily pro LED pásky</a>
+        <span class="toggle" (click)="menuShowItems('/profily-pro-led-pasky')"></span>
+        <ul>
+          <li>
+            <a [routerLink]="['/profily-pro-led-pasky-prisazene']">Přisazené</a>
+          </li>
+          <li>
+            <a [routerLink]="['/profily-pro-led-pasky-vestavne']">Vestavné</a>
+          </li>
+          <li>
+            <a [routerLink]="['/profily-pro-led-pasky-rohove']">Rohové</a>
+          </li>
+          <li>
+            <a [routerLink]="['/profily-pro-led-pasky-zavesne']">Závěsné</a>
+          </li>
+          <li>
+            <a [routerLink]="['/profily-pro-led-pasky-nastenne']">Nástěnné</a>
+          </li>
+          <li>
+            <a [routerLink]="['/profily-pro-led-pasky-naslapne']">Nášlapné</a>
+          </li>
+          <li>
+            <a [routerLink]="['/profily-pro-led-pasky-specialni']">Speciální</a>
+          </li>
+        </ul>
+      </li>
+      <li [ngClass]="{'opened': menuIsShow('/led-interierova-svitidla')}">
+        <a [routerLink]="['/led-interierova-svitidla']" class="childs">LED interiérová svítidla</a>
+        <span class="toggle" (click)="menuShowItems('/led-interierova-svitidla')"></span>
+        <ul>
+          <li [ngClass]="{'opened': menuIsShow('/led-interierova-svitidla-zavesna')}">
+            <a [routerLink]="['/led-interierova-svitidla-zavesna']">Závěsná svítidla</a>
+            <span class="toggle" (click)="menuShowItems('/led-interierova-svitidla-zavesna')"></span>
+            <ul>
+              <li>
+                <a [routerLink]="['/led-interierova-svitidla-zavesna-office']">Office + závěs</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-interierova-svitidla-zavesna-comet']">Comet + závěs</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-interierova-svitidla-zavesna-md32']">MD32</a>
+              </li>
+            </ul>
+          </li>
+          <li [ngClass]="{'opened': menuIsShow('/led-interierova-svitidla-prisazena')}">
+            <a [routerLink]="['/led-interierova-svitidla-prisazena']">Přisazená svítidla</a>
+            <span class="toggle" (click)="menuShowItems('/led-interierova-svitidla-prisazena')"></span>
+            <ul>
+              <li>
+                <a [routerLink]="['/led-interierova-svitidla-prisazena-inca']">Inca</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-interierova-svitidla-prisazena-calvia']">Calvia</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-interierova-svitidla-prisazena-cala']">Cala</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-interierova-svitidla-prisazena-office-ram']">Office + rám</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-interierova-svitidla-prisazena-mondi']">Mondi</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-interierova-svitidla-prisazena-mold']">Mold</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-interierova-svitidla-prisazena-gap']">Gap</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-interierova-svitidla-prisazena-sima-s']">Sima S</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-interierova-svitidla-prisazena-comet']">Comet</a>
+              </li>
+            </ul>
+          </li>
+          <li [ngClass]="{'opened': menuIsShow('/led-interierova-svitidla-downlights')}">
+            <a [routerLink]="['/led-interierova-svitidla-downlights']">Downlights</a>
+            <span class="toggle" (click)="menuShowItems('/led-interierova-svitidla-downlights')"></span>
+            <ul>
+              <li>
+                <a [routerLink]="['/led-interierova-svitidla-downlights-sima']">Sima</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-interierova-svitidla-downlights-farao']">Faro</a>
+              </li>
+            </ul>
+          </li>
+          <li [ngClass]="{'opened': menuIsShow('/led-interierova-svitidla-led-panely')}">
+            <a [routerLink]="['/led-interierova-svitidla-led-panely']">LED panely</a>
+            <span class="toggle" (click)="menuShowItems('/led-interierova-svitidla-led-panely')"></span>
+            <ul>
+              <li>
+                <a [routerLink]="['/led-interierova-svitidla-led-panely-office-6030']">Office 6030</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-interierova-svitidla-led-panely-office-6060']">Office 6060</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-interierova-svitidla-led-panely-office-12030']">Office 12030</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-interierova-svitidla-led-panely-office-12060']">Office 12060</a>
+              </li>
+            </ul>
+          </li>
+          <li [ngClass]="{'opened': menuIsShow('/led-interierova-svitidla-podhledova')}">
+            <a [routerLink]="['/led-interierova-svitidla-podhledova']">Podhledová svítidla</a>
+            <span class="toggle" (click)="menuShowItems('/led-interierova-svitidla-podhledova')"></span>
+            <ul>
+              <li>
+                <a [routerLink]="['/led-interierova-svitidla-podhledova-office']">Office</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-interierova-svitidla-podhledova-toro']">Toro</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-interierova-svitidla-podhledova-cristallo']">Cristallo</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-interierova-svitidla-podhledova-nixo']">Nixo</a>
+              </li>
+
+              <li>
+                <a [routerLink]="['/led-interierova-svitidla-podhledova-pop']">Pop</a>
+              </li>
+
+              <li>
+                <a [routerLink]="['/led-interierova-svitidla-podhledova-barcelo']">Barcelo</a>
+              </li>
+            </ul>
+          </li>
+          <li [ngClass]="{'opened': menuIsShow('/led-interierova-svitidla-listove-systemy')}">
+            <a [routerLink]="['/led-interierova-svitidla-listove-systemy']">Lištové systémy</a>
+            <span class="toggle" (click)="menuShowItems('/led-interierova-svitidla-listove-systemy')"></span>
+            <ul>
+              <li>
+                <a [routerLink]="['/led-interierova-svitidla-listove-systemy-lts']">LTS</a>
+              </li>
+            </ul>
+          </li>
+          <li [ngClass]="{'opened': menuIsShow('/led-interierova-svitidla-dekorativni')}">
+            <a [routerLink]="['/led-interierova-svitidla-dekorativni']">Dekorativní svítidla</a>
+            <span class="toggle" (click)="menuShowItems('/led-interierova-svitidla-dekorativni')"></span>
+            <ul>
+              <li>
+                <a [routerLink]="['/led-interierova-svitidla-dekorativni-barcelo']">Barcelo</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-interierova-svitidla-dekorativni-pop']">Pop</a>
+              </li>
+            </ul>
+          </li>
+          <li [ngClass]="{'opened': menuIsShow('/led-interierova-svitidla-nastenna')}">
+            <a [routerLink]="['/led-interierova-svitidla-nastenna']">Nástěnná svítidla</a>
+            <span class="toggle" (click)="menuShowItems('/led-interierova-svitidla-nastenna')"></span>
+            <ul>
+              <li>
+                <a [routerLink]="['/led-interierova-svitidla-nastenna-inca']">Inca</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-interierova-svitidla-nastenna-calvia']">Calvia</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-interierova-svitidla-nastenna-cala']">Cala</a>
+              </li>
+            </ul>
+          </li>
+          <li [ngClass]="{'opened': menuIsShow('/led-interierova-svitidla-senzorova')}">
+            <a [routerLink]="['/led-interierova-svitidla-senzorova']">Senzorová svítidla</a>
+            <span class="toggle" (click)="menuShowItems('/led-interierova-svitidla-senzorova')"></span>
+            <ul>
+              <li>
+                <a [routerLink]="['/led-interierova-svitidla-senzorova-cala']">Cala</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a [routerLink]="['/led-interierova-svitidla-prislusenstvi']">Příslušenství</a>
+          </li>
+        </ul>
+      </li>
+      <li [ngClass]="{'opened': menuIsShow('/led-venkovni-svitidla')}">
+        <a [routerLink]="['/led-venkovni-svitidla']" class="childs">LED venkovní svítidla</a>
+        <span class="toggle" (click)="menuShowItems('/led-venkovni-svitidla')"></span>
+        <ul>
+          <li [ngClass]="{'opened': menuIsShow('/led-venkovni-svitidla-reflektory')}">
+            <a [routerLink]="['/led-venkovni-svitidla-reflektory']">Reflektory</a>
+            <span class="toggle" (click)="menuShowItems('/led-venkovni-svitidla-reflektory')"></span>
+            <ul>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-troll']">Troll</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-orion']">Orion</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-gama']">Gama</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-ledcannonc']">LEDcannonC</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-persea']">Persea</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-ledstream']">LEDstream</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-ledstreamc']">LEDstreamC</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-ledcannon']">LEDcannon</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-baton']">Baton</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-yard-t']">Yard T</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-yard-p']">Yard P</a>
+              </li>
+            </ul>
+          </li>
+          <li [ngClass]="{'opened': menuIsShow('/led-venkovni-svitidla-podzemni')}">
+            <a [routerLink]="['/led-venkovni-svitidla-podzemni']">Podzemní svítidla</a>
+            <span class="toggle" (click)="menuShowItems('/led-venkovni-svitidla-podzemni')"></span>
+            <ul>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-podzemni-platform-r']">Platform R</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-podzemni-city']">City</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-podzemni-platform-s']">Platform S</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-podzemni-rivet-r']">Rivet R</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-podzemni-rivet-1']">Rivet 1</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-podzemni-rivet-2']">Rivet 2</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-podzemni-rivet-3']">Rivet 3</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-podzemni-rivet-4']">Rivet 4</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-podzemni-snap-1']">Snap 1</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-podzemni-snap-2']">Snap 2</a>
+              </li>
+            </ul>
+          </li>
+          <li [ngClass]="{'opened': menuIsShow('/led-venkovni-svitidla-sloupky')}">
+            <a [routerLink]="['/led-venkovni-svitidla-sloupky']">Sloupky</a>
+            <span class="toggle" (click)="menuShowItems('/led-venkovni-svitidla-sloupky')"></span>
+            <ul>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-boutique']">Boutique</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-gateway']">Gateway</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-court']">Court</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-stake-r']">Stake R</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-stake-f']">Stake F</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-lucerna-p']">Lucerna P</a>
+              </li>
+            </ul>
+          </li>
+          <li [ngClass]="{'opened': menuIsShow('/led-venkovni-svitidla-fasadni')}">
+            <a [routerLink]="['/led-venkovni-svitidla-fasadni']">Fasádní svítidla</a>
+            <span class="toggle" (click)="menuShowItems('/led-venkovni-svitidla-fasadni')"></span>
+            <ul>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-fasadni-tart-i']">Tart I.</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-fasadni-tart-ii']">Tart II.</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-fasadni-collet']">Collet</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-fasadni-flap-i']">Flap I.</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-fasadni-flap-ii']">Flap II.</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-fasadni-trapez']">Trapez</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-fasadni-heel-l']">Heel L</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-fasadni-heel-c']">Heel C</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-fasadni-zara-1']">Zara 1.</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-fasadni-zara-2']">Zara 2</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-fasadni-gallery-c']">Gallery C</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-fasadni-gallery-r']">Gallery R</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-fasadni-gallery-cr']">Gallery CR</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-fasadni-lucerna-w']">Lucerna W</a>
+              </li>
+            </ul>
+          </li>
+          <li [ngClass]="{'opened': menuIsShow('/led-venkovni-svitidla-vestavna')}">
+            <a [routerLink]="['/led-venkovni-svitidla-vestavna']">Vestavná svítidla</a>
+            <span class="toggle" (click)="menuShowItems('/led-venkovni-svitidla-vestavna')"></span>
+            <ul>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-vestavna-step']">Step</a>
+              </li>
+            </ul>
+          </li>
+          <li [ngClass]="{'opened': menuIsShow('/led-venkovni-svitidla-prisazena')}">
+            <a [routerLink]="['/led-venkovni-svitidla-prisazena']">Přisazená svítidla</a>
+            <span class="toggle" (click)="menuShowItems('/led-venkovni-svitidla-prisazena')"></span>
+            <ul>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-prisazena-mercure-m']">Mercure M</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-prisazena-mercure-l']">Mercure L</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-prisazena-quber-m']">Quber M</a>
+              </li>
+              <li>
+                <a [routerLink]="['/led-venkovni-svitidla-prisazena-quber-l']">Quber L</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a [routerLink]="['/led-venkovni-svitidla-prislusenstvi']">Příslušenství</a>
+          </li>
+        </ul>
+      </li>
+      <li [ngClass]="{'opened': menuIsShow('/led-prumyslova-svitidla')}">
+        <a [routerLink]="['/led-prumyslova-svitidla']" class="childs">LED průmyslová svítidla</a>
+        <span class="toggle" (click)="menuShowItems('/led-prumyslova-svitidla')"></span>
+        <ul>
+          <li>
+            <a [routerLink]="['/led-prumyslova-svitidla-troll']">Troll</a>
+          </li>
+          <li>
+            <a [routerLink]="['/led-prumyslova-svitidla-orion']">Orion</a>
+          </li>
+          <li>
+            <a [routerLink]="['/led-prumyslova-svitidla-gama']">Gama</a>
+          </li>
+          <li>
+            <a [routerLink]="['/led-prumyslova-svitidla-ledstream']">LEDstream</a>
+          </li>
+          <li>
+            <a [routerLink]="['/led-prumyslova-svitidla-ledtec']">LEDtec</a>
+          </li>
+          <li>
+            <a [routerLink]="['/led-prumyslova-svitidla-ledpot']">LEDpot</a>
+          </li>
+          <li>
+            <a [routerLink]="['/led-prumyslova-svitidla-ledalley']">LEDalley</a>
+          </li>
+          <li>
+            <a [routerLink]="['/led-prumyslova-svitidla-ledheaven']">LEDheaven</a>
+          </li>
+          <li>
+            <a [routerLink]="['/led-prumyslova-svitidla-comet']">Comet</a>
+          </li>
+          <li>
+            <a [routerLink]="['/led-prumyslova-svitidla-lts']">LTS</a>
+          </li>
+          <li>
+            <a [routerLink]="['/led-prumyslova-svitidla-prislusenstvi']">Příslušenství</a>
+          </li>
+
+        </ul>
+      </li>
+      <li [ngClass]="{'opened': menuIsShow('/led-nouzove-osvetleni')}">
+        <a [routerLink]="['/led-nouzove-osvetleni']" class="childs">LED nouzové osvětlení</a>
+        <span class="toggle" (click)="menuShowItems('/led-nouzove-osvetleni')"></span>
+        <ul>
+          <li>
+            <a [routerLink]="['/led-nouzove-osvetleni-prislusenstvi']">Příslušenství</a>
+          </li>
+
+        </ul>
+      </li>
+      <li [ngClass]="{'opened': menuIsShow('/led-verejne-osvetleni')}">
+        <a [routerLink]="['/led-verejne-osvetleni']" class="childs">LED veřejné osvětlení</a>
+        <span class="toggle" (click)="menuShowItems('/led-verejne-osvetleni')"></span>
+        <ul>
+          <li>
+            <a [routerLink]="['/led-verejne-osvetleni-shark']">Shark</a>
+          </li>
+          <li>
+            <a [routerLink]="['/led-verejne-osvetleni-prislusenstvi']">Příslušenství</a>
+          </li>
+        </ul>
+      </li>
+      <li [ngClass]="{'opened': menuIsShow('/nabytkove-a-regalove-osvetleni')}">
+        <a [routerLink]="['/nabytkove-a-regalove-osvetleni']" class="childs">Nábytkové a regálové osvětlení</a>
+        <span class="toggle" (click)="menuShowItems('/nabytkove-a-regalove-osvetleni')"></span>
+        <ul>
+          <li [ngClass]="{'opened': menuIsShow('/nabytkove-a-regalove-osvetleni-linear-led-light')}">
+            <a [routerLink]="['/nabytkove-a-regalove-osvetleni-linear-led-light']">Linear LED light</a>
+            <span class="toggle" (click)="menuShowItems('/nabytkove-a-regalove-osvetleni-linear-led-light')"></span>
+            <ul>
+              <li>
+                <a [routerLink]="['/nabytkove-a-regalove-osvetleni-linear-led-light-linear-light']">Linear light</a>
+              </li>
+              <li>
+                <a [routerLink]="['/nabytkove-a-regalove-osvetleni-linear-led-light-ovladaci-prvky']">Ovládací prvky</a>
+              </li>
+              <li>
+                <a [routerLink]="['/nabytkove-a-regalove-osvetleni-linear-led-light-propojovaci-prvky']">Propojovací prvky</a>
+              </li>
+              <li>
+                <a [routerLink]="['/nabytkove-a-regalove-osvetleni-linear-led-light-napajeci-zdroje']">Napájecí zdroje</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li [ngClass]="{'opened': menuIsShow('/komponenty-pro-vyrobu-svitidel')}">
+        <a [routerLink]="['/komponenty-pro-vyrobu-svitidel']" class="childs">Komponenty pro výrobu svítidel</a>
+        <span class="toggle" (click)="menuShowItems('/komponenty-pro-vyrobu-svitidel')"></span>
+        <ul>
+          <li>
+            <a [routerLink]="['/komponenty-pro-vyrobu-svitidel-drivery']">Drivery</a>
+          </li>
+          <li>
+            <a [routerLink]="['/komponenty-pro-vyrobu-svitidel-zavesy']">Závěsy</a>
+          </li>
+          <li>
+            <a [routerLink]="['/komponenty-pro-vyrobu-svitidel-difusory']">Difusory</a>
+          </li>
+          <li>
+            <a [routerLink]="['/komponenty-pro-vyrobu-svitidel-rizeni']">Řízení</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+</nav>
+</div>
+<!-- SHOP CATEGORIES END -->

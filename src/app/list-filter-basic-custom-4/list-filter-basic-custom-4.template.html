@@ -1,0 +1,57 @@
+<div class="item">
+    <div class="title">
+        {{'Patice' | translate}}
+    </div>
+    <div class="values">
+        <div class="checklist">
+            <label class="option">
+                <input type="checkbox" (click)="onSelectItem({id: 'MC000001:G4', name: 'G4', val: 'MC000001:G4'})" />
+                <div class="value">
+                    <div class="image">
+                        <div>
+                            <img src="/images/filter/filter_g4.png" alt="g4" />
+                        </div>
+                    </div>
+                    G4
+                </div>
+            </label>
+            <label class="option">
+                <input type="checkbox" (click)="onSelectItem({id: 'MC000001:G9', name: 'G9', val: 'MC000001:G9'})" />
+                <div class="value">
+                    <div class="image">
+                        <div>
+                            <img src="/images/filter/filter_g9.png" alt="g9" />
+                        </div>
+                    </div>
+                    G9
+                </div>
+            </label>
+        </div>
+    </div>
+</div>
+<!-- //////////////// -->
+<div class="item">
+    <div class="title">
+        {{'Barvy' | translate}}
+    </div>
+    <div class="values">
+        <div class="checklist">
+            <label class="option">
+                <input type="checkbox" (click)="onSelectItem({id: 'EF000103:3000', name: '3000', val: 'EF000103:3000'})" />
+                <div class="value color k3000">
+                    3000K
+                </div>
+            </label>
+        </div>
+    </div>
+</div>
+<!-- //////////////// -->
+<div class="item">
+    <div class="title">
+        {{'Náhrada za' | translate}}
+    </div>
+    <div class="values">
+        <div class="select" select-box [items]="itemsComboBox" [defaultItem]="defaultItem" (onSelectItem)="onSelectItemComboBox('MC000002', $event)">
+        </div>
+    </div>
+</div>

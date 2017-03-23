@@ -1,0 +1,69 @@
+<div class="homepage-login" [ngClass]="{hide: (isAustria && args.user.b2b)}"> <!--IF NEPRIHLASEN-->
+  <div class="homepage-login-box">
+    <div class="content">
+      <div class="texts" style="background:url(/files/1770680.jpg) left top no-repeat;background-size:cover; ">
+        <div>
+          <h2>Willkommen im McLED Webshop für Geschäftskunden!</h2>
+          <p>Haben Sie Interesse an unseren Produkten? Bitte registrieren Sie sich.<br> Wir freuen uns auf unsere
+            Zusammenarbeit!</p>
+          <p>Bei Fragen melden Sie sich bitte bei unserem McLED Support-Team <br> (Email: mcled.support@schmachtl.at ;
+            Tel: 0043 732 7646 -26 oder 738 )</p>
+        </div>
+        <a [routerLink]="['/login']">Login</a>
+        <a [routerLink]="['/registrierung']">Registrierung</a>
+      </div>
+    </div>
+  </div>
+  <br/>
+</div>
+
+
+<div class="site_homepage" [ngClass]="{hide: !(isAustria && args.user.b2b)}"> <!--IF PRIHLASEN + B2B-->
+  <div class="homepage_slideshow">
+    <div class="slides" id="hp_slideshow" slides>
+
+      <div class="item" data-title="Notbeluchtung">
+        <div class="image" style="background:url(/files/1761225.jpg) left top no-repeat;background-size:cover"></div>
+        <div class="texts">
+          <h2>LED NOTBELEUCHTUNG </h2>
+          <p>Die neue Reihe von Notbeleuchtung Cala E</p>
+          <a [routerLink]="['/led-notbeleuchtung']">Anzeigen Angebot</a>
+        </div>
+      </div>
+
+      <div class="item active" data-title="Mold">
+        <div class="image" style="background:url(/files/1761191.jpg) left top no-repeat;background-size:cover"></div>
+        <div class="texts">
+          <h2>MOLD</h2>
+          <p>Beliebte Produkte Serie MOLD</p>
+          <a [routerLink]="['/led-interior-beleuchtung-aufbauleuchten-mold']">Anzeigen Angebot</a>
+        </div>
+      </div>
+
+      <div class="item active" data-title="Flash 10">
+        <div class="image" style="background:url(/files/1762162.jpg) left top no-repeat;background-size:cover"></div>
+        <div class="texts">
+          <h2>Flash 10</h2>
+          <p>Neuheit 2017</p>
+          <a [routerLink]="['/led-industriebeleuchtung-fluter-flash']">Zum Artikel</a>
+        </div>
+      </div>
+
+      <div class="item active" data-title="Faro AR">
+        <div class="image" style="background:url(/files/1761190.jpg) left top no-repeat;background-size:cover"></div>
+        <div class="texts">
+          <h2>Faro AR</h2>
+          <p>Design 2017</p>
+          <a [routerLink]="['/led-interior-beleuchtung-downlights-faro']">LINK</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <br/>
+</div>
+
+
+<div style="height: 400px;" [ngClass]="{hide: true}">
+  <img style="width: 50px; height: 50px; position: relative; left: 50%; top: 50%;" src="/images/loader.gif"/>
+</div>

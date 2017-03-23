@@ -1,0 +1,75 @@
+<div class="product_detail_img_popup assist" [ngClass]="{opened: isOpen}"> <!--opened-->
+  <div class="bgr event_close_img_popup" (click)="close()"></div>
+  <div class="window">
+    <div class="container">
+      <div class="">
+        <div class="col-xs-12 col-xl-8 image">
+          <button class="close fa_b_times event_close_img_popup" (click)="close()"></button>
+        </div>
+      </div>
+      <div class="">
+        <div class="hidden-xs hidden-sm col-md-1 col-lg-2">&nbsp;</div>
+        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8">
+          <h1 class="page_title">{{'McLED Asist' | translate}}</h1>
+          <h2>{{'tel.: +420 220 184 886' | translate}}</h2>
+        </div>
+        <div class="hidden-xs hidden-sm col-md-1 col-lg-2">&nbsp;</div>
+      </div>
+      <form method="post" class="registration_form" (ngSubmit)="save()">
+        <!-- ///// -->
+        <div class="lui_form">
+          <div class="item row va-middle">
+            <div class="hiden-xs hidden-sm col-md-1 col-lg-2">&nbsp;</div>
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3">
+              <label class="label required">{{'Váš e-mail' | translate}}:</label>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-5">
+              <div class="input">
+                <input type="text" name="email" [(ngModel)]="formData.email" />
+              </div>
+            </div>
+            <div class="hiden-xs hidden-sm col-md-1 col-lg-2">&nbsp;</div>
+          </div>
+          <!-- ///// -->
+          <div class="item row va-middle">
+            <div class="hiden-xs hidden-sm col-md-1 col-lg-2">&nbsp;</div>
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3">
+              <label class="label required">{{'Vaše jméno' | translate}}:</label>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-5">
+              <div class="input">
+                <input type="text" name="fullName" [(ngModel)]="formData.fullName" />
+              </div>
+            </div>
+            <div class="hidden-xs hidden-sm col-md-1 col-lg-2">&nbsp;</div>
+          </div>
+          <!-- ///// -->
+          <div class="item row va-middle">
+            <div class="hidden-xs hidden-sm col-md-1 col-lg-2">&nbsp;</div>
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3">
+              <label class="label">{{'Text dotazu' | translate}}:</label>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-5">
+              <div class="input">
+                <textarea name="text" [(ngModel)]="formData.text"></textarea>
+              </div>
+            </div>
+            <div class="hidden-xs hidden-sm col-md-1 col-lg-2">&nbsp;</div>
+          </div>
+          <input type="hidden" name="password" value="" />
+          <!-- ///// -->
+          <div class="item row va-middle">
+            <div class="hidden-xs hidden-sm col-md-1 col-lg-2">&nbsp;</div>
+            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8">
+              <button type="submit" class="lui_button warning">{{'Odeslat' | translate}}</button>
+              <div class="required_label_info inline">{{'Položky označené' | translate}} <span>*</span> {{'je nutné vyplnit' | translate}}</div>
+            </div>
+            <div class="hidden-xs hidden-sm col-md-1 col-lg-2">&nbsp;</div>
+          </div>
+        </div>
+        <!-- ///// -->
+      </form>
+      <br>
+    </div>
+  </div>
+</div>

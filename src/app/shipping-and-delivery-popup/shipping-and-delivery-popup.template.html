@@ -1,0 +1,57 @@
+<div class="popup-content site_subpage_content shipping-and-payment" [ngClass]="{opened: isOpen}">
+  <div class="bgr event_close_img_popup" (click)="close()"></div>
+  <div class="window">
+    <div class="container">
+      <div class="">
+        <div class="col-xs-12 col-xl-8 image">
+          <button class="close fa_b_times event_close_img_popup" (click)="close()"></button>
+        </div>
+      </div>
+      <div class="">
+        <div class="hidden-xs hidden-sm col-md-1 col-lg-2">&nbsp;</div>
+        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8">
+          <h1 class="page_title">{{'Doprava a platba' | translate}}</h1>
+        </div>
+        <div class="hidden-xs hidden-sm col-md-1 col-lg-2">&nbsp;</div>
+      </div>
+      <div *ngIf="(store.language == 'DE' && store.user.b2b == false)">
+        <h2>B2C</h2>
+        <ul>
+          <li>Zustellung innerhalb Österreich 5,90 EUR inkl. Mwst.</li>
+          <li>Kostenlose Zustellung bei Bestellung über 50 EUR inkl. Mwst.</li>
+        </ul>
+        <h2>B2B</h2>
+        <ul>
+          <li>Versandkosten innerhalb Österreich 8 €.</li>
+          <li>Versandkostenfrei ab einem Bestellwert von 100 €.</li>
+        </ul>
+      </div>
+      <div *ngIf="(store.language == 'DE' && store.user.b2b == true)">
+        <ul>
+          <li>Versandkosten innerhalb Österreich 8 €.</li>
+          <li>Versandkostenfrei ab einem Bestellwert von 100 €.</li>
+        </ul>
+      </div>
+      <div *ngIf="(store.language == 'CZ' && store.user.b2b == false)">
+        <h2>B2C</h2>
+        <ul>
+          <li>Doprava po České republice 75 Kč s DPH</li>
+          <li>Doprava zdarma při objednávce vyšší než 1.000Kč s DPH</li>
+          <li>Cena doběrečného po České republice 45 Kč</li>
+        </ul>
+        <h2>B2B</h2>
+        <ul>
+          <li>Doprava po České republice 99 Kč bez DPH</li>
+          <li>Doprava zdarma při objednávce vyšší než 2.000Kč bez DPH</li>
+        </ul>
+      </div>
+      <div *ngIf="(store.language == 'CZ' && store.user.b2b == true)">
+        <ul>
+          <li>Doprava po České republice 99 Kč bez DPH</li>
+          <li>Doprava zdarma při objednávce vyšší než 2.000Kč bez DPH</li>
+        </ul>
+      </div>
+      <br>
+    </div>
+  </div>
+</div>

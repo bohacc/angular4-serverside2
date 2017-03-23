@@ -1,0 +1,30 @@
+<form action="" class="lui_form" (ngSubmit)="onSubmit()">
+  <div class="item row va-middle">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+      <label class="label">{{'Přihlašovací e-mail / Login' | translate}}:</label>
+    </div>
+    <div class="col-xs-12 col-lg-5">
+      <div class="input">
+        <input type="text" name="login[email]" [(ngModel)]="loginName" />
+      </div>
+    </div>
+  </div>
+  <div class="item row va-middle">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+      <label class="label">{{'Heslo' | translate}}:</label>
+    </div>
+    <div class="col-xs-12 col-lg-5">
+      <div class="input">
+        <input type="password" name="login[password]" [(ngModel)]="password" />
+      </div>
+    </div>
+  </div>
+  <div class="item row va-middle">
+    <div class="col-xs-12 col-lg-9 ml-lg-3">
+      <button type="submit" class="lui_button warning">{{'Přihlásit' | translate}}</button>
+      <a routerLink="{{'/lost-password' | translate}}" class="forget_pwd fa_b_lock">{{'Zapomenuté heslo' | translate}}</a>
+    </div>
+    <div *ngIf="isError">{{'Neplatné jméno nebo heslo.' | translate}}</div>
+    <div *ngIf="!isFilled">{{'Zadejte login a heslo.' | translate}}</div>
+  </div>
+</form>

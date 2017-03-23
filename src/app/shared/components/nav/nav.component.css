@@ -1,0 +1,105 @@
+.router-link-active {
+  border-color: #51677a;
+}
+
+.nav-start-link:hover,
+.nav-start-link.router-link-active {
+  color: #39f !important;
+  border-color: #39f !important;
+}
+
+.navbar {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.24);
+  z-index: 10;
+}
+
+.navbar-brand {
+  padding: 10px;
+}
+
+.navbar-brand > img {
+  height: 40px;
+}
+
+.navbar-btn-icon {
+  position: relative;
+}
+
+.navbar-btn-icon.active:after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  height: 7px;
+  width: 7px;
+  border: 2px solid;
+  border-radius: 50px;
+}
+
+.navbar-btn-icon-message.active:after {
+  border-color: #39f;
+}
+
+.navbar-btn-icon-bell.active:after {
+  border-color: #fb617f;
+}
+
+.navbar-links {
+  padding-right: 10px;
+}
+
+.navbar-action-user-anon,
+.navbar-action-user-auth,
+.navbar-action-icon {
+  border-left: 1px solid #eee;
+}
+
+.navbar-action-user-anon {
+  padding-left: 25px;
+}
+
+.navbar-action-user-auth {
+  padding-left: 20px;
+}
+
+.navbar-action-icon {
+  padding: 0 7px;
+}
+
+.user-dropdown-toggle {
+  margin: 13px 0;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.user-dropdown-menu {
+  top: 90%;
+}
+
+.user-dropdown-menu:before,
+.user-dropdown-menu:after {
+  right: 16px;
+}
+
+.user-dropdown-menu a {
+  cursor: pointer;
+}
+
+.user-dropdown-menu a:hover,
+.user-dropdown-menu a:focus {
+  color: #fff;
+  background-color: #39f;
+}
+
+.user-dropdown-menu a.user-link:hover,
+.user-dropdown-menu a.user-link:focus {
+  background-color: #011627;
+}
+
+.user-avatar {
+  display: inline-block;
+  height: 34px;
+  border-radius: 6px;
+}

@@ -1,0 +1,86 @@
+<div class="site_header">
+    <!-- SHOP CATEGORIES ON MOBILE -->
+    <div id="shop_cats_mobile" class="shop_cats_mobile">
+        <shop-categories [typeShowing]="'showCatsMobile'"></shop-categories>
+    </div>
+
+    <!-- LOGO, CONTACT, BASKET -->
+    <div class="container">
+        <div class="row part_top a-right">
+            <div class="col-12">
+                <ul>
+                    <li><a routerLink="{{'/registration' | translate}}" class="user fa_b_user" title="Admin"><span>Admin</span></a></li>
+                    <!--<li><a [routerLink]="['/']" class="fa_b_user" title="Uživatel">Přihlásit se</a></li>-->
+                    <li><a [routerLink]="['/']" class="logout fa_b_times">Odhlásit</a></li>
+                    <li><a [routerLink]="['/']" class="lang cz">Česky</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row part_middle va-middle fill">
+            <div class="col-xs-12 col-md-4 col-lg-5 logo_wrap">
+                <a [routerLink]="['/']" class="logo">
+                    <img src="/images/logo_new.png" alt="" />
+
+                </a>
+            </div>
+            <div class="col-xs-12 col-md-4 col-xl-3 ml-xl-1">
+                <div class="contact">
+                    Infolinka
+                    <a href="tel:244001528">220 184 800</a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-4 col-lg-3">
+                <a routerLink="{{'/basket' | translate}}" class="basket_box fa_a_shopping-cart">
+                    <div class="price">
+                        <span>Celkem: </span><strong>999 999 Kč</strong>
+                    </div>
+                    <div class="count">
+                        99
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- LOGO, CONTACT, BASKET END -->
+    <!-- HEADER MENU + SEARCH -->
+    <div class="site_menu">
+        <div class="container">
+            <div class="row part_foot">
+                <div class="col-12 ml-xl-3">
+                    <div class="row va-center">
+                        <div class="col-11 menu_wrap">
+                            <ul class="menu">
+                                <li>
+                                    <a [routerLink]="['/novinky']">Nachrichten</a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['/o-nas']">Über uns</a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['/reference']">Referenz</a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['/download']">Download</a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['/kontakt']">Kontakt</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-1 col-xs-12">
+                            <div class="search_area">
+                                <form>
+                                    <div class="input">
+                                        <input type="text" placeholder="Zadejte hledaný výraz" />
+                                    </div>
+                                    <button type="submit" class="search_button fa_b_search" title="Vyhledávání"></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- HEADER MENU + SEARCH END -->
+</div>

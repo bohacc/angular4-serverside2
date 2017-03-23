@@ -1,0 +1,9 @@
+<h3 class="related_title">{{'Podobné produkty' | translate}}</h3>
+<div *ngIf="products.length==0">{{'Žádný podobný produkt nebyl nalezen' | translate}}</div>
+<div class="products_list">
+  <div class="row stretch">
+    <div class="col-xs-12 col-md-6 col-xl-3 item" *ngFor="let item of products">
+      <list-item [item]="item"></list-item>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="order_summary">
+  <h2>{{'Rekapitulace objednávky' | translate}}</h2>
+  <div class="content">
+    <div class="item" *ngFor="let item of cartObj.records">
+      <div class="price">{{item.priceAmount | number:formatNumber1}} {{item.currency}}</div>
+      <div class="name product" [attr.data-count]="(item.amount + 'x')">
+        <a [routerLink]="[item.redirect]">
+          {{item.name}}
+        </a>
+      </div>
+    </div>
+    <div class="item">
+      <div class="price">{{cartObj.priceAmount | number:formatNumber1}} {{cartObj.currency}}</div>
+      <div class="name">
+        {{'Cena za zboží' | translate}} {{'bez DPH' | translate}}
+      </div>
+    </div>
+    <div class="item">
+      <!--PRICE WITHOUT VAT FOR AT-->
+      <div class="price" *ngIf="cartObj.shipping != 0 && store.isAustria">{{cartObj.shipping | number:formatNumber1}} {{cartObj.currency}}</div>
+      <!--PRICE VAT FOR ANOTHER-->
+      <div class="price" *ngIf="cartObj.shippingVat != 0 && !store.isAustria">{{cartObj.shippingVat | number:formatNumber1}} {{cartObj.currency}}</div>
+      <div class="price" *ngIf="cartObj.shippingVat == 0 && cartObj.shippingAndPaymentIsSelected">{{'zdarma' | translate}}</div>
+      <div class="name">
+        {{'Doprava' | translate}}: {{cartObj.shippingName | translate}}
+      </div>
+    </div>
+    <div class="item">
+      <!--PRICE WITHOUT VAT FOR AT-->
+      <div class="price" *ngIf="cartObj.payment != 0 && store.isAustria">{{cartObj.payment | number:formatNumber1}} {{cartObj.currency}}</div>
+      <!--PRICE VAT FOR ANOTHER-->
+      <div class="price" *ngIf="cartObj.paymentVat != 0 && !store.isAustria">{{cartObj.paymentVat | number:formatNumber1}} {{cartObj.currency}}</div>
+      <div class="price" *ngIf="cartObj.paymentVat == 0 && cartObj.shippingAndPaymentIsSelected">{{'zdarma' | translate}}</div>
+      <div class="name">
+        {{'Platba' | translate}}: {{cartObj.paymentName | translate}}
+      </div>
+    </div>
+    <!--PRICE WITHOUT VAT FOR AT-->
+    <div class="item" *ngIf="store.isAustria">
+      <div class="price"><strong>{{cartObj.priceAmountWithShippingAndPayment | number:formatNumber1}} {{cartObj.currency}}</strong></div>
+      <div class="name">
+        {{'Celková cena bez DPH' | translate}}
+      </div>
+    </div>
+    <!--PRICE WITH VAT-->
+    <div class="item" *ngIf="!store.isAustria">
+      <div class="price"><strong>{{cartObj.priceAmountVatWithShippingAndPayment | number:formatNumber1}} {{cartObj.currency}}</strong></div>
+      <div class="name">
+        {{'Celková cena vč. DPH' | translate}}
+      </div>
+    </div>
+  </div>
+</div>

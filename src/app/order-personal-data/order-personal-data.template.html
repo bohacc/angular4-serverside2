@@ -1,0 +1,36 @@
+<div class="site_order_content">
+  <div class="container fluid nospace">
+    <div class="row va_top">
+      <div class="col-xs-12 col-xl-8">
+        <div class="order_user_info">
+          <!-- //// -->
+          <section *ngIf="!user.isLogged">
+            <div class="item_opens">
+              <input type="checkbox" id="open_login">
+              <label for="open_login">
+                {{'Už jsem zde nakupoval/a a chci se' | translate}} <strong>{{'přihlásit' | translate}}</strong><br >
+                <small>{{'Po přihlášení předvyplníme vaše osobní údaje do formuláře níže' | translate}}</small>
+              </label>
+              <div class="content">
+                <br />
+                <login [pathAfterLogin]="pathAfterLogin" (onLogin)="onLogin($event)"></login>
+                <br />
+              </div>
+            </div>
+          </section>
+          <!-- DEV ONLY -->
+          <registration #registration [type]="2" [userCache]="user"></registration>
+        </div>
+      </div>
+      <!-- //// -->
+      <div class="col-xs-12 col-xl-4">
+        <order-side-bar></order-side-bar>
+      </div>
+      <!-- //// -->
+    </div>
+  </div>
+  <div class="order_actions">
+    <a routerLink="{{'/basket' | translate}}" class="lui_button prev light fa_b_chevron-left mobile_big">{{'Zpět' | translate}}</a>
+    <button type="submit" id="form_submit" (click)="nextPage()" class="lui_button next bold info fa_a_chevron-right mobile_big">{{'Pokračovat' | translate}}</button>
+  </div>
+</div>

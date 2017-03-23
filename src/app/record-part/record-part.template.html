@@ -1,0 +1,145 @@
+<div class="product_detail_img_popup js-product_detail_img_popup">
+  <div class="bgr event_close_img_popup js-event_close_img_popup"></div>
+  <div class="window">
+    <div class="container fluid">
+      <div class="row va-top a-center stretch">
+        <div class="col-xs-12 col-xl-8 image">
+          <button class="close fa_b_times event_close_img_popup js-event_close_img_popup"></button>
+          <button class="prev fa_b_caret-left"></button>
+          <button class="next fa_b_caret-right"></button>
+          <div class="data">
+            <img src="{{product.imgBig1File}}" alt="{{product.name}}" />
+          </div>
+        </div>
+        <div class="col-xs-12 col-xl-4 sidebar">
+          <h1 class="title">{{product.name}}</h1>
+          <div class="price_store">
+            <!--LANGUAGE VERSION-->
+            <div class="price" *ngIf="!store.isAustria">
+              <div class="primary"><strong>{{product.priceVat | number:formatNumber1}}</strong> {{product.currency}}/{{product.unit | translate}}</div>
+              <div class="secondary">{{product.price | number:formatNumber1}} {{product.currency}} {{'bez DPH' | translate}}</div>
+            </div>
+            <!--LANGUAGE VERSION AT-->
+            <div class="price" *ngIf="store.isAustria && !store.user.b2b">
+              <div class="primary"><strong>{{product.price | number:formatNumber1}}</strong> {{product.currency}}</div>
+              <div class="secondary">{{'bez DPH' | translate}}</div>
+            </div>
+            <!--LANGUAGE VERSION AT - B2B-->
+            <div class="price" *ngIf="store.isAustria && store.user.b2b">
+              <div class="primary"><strong>{{product.price | number:formatNumber1}}</strong> {{product.currency}} {{'vaše cena' | translate}}</div>
+              <div class="secondary">{{product.priceRecommended | number:formatNumber1}} {{product.currency}} {{'DPC bez DPH' | translate}}</div>
+              <div class="tertiary">{{'Ceny jsou uvedeny bez DPH' | translate}}</div>
+            </div>
+            <div class="store" [ngClass]="{positive: product.inStock, negative: !product.inStock}">
+              {{product.availability | translate}}
+            </div>
+          </div>
+          <div class="images">
+            <div class="item active" *ngFor="let item of bigPictures; let i = index">
+              <img [src]="item.fileName" [attr.data-full-src]="bigPictures[i].fileName" [alt]="item.productName" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--ASSIST-->
+<assist [isOpen]="popupAssistShow" [product]="product" (onClose)="closeAssist()"></assist>
+<!--ASSIST-->
+
+<div class="container fluid header nospace">
+  <div class="row va-top a-center">
+    <!-- PRODUCT IMAGES -->
+    <div class="col-xs-12 col-lg-6 images">
+      <div class="product_image_main">
+        <!-- first image (also as fallback for non-javascript) -->
+        <!-- href, src and "nth" gets replaced by javascript -->
+        <a class="event_open_img_popup" data-image-nth="1" href="javascript:void(0);">
+          <img src="{{product.imgMediumFile}}" alt="{{product.name}}" class="main_image" />
+          <img src="{{product.imgBig1File}}" alt="{{product.name}}" class="zoom_image" />
+        </a>
+      </div>
+      <div class="product_image_list">
+        <a class="arrow left fa_b_caret-left"></a>
+        <a class="arrow right fa_b_caret-right"></a>
+        <div class="content" carousel [hidden]="!isLoaded">
+          <!-- ALL IMAGES -->
+          <div class="active" [attr.data-nth-child]="i + 1" *ngFor="let item of smallPictures; let i = index">
+            <img [src]="item.fileName" [attr.data-main-src]="bigPictures[i].fileName" [attr.data-full-src]="bigPictures[i].fileName" [alt]="item.productName" />
+          </div>
+          <!-- ALL IMAGES END -->
+        </div>
+      </div>
+    </div>
+    <!-- PRODUCT HEADLINE TEXT, PRICE, BUY -->
+    <div class="col-xs-12 col-lg-6 texts">
+      <p class="description">
+        {{product.name2}}
+      </p>
+      <div class="choose_variant_info" (click)="scrollToSelect()" *ngIf="type==2">
+        {{'Vyberte délku profilu z&nbsp;tabulky a&nbsp;zvolte příslušenství' | translate}}
+      </div>
+      <!-- //// -->
+      <form class="price_buy">
+        <!--LANGUAGE VERSION-->
+        <div class="price" *ngIf="!store.isAustria">
+          <div class="primary"><span>{{product.priceVat | number:formatNumber1}}</span> {{product.currency}}/{{product.unit | translate}}</div>
+          <div class="secondary">{{product.price | number:formatNumber1}} {{product.currency}} {{'bez DPH' | translate}}</div>
+        </div>
+        <!--LANGUAGE VERSION AT-->
+        <div class="price" *ngIf="store.isAustria && !store.user.b2b">
+          <div class="primary"><span>{{product.price | number:formatNumber1}}</span> {{product.currency}}</div>
+          <div class="secondary">{{'bez DPH' | translate}}</div>
+        </div>
+        <!--LANGUAGE VERSION AT - B2B-->
+        <div class="price" *ngIf="store.isAustria && store.user.b2b">
+          <div class="primary"><span>{{product.price | number:formatNumber1}}</span> {{product.currency}} {{'vaše cena' | translate}}</div>
+          <div class="secondary">{{product.priceRecommended | number:formatNumber1}} {{product.currency}} {{'DPC bez DPH' | translate}}</div>
+          <div class="tertiary">{{'Ceny jsou uvedeny bez DPH' | translate}}</div>
+        </div>
+
+        <div class="buy" *ngIf="(store.isAustria && store.user.b2b) || !store.isAustria">
+          <div class="ui_input_number" *ngIf="type==1">
+            <input type="text" [(ngModel)]="amount" name="amount" id="amountX" />
+            <button type="button" class="minus" (click)="minus()" [disabled]="inProcess">-</button>
+            <button type="button" class="plus" (click)="plus()" [disabled]="inProcess">+</button>
+          </div>
+          <button type="submit" [disabled]="inProcess" *ngIf="type==1" (click)="buy()">{{'Do košíku' | translate}}</button>
+          <button type="submit" [disabled]="inConfiguration" *ngIf="type==2" (click)="extBuy()">{{'Do košíku' | translate}}</button>
+        </div>
+      </form>
+      <!-- //// -->
+      <div class="store_code" *ngIf="type==1">
+        <div class="store" [ngClass]="{positive: product.inStock, negative: !product.inStock}">
+          {{product.availability | translate}}
+        </div>
+        <div class="code">
+          {{'Kód' | translate}}:
+          <strong>{{product.code}}</strong>
+        </div>
+      </div>
+      <!-- //// -->
+      <div class="downloads_list simple">
+        <div class="item">
+          <div class="icon">
+            <div>
+              <img src="/images/theme/files/file_pdf.png" alt="Soubor .pdf" />
+            </div>
+          </div>
+          <h2 class="filename">
+            <a href="/products/{{product.id}}/product-list/pdf" onclick="window.open(this.href); return false">{{'Produktový list' | translate}}</a>
+          </h2>
+        </div>
+      </div>
+      <!-- //// -->
+      <div class="print">
+        <a href="/products/{{product.id}}/product-list" onclick="window.open(this.href); return false">{{'Tisknout' | translate}}</a>
+      </div>
+      <div class="mcled_asist">
+        <a href="javascript:void(0);" (click)="openAssist()">{{'McLED Asist' | translate}}</a>
+      </div>
+    </div>
+  </div>
+</div>

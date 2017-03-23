@@ -1,0 +1,10 @@
+<div class="site_subpage_header">
+    <div class="inside">
+        <div class="pagepath">
+            <ul>
+                <li><a [routerLink]="['/homepage']" class="home"><span>Domů</span></a></li>
+                <li *ngFor="let item of redirects"><a [routerLink]="[item.code]"><span>{{item.name}}</span></a></li>
+            </ul>
+        </div>
+    </div>
+</div>

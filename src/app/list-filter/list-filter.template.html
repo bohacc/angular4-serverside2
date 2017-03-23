@@ -1,0 +1,34 @@
+<div class="switch">
+  <a class="item" data-tab="tab_1" (click)="setTabState(1)" [ngClass]="{active: tabsState==1}">
+    <div>
+      {{'Základní filtr' | translate}}
+    </div>
+  </a>
+  <a class="item" data-tab="tab_2" (click)="setTabState(2)" [ngClass]="{active: tabsState==2}">
+    <div>
+      {{'Rozšířený filtr' | translate}}
+    </div>
+  </a>
+  <a class="item" data-tab="tab_3" (click)="setTabState(3)" [ngClass]="{active: tabsState==3}" *ngIf="meta.showDownload">
+    <div>
+      {{'Ke stažení' | translate}}
+    </div>
+  </a>
+</div>
+<div class="content">
+  <div class="tab_1 inside"
+       [ngClass]="{opened: tabsState==1, active: tabsState==1, hide: !(tabsState==1)}"
+       list-filter-basic
+       (onChangeFilter)="onChangeFilterBasic($event)">
+  </div>
+  <div class="tab_2 inside"
+       [ngClass]="{opened: tabsState==2, active: tabsState==2, hide: !(tabsState==2)}"
+       list-filter-advanced
+       (onChangeFilter)="onChangeFilterAdvanced($event)">
+  </div>
+  <div class="tab_3 inside"
+       *ngIf="tabsState==3"
+       [ngClass]="{opened: tabsState==3, active: tabsState==3}">
+    <attachments [id]="(meta && meta.category ? meta.category.id : null)" [type]="'produkty_a_zatrideni_produktu'" [tableName]="'produkty_a_zatrideni_produktu'"></attachments>
+  </div>
+</div>

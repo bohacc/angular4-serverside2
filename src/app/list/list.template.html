@@ -1,0 +1,87 @@
+  <div [ngClass]="{'bgr_wrapper': asListType == 2}"> <!--<div class="bgr_wrapper"> only list 2-->
+    <!-- SHOP FILTER --> <!--in_tab only list 2-->
+    <div *ngIf="asListType !== 0" class="shop_filter" [ngClass]="{'in_tab': asListType == 2}" list-filter
+         [meta]="meta"
+         (onChangeFilterBasic)="onChangeFilterBasic($event)"
+         (onChangeFilterAdvanced)="onChangeFilterAdvanced($event)">
+    </div>
+    <!-- SHOP FILTER END -->
+    <!-- SHOP ORDER BY -->
+    <div class="shop_orderby">
+      <div class="item">
+        {{'Řazení' | translate}}
+        <div class="select" select-box [firstEmpty]="false" [items]="sortItems" [defaultItem]="defaultItemSort" (onSelectItem)="onSelectSort($event)">
+        </div>
+      </div>
+      <div class="item">
+        <ul>
+          <li>
+            <label>
+              <input type="checkbox" [(ngModel)]="stock" name="stock" (ngModelChange)="refreshDataWithPagination()"/>
+              <span>
+                {{'Skladem' | translate}}
+              </span>
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" [(ngModel)]="news" name="news" (ngModelChange)="refreshDataWithPagination()"/>
+              <span>
+                {{'Novinky' | translate}}
+              </span>
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" [(ngModel)]="action" name="action" (ngModelChange)="refreshDataWithPagination()"/>
+              <span>
+                {{'Akce' | translate}}
+              </span>
+            </label>
+          </li>
+        </ul>
+      </div>
+      <div class="item">
+        {{'Zobrazit' | translate}}
+        <div class="select small" select-box [firstEmpty]="false" [items]="itemsOnPage" [defaultItem]="defaultItem" (onSelectItem)="onSelectItemsOnPage($event)">
+        </div>
+        {{'z' | translate}} <strong>{{paginationCount}}</strong> {{'položek' | translate}}
+      </div>
+    </div>
+    <!-- SHOP ORDER BY END -->
+  </div>
+
+  <!-- PRODUCT LIST -->
+  <div class="products_list">
+    <div class="stretch" [ngClass]="{row: products.length>0, empty_row: products.length==0}">
+      <span *ngIf="loading">
+        <img style="width: 50px; height: 50px; position: relative; left: 50%; top: 50%;" src="/images/loader.gif" />
+      </span>
+      <div *ngIf="products.length==0 && isLoaded">{{notFoundText}}</div>
+
+      <div class="col-xs-12 col-md-6 col-xl-3 item" *ngFor="let item of products">
+        <!--LIST 1, 2-->
+        <list-item *ngIf="([0,1,2,5].indexOf(asListType) > -1)" [item]="item"></list-item>
+        <!--LIST 1, 2 END-->
+
+        <!--LIST 3-->
+        <list3-item *ngIf="asListType == 3" [item]="item"></list3-item>
+        <!--LIST 3 END-->
+
+        <!--LIST 4-->
+        <list4-item *ngIf="asListType == 4" [item]="item"></list4-item>
+        <!--LIST 4 END-->
+      </div>
+
+    </div>
+  </div>
+  <!-- PRODUCT LIST END -->
+  <!-- PAGEBAR -->
+  <pagination
+    [itemsOnPage]="itemsOnPageCount"
+    [meta]="paginationMeta"
+    (onPage)="onPage($event)"
+    (onLoadNextItems)="onLoadNextItems($event)"
+    (onCount)="getPaginationCount($event)">
+  </pagination>
+  <!-- PAGEBAR END -->

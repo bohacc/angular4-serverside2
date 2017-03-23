@@ -1,0 +1,831 @@
+<div class="site_subpage_content n-space-top n-space-bottom">
+    <h1 class="page_title small">McLED LED spot 4W GU10 3000K</h1>
+
+    <!-- configurator start -->
+    <!-- POPUP CONFIGURATION -->
+    <div class="product_detail_config_popup">
+        <div class="bgr event_close_config_popup"></div>
+        <div class="window">
+            <button class="close fa_b_times event_close_config_popup"></button>
+            <div class="container fluid max_lg">
+                <section class="item">
+                    <header data-num="1">
+                        <h2 class="title">Zvolte jednostranné nebo oboustranné napájení LED pásku</h2>
+                        <p>Při délkách pásku nad <strong>4 m</strong> doporučujeme zvolit oboustranné napájení</p>
+                    </header>
+                    <div class="data">
+                        <div class="radio_area">
+                            <label class="item hide_second_power_cable">
+                                <input type="radio" value="1" name="power" checked />
+                                <div>
+                                    <span>Jednostranné napájení</span> - maximální délka LED pásku <strong>5000 mm</strong>
+                                </div>
+                            </label>
+                            <label class="item show_second_power_cable">
+                                <input type="radio" value="2" name="power" />
+                                <div>
+                                    <span>Oboustranné napájení</span> - maximální délka LED pásku <strong>8000 mm</strong>
+                                </div>
+                            </label>
+
+                        </div>
+                    </div>
+                </section>
+
+                <section class="item">
+                    <header data-num="2">
+                        <h2 class="title">Zvolte délku pásku <span>- pásek lze zkracovat po modulech 50 mm</span></h2>
+                    </header>
+                    <div class="data">
+                        <!-- SLIDER START -->
+                        <div class="slider_area">
+                            <div class="head">
+                                <div class="min">0 mm</div>
+                                <div class="max">5000 mm</div>
+                                <button class="minus amount_decrease">-</button>
+                                <button class="plus amount_increase">+</button>
+                                <div class="range scissors">
+                                    <div id="slider_lenght"></div>
+                                </div>
+                            </div>
+                            <div class="foot">
+                                <div class="label">Zvolená délka</div>
+                                <div class="input">
+                                    <input type="text" class="amount_lenght" readonly />
+                                    <button class="minus amount_decrease">-</button>
+                                    <button class="plus amount_increase">+</button>
+                                </div>
+                            </div>
+                            <script>
+                                $(document).ready(function() {
+                                    var options = {
+                                        ranger: $("#slider_lenght"),
+                                        input: $(".amount_lenght"),
+                                        button_increase: $(".amount_increase"),
+                                        button_decrease: $(".amount_decrease"),
+                                        min: 0,
+                                        max: 5000,
+                                        default: 50,
+                                        step: 50,
+                                        postfix: " mm",
+                                        round: false
+                                    }
+                                    configuration_slideshow(options);
+                                });
+                            </script>
+                        </div>
+                        <!-- SLIDER END -->
+                    </div>
+                    <div class="desc">
+                        <p>Zohledněte délky koncovek, délku LED pásku, prostor pro vstup vodiče do profilu a pro připojení vodiče k LED pásku</p>
+                        <img src="/images/configurator/foot_lenght.jpg" alt="Délka pásku">
+                    </div>
+                </section>
+                <section class="item">
+                    <header data-num="3">
+                        <h2 class="title">Zvolte délku napájecího vodiče LED pásku</h2>
+                        <p>Celková maximální doporučená délka napájecího vodiče (průřez 0,5 mm2) je pro tento typ LED pásku <strong>10 m</strong></p>
+                    </header>
+                    <div class="data">
+                        <!-- SLIDER START -->
+                        <div class="slider_area">
+                            <div class="head">
+                                <div class="min">0 m</div>
+                                <div class="max">10 m</div>
+                                <button class="minus amount_power_decrease">-</button>
+                                <button class="plus amount_power_increase">+</button>
+                                <div class="range pliers">
+                                    <div id="slider_power_lenght"></div>
+                                </div>
+                            </div>
+                            <div class="foot">
+                                <div class="label"><strong>Přívod "A"</strong> - Zvolená délka</div>
+                                <div class="input">
+                                    <input type="text" class="amount_power_lenght" readonly />
+                                    <button class="minus amount_power_decrease">-</button>
+                                    <button class="plus amount_power_increase">+</button>
+                                </div>
+                            </div>
+                            <script>
+                                $(document).ready(function() {
+                                    var options = {
+                                        ranger: $("#slider_power_lenght"),
+                                        input: $(".amount_power_lenght"),
+                                        button_increase: $(".amount_power_increase"),
+                                        button_decrease: $(".amount_power_decrease"),
+                                        min: 0,
+                                        max: 10,
+                                        default: 1,
+                                        step: 0.0500,
+                                        postfix: " m",
+                                        round: true
+                                    }
+                                    configuration_slideshow(options);
+                                });
+                            </script>
+                        </div>
+                        <!-- SLIDER END -->
+                    </div>
+                    <div class="desc">
+                        <img src="/images/configurator/foot_power.jpg" alt="Délka napájení">
+                    </div>
+                </section>
+                <section class="item secondary_power_cable">
+                    <header class="nonum">
+                        <h2 class="title">Druhý napájecí vodič</h2>
+                    </header>
+                    <div class="data">
+                        <!-- SLIDER START -->
+                        <div class="slider_area">
+                            <div class="head">
+                                <div class="min">0 m</div>
+                                <div class="max">10 m</div>
+                                <button class="minus amount_power_sec_decrease">-</button>
+                                <button class="plus amount_power_sec_increase">+</button>
+                                <div class="range pliers">
+                                    <div id="slider_power_sec_lenght"></div>
+                                </div>
+                            </div>
+                            <div class="foot">
+                                <div class="label"><strong>Přívod "B"</strong> - Zvolená délka</div>
+                                <div class="input">
+                                    <input type="text" class="amount_power_sec_lenght" readonly  />
+                                    <button class="minus amount_power_sec_decrease">-</button>
+                                    <button class="plus amount_power_sec_increase">+</button>
+                                </div>
+                            </div>
+                            <script>
+                                $(document).ready(function() {
+                                    var options = {
+                                        ranger: $("#slider_power_sec_lenght"),
+                                        input: $(".amount_power_sec_lenght"),
+                                        button_increase: $(".amount_power_sec_increase"),
+                                        button_decrease: $(".amount_power_sec_decrease"),
+                                        min: 0,
+                                        max: 10,
+                                        default: 0,
+                                        step: 0.0500,
+                                        postfix: " m",
+                                        round: true
+                                    }
+                                    configuration_slideshow(options);
+                                });
+                            </script>
+                        </div>
+                        <!-- SLIDER END -->
+                    </div>
+                    <div class="desc">
+                        <img src="/images/configurator/foot_power2.jpg" alt="Délka napájení">
+                    </div>
+                </section>
+                <div class="configurator_confirm">
+                    <button class="event_close_config_popup">Zvolit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- configurator end -->
+
+    <!-- gallery start -->
+
+    <!-- POPUP IMAGES -->
+    <div class="product_detail_img_popup">
+        <div class="bgr event_close_img_popup"></div>
+        <div class="window">
+            <div class="container fluid">
+                <div class="row va-top a-center stretch">
+                    <div class="col-xs-12 col-xl-8 image">
+                        <button class="close fa_b_times event_close_img_popup"></button>
+                        <button class="prev fa_b_caret-left"></button>
+                        <button class="next fa_b_caret-right"></button>
+                        <div class="data">
+                            <img src="/examples/product_image_full_test_1.jpg" alt="" />
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-xl-4 sidebar">
+                        <h1 class="title">Lorem ipsum dolor sit amed</h1>
+                        <p class="desc">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet augue commodo, egestas purus ac, molestie est. Donec eu elit vel ipsum porta congue ut ac ante. Duis fermentum justo turpis. Praesent et nibh libero. Phasellus sem dui, vehicula at felis eget, rhoncus finibus felis.
+                        </p>
+                        <div class="price_store">
+                            <div class="price">
+                                <div class="primary"><strong>120</strong> Kč/ks</div>
+                                <div class="secondary">99 Kč bez DPH</div>
+                            </div>
+                            <div class="store positive">
+                                Skladem
+                            </div>
+                        </div>
+                        <div class="images">
+                            <div class="item active">
+                                <img src="/examples/product_image_full_test_1.jpg" data-full-src="/examples/product_image_full_test_1_full.jpg" alt="" />
+                            </div>
+                            <div class="item">
+                                <img src="/examples/product_image_full_test_2.jpg" data-full-src="/examples/product_image_full_test_2_full.jpg" alt="" />
+                            </div>
+                            <div class="item">
+                                <img src="/examples/product_image_full_test_3.jpg" data-full-src="/examples/product_image_full_test_3_full.jpg" alt="" />
+                            </div>
+                            <div class="item">
+                                <img src="/examples/product_image_full_test_4.jpg" data-full-src="/examples/product_image_full_test_4_full.jpg" alt="" />
+                            </div>
+                            <div class="item">
+                                <img src="/examples/product_image_full_test_1.jpg" data-full-src="/examples/product_image_full_test_1_full.jpg" alt="" />
+                            </div>
+                            <div class="item">
+                                <img src="/examples/product_image_full_test_2.jpg" data-full-src="/examples/product_image_full_test_2_full.jpg" alt="" />
+                            </div>
+                            <div class="item">
+                                <img src="/examples/product_image_full_test_3.jpg" data-full-src="/examples/product_image_full_test_3_full.jpg" alt="" />
+                            </div>
+                            <div class="item">
+                                <img src="//placekitten.com/200/200" data-full-src="//placekitten.com/800/800" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- gallery stop -->
+
+    <div class="product_detail">
+        <!-- PRODUCT DETAIL HEADER -->
+        <div class="container fluid header nospace">
+            <div class="row va-top a-center">
+                <!-- PRODUCT IMAGES -->
+                <div class="col-xs-12 col-lg-6 images">
+                    <div class="product_image_main">
+                        <!-- first image (also as fallback for non-javascript) -->
+                        <!-- href, src and "nth" gets replaced by javascript -->
+                        <a class="event_open_img_popup" data-image-nth="1" href="/examples/product_image_full_test_1.jpg">
+                            <img src="/examples/product_image_full_test_1.jpg" alt="" class="main_image" />
+                            <img src="/examples/product_image_full_test_1_full.jpg" alt="" class="zoom_image" />
+                        </a>
+                    </div>
+                    <script src="/src/app/tools/js/jquery/ui/ui.product.img.zoom.js" async></script>
+                    <div class="product_image_list">
+                        <a class="arrow left fa_b_caret-left"></a>
+                        <a class="arrow right fa_b_caret-right"></a>
+                        <div class="content">
+                            <!-- ALL IMAGES -->
+                            <div class="active" data-nth-child="1">
+                                <img src="/examples/product_image_full_test_1_small.jpg" data-main-src="/examples/product_image_full_test_1.jpg" data-full-src="/examples/product_image_full_test_1_full.jpg" alt="" />
+                            </div>
+                            <div data-nth-child="2">
+                                <img src="/examples/product_image_full_test_2_small.jpg" data-main-src="/examples/product_image_full_test_2.jpg" data-full-src="/examples/product_image_full_test_2_full.jpg" alt="" />
+                            </div>
+                            <div data-nth-child="3">
+                                <img src="/examples/product_image_full_test_3_small.jpg" data-main-src="/examples/product_image_full_test_3.jpg" data-full-src="/examples/product_image_full_test_3_full.jpg" alt="" />
+                            </div>
+                            <div data-nth-child="4">
+                                <img src="/examples/product_image_full_test_4_small.jpg" data-main-src="/examples/product_image_full_test_4.jpg" data-full-src="/examples/product_image_full_test_4_full.jpg" alt="" />
+                            </div>
+                            <div data-nth-child="5">
+                                <img src="/examples/product_image_full_test_1_small.jpg" data-main-src="/examples/product_image_full_test_1.jpg" data-full-src="/examples/product_image_full_test_1_full.jpg" alt="" />
+                            </div>
+                            <div data-nth-child="6">
+                                <img src="/examples/product_image_full_test_2_small.jpg" data-main-src="/examples/product_image_full_test_2.jpg" data-full-src="/examples/product_image_full_test_2_full.jpg" alt="" />
+                            </div>
+                            <div data-nth-child="7">
+                                <img src="/examples/product_image_full_test_3_small.jpg" data-main-src="/examples/product_image_full_test_3.jpg" data-full-src="/examples/product_image_full_test_3_full.jpg" alt="" />
+                            </div>
+                            <div data-nth-child="8">
+                                <img src="/examples/product_image_full_test_4_small.jpg" data-main-src="/examples/product_image_full_test_4.jpg" data-full-src="/examples/product_image_full_test_4_full.jpg" alt="" />
+                            </div>
+                            <!-- ALL IMAGES END -->
+                        </div>
+                    </div>
+                    <script>
+                        $(document).ready(function(){
+                            $('.product_image_list .content').slick({
+                                slidesToShow: 5,
+                                slidesToScroll: 1,
+                                dots: false,
+                                arrows: true,
+                                prevArrow: $('.product_image_list .arrow.left'),
+                                nextArrow: $('.product_image_list .arrow.right'),
+                                autoplay: false,
+                                autoplaySpeed: 5500,
+                                responsive: [
+                                    {
+                                        breakpoint: 1300,
+                                        settings: {
+                                            slidesToShow: 3,
+                                            slidesToScroll: 1,
+                                        }
+                                    },
+                                    {
+                                        breakpoint: 991,
+                                        settings: {
+                                            slidesToShow: 6,
+                                            slidesToScroll: 1,
+                                        }
+                                    },
+                                    {
+                                        breakpoint: 767,
+                                        settings: {
+                                            slidesToShow: 5,
+                                            slidesToScroll: 1
+                                        }
+                                    },
+                                    {
+                                        breakpoint: 500,
+                                        settings: {
+                                            slidesToShow: 3,
+                                            slidesToScroll: 1
+                                        }
+                                    }
+                                ]
+                            });
+                        });
+                    </script>
+                </div>
+                <!-- PRODUCT HEADLINE TEXT, PRICE, BUY -->
+                <div class="col-xs-12 col-lg-6 texts">
+                    <p class="description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lacinia, ex id fermentum finibus, mi leo fringilla sem, vel viverra lacus purus sed nisi. Mauris tellus ante, rhoncus sit amet euismod nec, iaculis et magna.
+                    </p>
+                    <div class="choose_variant_info">
+                        Vyberte délku profilu z&nbsp;tabulky a&nbsp;zvolte příslušenství
+                    </div>
+                    <script>
+                        $(".choose_variant_info").click(function(e){
+                            e.preventDefault();
+                            $("html, body").animate({ scrollTop: $(".product_detail .footer").offset().top }, "slow");
+                        });
+                    </script>
+                    <!-- //// -->
+                    <form class="price_buy">
+                        <div class="price">
+                            <div class="primary"><span>--</span> Kč</div>
+                            <div class="secondary">-- Kč bez DPH</div>
+                        </div>
+                        <div class="buy">
+                            <button type="submit" disabled>
+                                Do košíku
+                            </button>
+                        </div>
+                    </form>
+                    <!-- //// -->
+                    <div class="downloads_list simple">
+                        <div class="item">
+                            <div class="icon">
+                                <div>
+                                    <img src="/images/theme/files/file_pdf.png" alt="Soubor .pdf" />
+                                </div>
+                            </div>
+                            <h2 class="filename">
+                                <a [routerLink]="['/']">Produktový list</a>
+                            </h2>
+                        </div>
+                    </div>
+                    <!-- //// -->
+                    <div class="print">
+                        <a [routerLink]="['/']">Tisknout</a>
+                    </div>
+                    <div class="mcled_asist">
+                        <a [routerLink]="['/']">McLED Asist</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- PRODUCT DETAIL FOOTER -->
+        <div class="footer">
+            <h3 class="section_title">
+                Základní délky pásku
+            </h3>
+            <!-- PARAMS TABLE -->
+            <table class="product_params">
+                <thead>
+                <tr>
+                    <th>Kód</th>
+                    <th>Popis</th>
+                    <th class="center">Délka</th>
+                    <th class="center">Dostupnost</th>
+                    <th class="center">Cena bez DPH</th>
+                    <th class="center">Počet</th>
+                    <th class="center">Celkem bez DPH</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- //// -->
+                <tr>
+                    <td data-title="Kód">ML-XYZ0123</td>
+                    <td data-title="Popis">Led pásek testovací</td>
+                    <td data-title="Délka" class="center"><strong>1,5 m</strong></td>
+                    <td data-title="Dostupnost" class="center">skladem</td>
+                    <td data-title="Cena bez DPH" class="center nowrap"><strong>4 999 Kč</strong></td>
+                    <td data-title="Počet" class="center">
+                        <div class="ui_input_number small">
+                            <input type="text" value="0" />
+                            <button type="button" class="minus">-</button>
+                            <button type="button" class="plus">+</button>
+                        </div>
+                    </td>
+                    <td data-title="Celkem bez DPH" class="center primary nowrap"><strong>49 999 Kč</strong></td>
+                </tr>
+                <!-- //// -->
+                <tr>
+                    <td data-title="Kód">ML-XYZ0123</td>
+                    <td data-title="Popis">Led pásek testovací</td>
+                    <td data-title="Délka" class="center"><strong>1,5 m</strong></td>
+                    <td data-title="Dostupnost" class="center">skladem</td>
+                    <td data-title="Cena bez DPH" class="center nowrap"><strong>4 999 Kč</strong></td>
+                    <td data-title="Počet" class="center">
+                        <div class="ui_input_number small">
+                            <input type="text" value="0" />
+                            <button type="button" class="minus">-</button>
+                            <button type="button" class="plus">+</button>
+                        </div>
+                    </td>
+                    <td data-title="Celkem bez DPH" class="center primary nowrap"><strong>49 999 Kč</strong></td>
+                </tr>
+                <!-- //// -->
+                </tbody>
+            </table>
+            <!-- //// -->
+            <h3 class="section_title">
+                Individuální délka pásku a přívodu – zakázková výroba
+                <button class="event_open_config_popup configurator">Zvolit délku</button>
+            </h3>
+            <table class="product_params">
+                <thead>
+                <tr>
+                    <th>Popis</th>
+                    <th class="center">Pásek</th>
+                    <th class="center">Přívod "A"</th>
+                    <th class="center">Přívod "B"</th>
+                    <th class="center">Dostupnost</th>
+                    <th class="center">Cena bez DPH</th>
+                    <th class="center">Počet</th>
+                    <th class="center">Celkem bez DPH</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td data-title="Popis">Popis</td>
+                    <td data-title="Pásek" class="center">
+                        <input type="text" class="value amount_lenght event_open_config_popup" readonly />
+                    </td>
+                    <td data-title="Přívod A" class="center">
+                        <input type="text" class="value amount_power_lenght event_open_config_popup" readonly />
+                    </td>
+                    <td data-title="Přívod B" class="center">
+                        <input type="text" class="value amount_power_sec_lenght event_open_config_popup" readonly />
+                    </td>
+                    <td data-title="Dostupnost" class="center">skladem</td>
+                    <td data-title="Cena bez DPH" class="center nowrap"><strong>0 Kč</strong></td>
+                    <td data-title="Počet" class="center">
+                        <div class="ui_input_number small">
+                            <input type="text" value="0" />
+                            <button type="button" class="minus">-</button>
+                            <button type="button" class="plus">+</button>
+                        </div>
+                    </td>
+                    <td data-title="Celkem bez DPH" class="center primary nowrap"><strong>49 999 Kč</strong></td>
+                </tr>
+                </tbody>
+            </table>
+            <!-- //// -->
+            <h3 class="related_title">Příslušenství</h3>
+            <div class="products_list">
+                <div class="row stretch">
+                    <!-- //// -->
+                    <div class="col-xs-12 col-md-6 col-xl-3 item">
+                        <a [routerLink]="['/']" class="image">
+                            <div>
+                                <img src="https://placekitten.com/420/420" alt="" />
+                            </div>
+                        </a>
+                        <h3 class="title">
+                            <a [routerLink]="['/']">
+                                LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm
+                            </a>
+                        </h3>
+                        <div class="price">
+                            <div class="primary accessory">
+                                1 999 Kč/ks
+                            </div>
+                            <div class="secondary">
+                                1 899 Kč bez DPH
+                            </div>
+                            <div class="store positive fa_b_check">
+                                Skladem
+                            </div>
+                        </div>
+                        <div class="ui_input_number short">
+                            <input type="text" value="0" />
+                            <button type="button" class="minus">-</button>
+                            <button type="button" class="plus">+</button>
+                        </div>
+                    </div>
+                    <!-- //// -->
+                    <div class="col-xs-12 col-md-6 col-xl-3 item">
+                        <a [routerLink]="['/']" class="image">
+                            <div>
+                                <img src="https://placekitten.com/420/420" alt="" />
+                            </div>
+                        </a>
+                        <h3 class="title">
+                            <a [routerLink]="['/']">
+                                LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm
+                            </a>
+                        </h3>
+                        <div class="price">
+                            <div class="primary accessory">
+                                19 999 Kč/ks
+                            </div>
+                            <div class="secondary">
+                                19 899 Kč bez DPH
+                            </div>
+                            <div class="store negative fa_b_times">
+                                Na dotaz
+                            </div>
+                        </div>
+                        <div class="ui_input_number short">
+                            <input type="text" value="0" />
+                            <button type="button" class="minus">-</button>
+                            <button type="button" class="plus">+</button>
+                        </div>
+                    </div>
+                    <!-- //// -->
+                    <div class="col-xs-12 col-md-6 col-xl-3 item">
+                        <a [routerLink]="['/']" class="image">
+                            <div>
+                                <img src="https://placekitten.com/420/420" alt="" />
+                            </div>
+                        </a>
+                        <h3 class="title">
+                            <a [routerLink]="['/']">
+                                LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm
+                            </a>
+                        </h3>
+                        <div class="price">
+                            <div class="primary accessory">
+                                19 999 Kč/ks
+                            </div>
+                            <div class="secondary">
+                                19 899 Kč bez DPH
+                            </div>
+                            <div class="store negative fa_b_times">
+                                Na dotaz
+                            </div>
+                        </div>
+                        <div class="ui_input_number short">
+                            <input type="text" value="0" />
+                            <button type="button" class="minus">-</button>
+                            <button type="button" class="plus">+</button>
+                        </div>
+                    </div>
+                    <!-- //// -->
+                    <div class="col-xs-12 col-md-6 col-xl-3 item">
+                        <a [routerLink]="['/']" class="image">
+                            <div>
+                                <img src="https://placekitten.com/420/420" alt="" />
+                            </div>
+                        </a>
+                        <h3 class="title">
+                            <a [routerLink]="['/']">
+                                LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm
+                            </a>
+                        </h3>
+                        <div class="price">
+                            <div class="primary accessory">
+                                0 Kč/ks
+                            </div>
+                            <div class="secondary">
+                                19 899 Kč bez DPH
+                            </div>
+                            <div class="store negative fa_b_times">
+                                Na dotaz
+                            </div>
+                        </div>
+                        <div class="ui_input_number short">
+                            <input type="text" value="0" />
+                            <button type="button" class="minus">-</button>
+                            <button type="button" class="plus">+</button>
+                        </div>
+                    </div>
+                    <!-- //// -->
+                </div>
+            </div>
+            <br />
+            <!-- TABS -->
+            <div class="ui_tabs make_tabs" tabs>
+                <ul>
+                    <li><a href="#tabs-1">Parametry</a></li>
+                    <li><a href="#tabs-2">Detailní popis</a></li>
+                    <li><a href="#tabs-3">Ke stažení</a></li>
+                    <li><a href="#tabs-4">Foto</a></li>
+                    <li><a href="#tabs-5">Video</a></li>
+                </ul>
+                <!-- //// -->
+                <div id="tabs-1">
+                    <div class="container fluid nospace">
+                        <div class="row a-center va-top">
+                            <div class="col-xs-12 col-xl-4">
+                                <p>
+                                    Druh napětí: <strong>AC</strong><br />
+                                    Délka (mm): <strong>57</strong><br />
+                                    Jmenovité napětí (V): <strong>230</strong><br />
+                                    Výkon světel. zdroje (W): <strong>4</strong><br />
+                                    Barva: <strong>bílá</strong><br />
+                                    Patice: <strong>GU10</strong><br />
+                                    Jmenovitý proud (mA): <strong>37</strong><br />
+                                    Stupeň ochrany krytí (IP): <strong>IP20</strong>
+                                </p>
+                            </div>
+                            <div class="col-xs-12 col-xl-4">
+                                <p>
+                                    Tvar svítidla: <strong>reflektor</strong><br />
+                                    Vyzařovací úhel (°): <strong>100</strong><br />
+                                    Průměr (mm): <strong>50</strong><br />
+                                    Počet spínacích cyklů: <strong>100 000</strong><br />
+                                    Stmívatelné: <strong>Ne</strong><br />
+                                    Náhrada za (W): <strong>35</strong><br />
+                                    Teplota chromatičnosti (K): <strong>3000</strong><br />
+                                    Světelný tok (lm): <strong>225</strong>
+                                </p>
+                            </div>
+                            <div class="col-xs-12 col-xl-4">
+                                <p>
+                                    Teplota bílé barvy: <strong>Teplá</strong><br />
+                                    Rychlost náběhu (s na 100%): <strong>0,01</strong><br />
+                                    Prům. jmen. životnost (h): <strong>15 000</strong><br />
+                                    Celkový světelný tok (lm): <strong>305</strong><br />
+                                    Provedení sklo: <strong>Opálové</strong><br />
+                                    Energetická třída: <strong>A</strong><br />
+                                    Index podaní barev: <strong>80-89 (třída 1B)</strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //// -->
+                <div id="tabs-2">
+                    <p>
+                        Nunc sodales mauris eget massa vulputate fringilla. Etiam pretium nec orci et porttitor. Nunc lobortis felis et porta aliquet. Pellentesque ac semper ipsum. Etiam blandit leo nec pulvinar efficitur. Aenean nec euismod turpis, vitae fermentum mauris.
+                    </p>
+                    <p>
+                        Phasellus vitae aliquet ipsum. Curabitur sodales mauris non sapien ornare, vitae placerat quam varius. Vivamus sodales scelerisque nunc, vel consequat erat dapibus eget. Morbi sagittis, tortor vitae semper tincidunt, nulla justo elementum ante, sit amet commodo tortor diam sit amet ligula. Ut non dui sed nunc ullamcorper interdum.
+                    </p>
+                    <ul>
+                        <li>Mauris ligula orci, consequat sed faucibus non, aliquam eget justo.</li>
+                        <li>Suspendisse non erat dignissim, varius mauris eu, condimentum mauris. Fusce vulputate ac nisi ut efficitur.</li>
+                        <li>Proin id elit tellus. Fusce ut faucibus augue, sit amet hendrerit ex. In hac habitasse platea dictumst. Proin vitae malesuada nibh.</li>
+                        <li>Donec pharetra lobortis auctor. Donec imperdiet hendrerit elementum. Proin tempor dolor id magna rutrum pharetra. </li>
+                    </ul>
+                </div>
+                <!-- //// -->
+                <div id="tabs-3">
+                    <div class="downloads_list simple">
+                        <div class="item">
+                            <div class="icon">
+                                <div>
+                                    <img src="/images/theme/files/file_doc.png" alt="Soubor .doc" />
+                                </div>
+                            </div>
+                            <h2 class="filename">
+                                <a [routerLink]="['/']">Lorem ipsum dolor <small>(doc / 3MB)</small></a>
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <div class="icon">
+                                <div>
+                                    <img src="/images/theme/files/file_docx.png" alt="Soubor .docx" />
+                                </div>
+                            </div>
+                            <h2 class="filename">
+                                <a [routerLink]="['/']">Lorem ipsum dolor <small>(docx / 3MB)</small></a>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- //// -->
+                <div id="tabs-4">
+                    Foto
+                </div>
+                <!-- //// -->
+                <div id="tabs-5">
+                    Video
+                </div>
+            </div>
+        </div>
+        <!-- //// -->
+        <h3 class="related_title">Podobné produkty</h3>
+        <div class="products_list">
+            <div class="row stretch">
+                <!-- //// -->
+                <div class="col-xs-12 col-md-6 col-xl-3 item">
+                    <div class="prefers">
+                        <div class="state_1">Novinka</div>
+                    </div>
+                    <a [routerLink]="['/']" class="image">
+                        <div>
+                            <img src="https://placekitten.com/420/420" alt="" />
+                        </div>
+                    </a>
+                    <h3 class="title">
+                        <a [routerLink]="['/']">
+                            LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm
+                        </a>
+                    </h3>
+                    <div class="price">
+                        <div class="primary">
+                            1 999 Kč/ks
+                        </div>
+                        <div class="secondary">
+                            1 899 Kč bez DPH
+                        </div>
+                        <div class="store positive fa_b_check">
+                            Skladem
+                        </div>
+                    </div>
+                    <a [routerLink]="['/']" class="buy"></a>
+                </div>
+                <!-- //// -->
+                <div class="col-xs-12 col-md-6 col-xl-3 item">
+                    <div class="prefers">
+                        <div class="state_2">Akce</div>
+                    </div>
+                    <a [routerLink]="['/']" class="image">
+                        <div>
+                            <img src="https://placekitten.com/420/420" alt="" />
+                        </div>
+                    </a>
+                    <h3 class="title">
+                        <a [routerLink]="['/']">
+                            LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm
+                        </a>
+                    </h3>
+                    <div class="price">
+                        <div class="primary">
+                            19 999 Kč/ks
+                        </div>
+                        <div class="secondary">
+                            19 899 Kč bez DPH
+                        </div>
+                        <div class="store negative fa_b_times">
+                            Na dotaz
+                        </div>
+                    </div>
+                    <a [routerLink]="['/']" class="buy"></a>
+                </div>
+                <!-- //// -->
+                <div class="col-xs-12 col-md-6 col-xl-3 item">
+                    <a [routerLink]="['/']" class="image">
+                        <div>
+                            <img src="https://placekitten.com/420/420" alt="" />
+                        </div>
+                    </a>
+                    <h3 class="title">
+                        <a [routerLink]="['/']">
+                            LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm
+                        </a>
+                    </h3>
+                    <div class="price">
+                        <div class="primary">
+                            19 999 Kč/ks
+                        </div>
+                        <div class="secondary">
+                            19 899 Kč bez DPH
+                        </div>
+                        <div class="store negative fa_b_times">
+                            Na dotaz
+                        </div>
+                    </div>
+                    <a [routerLink]="['/']" class="buy"></a>
+                </div>
+
+                <!-- //// -->
+                <div class="col-xs-12 col-md-6 col-xl-3 item">
+                    <a [routerLink]="['/']" class="image">
+                        <div>
+                            <img src="https://placekitten.com/420/420" alt="" />
+                        </div>
+                    </a>
+                    <h3 class="title">
+                        <a [routerLink]="['/']">
+                            LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm
+                        </a>
+                    </h3>
+                    <div class="price">
+                        <div class="primary">
+                            19 999 Kč/ks
+                        </div>
+                        <div class="secondary">
+                            19 899 Kč bez DPH
+                        </div>
+                        <div class="store negative fa_b_times">
+                            Na dotaz
+                        </div>
+                    </div>
+                    <a [routerLink]="['/']" class="buy"></a>
+                </div>
+                <!-- //// -->
+            </div>
+        </div>
+    </div>
+</div>

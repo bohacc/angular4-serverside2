@@ -1,0 +1,18 @@
+<span (click)="onEnter()" tabindex="0" id="test-button" role="combobox" class="ui-selectmenu-button ui-button ui-widget ui-selectmenu-button-closed ui-corner-all">
+    <span class="ui-selectmenu-icon ui-icon ui-icon-triangle-1-s"></span>
+    <span class="ui-selectmenu-text">{{selectedItem.name | translate}}</span>
+</span>
+<div class="ui-js-dropdown">
+  <div class="inside">
+    <div *ngIf="showItems" [ngClass]="{'ui-selectmenu-open': showItems}" class="ui-selectmenu-menu ui-front" style="position: relative; top: 0px; left: 0px;">
+      <ul id="test-menu" role="listbox" tabindex="0" class="ui-menu ui-corner-bottom ui-widget ui-widget-content">
+        <li class="ui-menu-item" (click)="onSelect(emptyItem)" *ngIf="firstEmpty">
+          <div tabindex="-1" role="option" class="ui-menu-item-wrapper">{{emptyItemComboText}}</div>
+        </li>
+        <li *ngFor="let item of items; let i = index" class="ui-menu-item" (click)="onSelect(item)">
+          <div tabindex="-1" role="option" class="ui-menu-item-wrapper">{{item.name | translate}}</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

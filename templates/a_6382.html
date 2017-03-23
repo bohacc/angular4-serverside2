@@ -1,0 +1,114 @@
+<div class="site_order_header">
+    <div class="inside">
+        <ul>
+            <li class="completed">1. Košík</li>
+            <li class="completed">2. Doprava a platba</li>
+            <li class="completed">3. Osobní údaje</li>
+            <li class="active">4. Shrnutí objednávky</li>
+        </ul>
+    </div>
+</div>
+<div class="site_order_content">
+    <div class="container fluid nospace">
+        <div class="row va_top fill">
+            <!-- //// -->
+            <div class="col-xs-12 col-xl-4">
+                <div class="order_summary full_height">
+                    <h2>Fakturační údaje</h2>
+                    <div class="content">
+                        <address>
+                            <p>Jiří Bělský</p>
+                            <p>
+                                Lorem 99/10<br />
+                                999 00 Brno
+                            </p>
+                        </address>
+                    </div>
+                </div>
+            </div>
+            <!-- //// -->
+            <div class="col-xs-12 col-xl-4">
+                <div class="order_summary full_height">
+                    <h2>Dodací údaje</h2>
+                    <div class="content">
+                        <address>
+                            <p>Jiří Bělský</p>
+                            <p>
+                                Lorem 99/10<br />
+                                999 00 Brno
+                            </p>
+                            <p>
+                                lorem@ip.sum
+                                001 002 003
+                            </p>
+                        </address>
+                    </div>
+                </div>
+            </div>
+            <!-- //// -->
+            <div class="col-xs-12 col-xl-4">
+                <div class="order_summary full_height">
+                    <h2>Rekapitulace objednávky</h2>
+                    <div class="content">
+                        <div class="item">
+                            <div class="price">250 Kč</div>
+                            <div class="name product" data-count="2x">
+                                <a [routerLink]="['/']">
+                                    LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="price">250 Kč</div>
+                            <div class="name product" data-count="2x">
+                                <a [routerLink]="['/']">
+                                    LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="price">250 Kč</div>
+                            <div class="name product" data-count="200x">
+                                <a [routerLink]="['/']">
+                                    LED žárovka 10W, E27, 2700K, CRI 80, vyzař. úhel 270, sv. tok 840lm
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="price">500 Kč</div>
+                            <div class="name">
+                                Cena za zboží
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="price">145 Kč</div>
+                            <div class="name">
+                                Doprava: Česká pošta
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="price">0 Kč</div>
+                            <div class="name">
+                                Platba: Kartou online
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="price"><strong>645 Kč</strong></div>
+                            <div class="name">
+                                Celková cena vč. DPH
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //// -->
+        </div>
+    </div>
+    <p class="order_terms_info">
+        Odesláním objednávky souhlasíte s <a [routerLink]="['/']">obchodními podmínkami</a> internetového obchodu <strong>www.mcled.cz</strong>
+    </p>
+    <div class="order_actions">
+        <a [routerLink]="['/osobni-udaje']" class="lui_button prev light fa_b_chevron-left mobile_big">Zpět</a>
+        <a [routerLink]="['/podekovani']" class="lui_button next bold info fa_a_chevron-right mobile_big">Odeslat objednávku</a>
+    </div>
+</div>

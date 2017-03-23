@@ -1,0 +1,16 @@
+<div class="site_pagebar">
+  <button class="more" *ngIf="showNext" (click)="addItemsOnPage()">{{'Načíst další' | translate}}</button>
+  <ul class="pages">
+    <li><a href="javascript:void(0);" *ngIf="showPrior" (click)="prior()">{{'Předchozí' | translate}}</a></li>
+    <li><a href="javascript:void(0);" *ngIf="showFirst" [ngClass]="{active: currentPage == pageFirst}" (click)="setCurrent(pageFirst, true)">{{pageFirst}}</a></li>
+    <li><span *ngIf="showRangeLeft">..</span></li>
+    <li><a href="javascript:void(0);" [ngClass]="{active: currentPage == pageA}" *ngIf="showA" (click)="setCurrent(pageA, false)">{{pageA}}</a></li>
+    <li><a href="javascript:void(0);" [ngClass]="{active: currentPage == pageB}" *ngIf="showB" (click)="setCurrent(pageB, false)">{{pageB}}</a></li>
+    <li><a href="javascript:void(0);" [ngClass]="{active: currentPage == pageC}" *ngIf="showC" (click)="setCurrent(pageC, false)">{{pageC}}</a></li>
+    <li><a href="javascript:void(0);" [ngClass]="{active: currentPage == pageD}" *ngIf="showD" (click)="setCurrent(pageD, false)">{{pageD}}</a></li>
+    <li><a href="javascript:void(0);" [ngClass]="{active: currentPage == pageE}" *ngIf="showE" (click)="setCurrent(pageE, false)">{{pageE}}</a></li>
+    <li><span *ngIf="showRangeRight">..</span></li>
+    <li><a href="javascript:void(0);" *ngIf="showLast" [ngClass]="{active: currentPage == pageLast}" (click)="setCurrent(pageLast, true)">{{pageLast}}</a></li>
+    <li><a href="javascript:void(0);" *ngIf="showNext" (click)="next()">{{'Další' | translate}}</a></li>
+  </ul>
+</div>

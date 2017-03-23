@@ -1,0 +1,21 @@
+<div class="site_partners">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>{{'Nakupujte u našich partnerů' | translate}}</h2>
+                <a class="arrow left fa_b_chevron-left"></a>
+                <a class="arrow right fa_b_chevron-right"></a>
+                <div class="carousel site_partners_content" carousel-partners [init]="isInit">
+                    <img *ngIf="showDefault" src="/images/loader.gif" style="position: relative;top: 50%;left: 50%;height: 50px;width: 50px;">
+                    <div *ngFor="let item of items" [ngClass]="{hide: showDefault}">
+                        <a href="{{item.redirect}}" class="logo">
+                            <div>
+                                <img src="/attachments/{{item.idAtt}}" alt="{{item.name}}" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

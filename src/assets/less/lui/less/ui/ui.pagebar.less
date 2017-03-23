@@ -1,0 +1,178 @@
+/*
+
+PAGEBAR
+
+TODO: USE FLEXBOX TO ALIGN NUMBERS (PAGES)
+
+*/
+
+
+
+.lui_pagebar {
+	.lui.box-sizing.border-box();
+	
+	.lui.clear.before();
+	.lui.clear.after();
+
+	.lui.flexbox.block();
+	.lui.flexbox.flex-direction(row);
+	.lui.flexbox.flex-wrap(wrap);
+
+	list-style: none; // IN CASE OF UL
+	font-size: 14px;
+	line-height: 14px;
+
+
+	&.va-top {
+		.lui.flexbox.align-content(flex-start);
+		.lui.flexbox.align-items(flex-start);
+	}
+
+	&.va-bottom {
+		.lui.flexbox.align-content(flex-start);
+		.lui.flexbox.align-items(flex-end);
+	}
+
+	&.va-middle,
+	&.va-center {
+		.lui.flexbox.align-content(flex-start);
+		.lui.flexbox.align-items(center);
+	}
+
+	&.a-left {
+		.lui.flexbox.justify-content(flex-start);
+		.lui.flexbox.align-content(flex-start);
+	}
+
+	&.a-right {
+		.lui.flexbox.justify-content(flex-end);
+		.lui.flexbox.align-content(flex-start);
+	}
+
+	&.a-middle,
+	&.a-center {
+		.lui.flexbox.justify-content(center);
+		.lui.flexbox.align-content(flex-start);
+	}
+	
+	@media (max-width:@grid_sm_end){
+		& when (@responsive = true){ 
+			.lui.flexbox.justify-content(~"space-between !important");
+		}
+	}
+
+	& > li {
+		margin: 2px;
+		display: inline-block;
+
+		@media (max-width:@grid_sm_end){
+			& when (@responsive = true){ 
+				display: none;
+
+				&.prev,
+				&.next,
+				&.input{
+					display: block;
+				}
+			}
+		}
+
+		&.prev > a {
+			&:before {
+				font-family: FontAwesome;
+				content: "\f053";
+			}
+
+			span {
+				padding: 0 0 0 10px;
+			}
+		}
+
+		&.next > a {
+			&:after {
+				font-family: FontAwesome;
+				content: "\f054";
+			}
+
+			span {
+				padding: 0 10px 0 0;
+			}
+		}
+
+		& > a {
+			display: block;
+			padding: 10px 15px;
+			color: @pgb_dark_bg;
+			text-decoration: none;
+			background: @pgb_default_bg;
+			border-radius: 5px;
+		}
+		
+		&.input {
+			background: none;
+			border-radius: 5px;
+			height: 34px;
+			line-height: 14px;
+			padding: 10px 15px 10px 10px;
+			
+			@media (max-width:@grid_sm_end){
+				& when (@responsive = true){ 
+					padding: 10px 15px 10px 0;
+				}
+			}
+			
+			label {
+				margin-right: 14px;
+				padding-right: 14px;
+			}
+			
+			input {
+				display: block;
+				float: right;
+				.lui.box-sizing.border-box();
+				width: 60px;
+				height: 34px;
+				border: 1px solid darken(@pgb_default_bg, 10%);
+				margin: -10px -15px;
+				background: transparent;
+				text-align: center;
+				font-family: inherit;
+				outline: none;
+				border-radius: 5px;
+				box-shadow: inset 1px 1px 3px rgba(0,0,0,0.07);
+				
+				
+				&:focus {
+					border: 1px solid darken(@pgb_default_bg, 30%);
+					color: black;
+				}
+			}
+
+		}
+
+		&:not(.inactive) > a {
+			cursor: pointer;
+
+			&:hover {
+				background: darken(@pgb_default_bg, 10%);
+			}
+		}
+
+		&.inactive > a {
+			cursor: default;
+		}
+		
+		
+	}
+
+	&.dark > * {
+		& > a {
+			background: @pgb_dark_bg;
+			color: @pgb_default_bg;
+
+			&:not(.inactive):hover {
+				background: darken(@pgb_dark_bg, 10%);
+			}
+		}
+	}
+}

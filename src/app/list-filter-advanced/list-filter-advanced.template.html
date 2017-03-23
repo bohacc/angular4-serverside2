@@ -1,0 +1,9 @@
+<div class="item" *ngFor="let item of defaultItems; let i = index">
+  <div class="title">
+    {{item.name}}
+  </div>
+  <div class="values">
+    <div class="select" select-box [items]="items[i].items" [defaultItem]="defaultItem" (onSelectItem)="onSelectItemComboBox(item.par, $event)">
+    </div>
+  </div>
+</div>

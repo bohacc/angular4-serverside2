@@ -1,0 +1,53 @@
+<div class="footer">
+  <!-- TABS -->
+  <div class="ui_tabs make_tabs">
+    <ul class="ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header">
+      <li class="ui-tabs-tab ui-state-default ui-tab ui-corner-top" [ngClass]="{'ui-state-active ui-tabs-active': tabsState==1, 'ui-state-hover': tabsStateHover==1}"
+          on-mouseenter="setHover(1)" on-mouseleave="setHover(0)">
+        <a href="javascript:void(0);"  class="ui-tabs-anchor" (click)="setTabState(1)">{{'Parametry' | translate}}</a>
+      </li>
+      <li class="ui-tabs-tab ui-state-default ui-tab ui-corner-top" [ngClass]="{'ui-state-active ui-tabs-active': tabsState==2, 'ui-state-hover': tabsStateHover==2}"
+          on-mouseenter="setHover(2)" on-mouseleave="setHover(0)">
+        <a href="javascript:void(0);" class="ui-tabs-anchor" (click)="setTabState(2)">{{'Detailní popis' | translate}}</a>
+      </li>
+      <li class="ui-tabs-tab ui-state-default ui-tab ui-corner-top" [ngClass]="{'ui-state-active ui-tabs-active': tabsState==3, 'ui-state-hover': tabsStateHover==3}"
+          on-mouseenter="setHover(3)" on-mouseleave="setHover(0)">
+        <a href="javascript:void(0);" class="ui-tabs-anchor" (click)="setTabState(3)">{{'Ke stažení' | translate}}</a>
+      </li>
+      <!--<li class="ui-tabs-tab ui-state-default ui-tab ui-corner-top" [ngClass]="{'ui-state-active ui-tabs-active': tabsState==4, 'ui-state-hover': tabsStateHover==4}"
+          on-mouseenter="setHover(4)" on-mouseleave="setHover(0)">
+        <a href="javascript:void(0);" class="ui-tabs-anchor" (click)="setTabState(4)">{{'Foto' | translate}}</a>
+      </li>
+      <li class="ui-tabs-tab ui-state-default ui-tab ui-corner-top" [ngClass]="{'ui-state-active ui-tabs-active': tabsState==5, 'ui-state-hover': tabsStateHover==5}"
+          on-mouseenter="setHover(5)" on-mouseleave="setHover(0)">
+        <a href="javascript:void(0);" class="ui-tabs-anchor" (click)="setTabState(5)">{{'Video' | translate}}</a>
+      </li>-->
+    </ul>
+    <!-- //// -->
+    <div id="tabs-1" *ngIf="tabsState===1" class="ui-tabs-panel ui-corner-bottom ui-widget-content">
+      <div class="container fluid nospace">
+        <div class="row a-center va-top">
+          <div class="col-xs-12 col-xl-4" *ngFor="let prop of product.properties">
+            <p>
+              <span *ngFor="let item of prop.items">{{item.paramName}}: <strong>{{item.val}}&nbsp;{{item.oddVal2}}&nbsp;{{item.val2}}</strong><br /></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //// -->
+    <div id="tabs-2" *ngIf="tabsState===2" class="ui-tabs-panel ui-corner-bottom ui-widget-content" [innerHtml]="(product.descriptionTabs || '')"></div>
+    <!-- //// -->
+    <div id="tabs-3" *ngIf="tabsState===3" class="ui-tabs-panel ui-corner-bottom ui-widget-content">
+      <attachments [id]="product.id" [type]="downloadAttType" [tableName]="'PRODUKTY'"></attachments>
+    </div>
+    <!-- //// -->
+    <!--<div id="tabs-4" *ngIf="tabsState===4" class="ui-tabs-panel ui-corner-bottom ui-widget-content">
+      Foto
+    </div>-->
+    <!-- //// -->
+    <!--<div id="tabs-5" *ngIf="tabsState===5" class="ui-tabs-panel ui-corner-bottom ui-widget-content">
+      Video
+    </div>-->
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="downloads_list simple">
+  <span *ngIf="loading">
+    <img style="width: 50px; height: 50px; position: relative; left: 50%; top: 50%;" src="/images/loader.gif" />
+  </span>
+  <div class="item" *ngFor="let item of items">
+    <div class="icon">
+      <div>
+        <img [src]="item.imgType" alt="{{item.name}}" />
+      </div>
+    </div>
+    <h2 class="filename">
+      <a href="/attachments/{{item.id}}">{{item.name}}<small>&nbsp;({{item.ext}} / {{item.size | number:'1.0-3'}}MB)</small></a>
+    </h2>
+  </div>
+</div>

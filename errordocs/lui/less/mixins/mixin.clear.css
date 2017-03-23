@@ -1,0 +1,17 @@
+/*
+
+CLEAR
+
+*/
+.lui.clear .after:after {
+  display: block;
+  width: 100%;
+  clear: both;
+  content: "";
+}
+.lui.clear .before:before {
+  display: block;
+  width: 100%;
+  clear: both;
+  content: "";
+}

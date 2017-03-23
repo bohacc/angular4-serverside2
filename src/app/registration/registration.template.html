@@ -1,0 +1,467 @@
+<div class="site_subpage_content n-space-top n-space-bottom">
+  <h1 *ngIf="type==1" class="page_title">{{'Registrace' | translate}}</h1>
+  <form method="post" class="registration_form" (ngSubmit)="save()">
+    <section *ngIf="type==1">
+      <h2>{{'Přihlašovací údaje' | translate}}</h2>
+      <div class="lui_form"> <!--formGroupName="loginGroupForm"-->
+        <div class="item row va-middle">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+            <label class="label required">{{'Přihlašovací e-mail' | translate}}:</label>
+          </div>
+          <div class="col-xs-12 col-lg-5">
+            <div class="input">
+              <input type="text" name="login" [(ngModel)]="user.login" [disabled]="user.isLogged" (ngModelChange)="onLoginChange()" [required]="!user.isLogged" />
+            </div>
+          </div>
+        </div>
+        <div class="item row va-middle" *ngIf="!user.isLogged">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+            <label class="label required">{{'Heslo' | translate}}:</label>
+          </div>
+          <div class="col-xs-12 col-lg-5">
+            <div class="input">
+              <input type="password" name="password" [(ngModel)]="user.password" [required]="!user.isLogged" />
+            </div>
+          </div>
+        </div>
+        <div class="item row va-middle" *ngIf="!user.isLogged">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+            <label class="label required">{{'Potvrdit heslo' | translate}}:</label>
+          </div>
+          <div class="col-xs-12 col-lg-5">
+            <div class="input">
+              <input type="password" name="confirmPassword" [(ngModel)]="user.confirmPassword" [required]="!user.isLogged" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>{{'Firemní údaje' | translate}}</h2>
+      <div class="lui_form">
+        <div class="item row va-middle"> <!--formGroupName="companyGroupForm"-->
+        <div class="col-xs-12">
+          <div class="as_form_item">
+<!--            <input type="checkbox" id="company_info" name="toCompany" [(ngModel)]="user.toCompany">
+            <label for="company_info" class="secondary">
+              {{'Firemní údaje' | translate}}
+            </label>-->
+            <div class="content">
+              <!--<div class="company-note" *ngIf="!user.isLogged && user.saveAsNewUser">
+                {{'Pro firemní zákazníky nabízíme výhodné nákupní podmínky' | translate}}:
+                <div class="content">
+                  <label class="item">
+                    <input name="delivery" class="ng-untouched ng-dirty ng-valid" type="radio" [(ngModel)]="user.conditions" [value]="false">
+                    <div>
+                      {{'Děkuji, nemám zájem' | translate}}
+                    </div>
+                  </label>
+                  <label class="item">
+                    <input name="delivery" class="ng-untouched ng-dirty ng-valid" type="radio" [(ngModel)]="user.conditions" [value]="true">
+                    <div>
+                      {{'Mám zájem o sjednání obchodních podmínek pro firemní zákazníky (B2B)' | translate}}
+                    </div>
+                  </label>
+                </div>
+              </div>-->
+              <!-- ///// -->
+              <div class="item row va-middle">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                  <label class="label" [ngClass]="{required: store.isAustria}">{{'Firma' | translate}}:</label>
+                </div>
+                <div class="col-xs-12 col-lg-5">
+                  <div class="input">
+                    <input type="text" name="company[name]" [(ngModel)]="user.companyName" [required]="store.isAustria || user.toCompany" />
+                  </div>
+                </div>
+              </div>
+              <!-- ///// -->
+              <div class="item row va-middle">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                  <label class="label" [ngClass]="{required: store.isAustria || user.conditions}">{{'IČ' | translate}}:</label>
+                </div>
+                <div class="col-xs-12 col-lg-5">
+                  <div class="input">
+                    <input type="text" name="company[ic]" [(ngModel)]="user.regId" [required]="store.isAustria || (user.toCompany && user.conditions)" [placeholder]="placeholderRegId" />
+                  </div>
+                </div>
+              </div>
+              <!-- ///// -->
+              <div class="item row va-middle">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                  <label class="label" [ngClass]="{required: store.isAustria || user.conditions}">{{'DIČ' | translate}}:</label>
+                </div>
+                <div class="col-xs-12 col-lg-5">
+                  <div class="input">
+                    <input type="text" name="company[dic]" [(ngModel)]="user.vatId" [required]="store.isAustria || (user.toCompany && user.conditions)" [placeholder]="placeholderVatId" />
+                  </div>
+                </div>
+              </div>
+              <!-- ///// -->
+              <div class="item row va-middle">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                  <label class="label">{{'Předmět podnikání' | translate}}:</label>
+                </div>
+                <div class="col-xs-12 col-lg-5">
+                  <div class="input">
+                    <input type="text" name="company[poznamka]" [(ngModel)]="user.bussinesScope" />
+                  </div>
+                </div>
+              </div>
+              <!-- ///// -->
+              <div class="item row va-middle">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                  <label class="label">{{'Webová adresa' | translate}}:</label>
+                </div>
+                <div class="col-xs-12 col-lg-5">
+                  <div class="input">
+                    <input type="text" name="company[web]" [(ngModel)]="user.webAddr" />
+                  </div>
+                </div>
+              </div>
+              <!-- ///// -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+      </div>
+    </section>
+    <section>
+      <h2>{{'Fakturační údaje' | translate}}</h2>
+      <!-- ///// -->
+      <div class="lui_form">
+
+        <div> <!--formGroupName="invoiceGroupForm"-->
+
+          <!--FOR ORDER-->
+          <div class="item row va-middle" *ngIf="!user.isLogged && type==2">
+            <div class="col-xs-12 col-lg-5 ml-lg-3">
+              <div class="item_opens">
+                <input type="checkbox" id="want_register" name="want_register" [(ngModel)]="user.saveAsNewUser" />
+                <label for="want_register" class="secondary order_w_register_toggle">
+                  {{'Chci se zároveň registrovat' | translate}}
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="order_w_register_inputs" *ngIf="user.saveAsNewUser && type==2">
+            <!-- ///// -->
+            <div class="item row va-middle">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                <label class="label required">{{'Přihlašovací e-mail' | translate}}:</label>
+              </div>
+              <div class="col-xs-12 col-lg-5">
+                <div class="input">
+                  <input type="text" name="email" [(ngModel)]="user.email" required />
+                </div>
+              </div>
+            </div>
+            <!-- ///// -->
+            <div class="item row va-middle">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                <label class="label required">{{'Heslo' | translate}}:</label>
+              </div>
+              <div class="col-xs-12 col-lg-5">
+                <div class="input">
+                  <input type="password" name="user[password]" [(ngModel)]="user.password" required />
+                </div>
+              </div>
+            </div>
+            <!-- ///// -->
+            <div class="item row va-middle">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                <label class="label required">{{'Potvrdit heslo' | translate}}:</label>
+              </div>
+              <div class="col-xs-12 col-lg-5">
+                <div class="input">
+                  <input type="password" name="user[password_confirm]" [(ngModel)]="user.confirmPassword" required />
+                </div>
+              </div>
+            </div>
+            <!-- ///// -->
+          </div>
+          <!--END FOR ORDER-->
+
+
+          <div class="item row va-middle">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+              <label class="label">{{'Oslovení' | translate}}:</label>
+            </div>
+            <div class="col-xs-12 col-lg-5">
+              <div class="input">
+                <div class="n-select" select-box [disabled]="false" [items]="sex"
+                     [firstEmpty]="false"
+                     [defaultItem]="(defaultSex || sex[0])"
+                     (onSelectItem)="onSelectSex($event, 'sex')">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ///// -->
+          <div class="item row va-middle">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+              <label class="label required">{{'Jméno' | translate}}:</label>
+            </div>
+            <div class="col-xs-12 col-lg-5">
+              <div class="input">
+                <input type="text" name="firstName" [(ngModel)]="user.firstName" required />
+              </div>
+            </div>
+          </div>
+          <!-- ///// -->
+          <div class="item row va-middle">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+              <label class="label required">{{'Příjmení' | translate}}:</label>
+            </div>
+            <div class="col-xs-12 col-lg-5">
+              <div class="input">
+                <input type="text" name="lastName" [(ngModel)]="user.lastName" required />
+              </div>
+            </div>
+          </div>
+          <!-- ///// -->
+          <div class="item row va-middle" *ngIf="!user.saveAsNewUser && type==2">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+              <label class="label required">{{'E-mail' | translate}}:</label>
+            </div>
+            <div class="col-xs-12 col-lg-5">
+              <div class="input">
+                <input type="text" name="email" [(ngModel)]="user.email" required />
+              </div>
+            </div>
+          </div>
+          <!-- ///// -->
+          <div class="item row va-middle">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+              <label class="label required">{{'Telefon' | translate}}:</label>
+            </div>
+            <div class="col-xs-12 col-lg-5">
+              <div class="input">
+                <input type="text" name="phone" [(ngModel)]="user.phone" required />
+              </div>
+            </div>
+          </div>
+          <!-- ///// -->
+          <div class="item row va-middle">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+              <label class="label required">{{'Ulice' | translate}}:</label>
+            </div>
+            <div class="col-xs-12 col-lg-5">
+              <div class="input">
+                <input type="text" name="street" [(ngModel)]="user.street" required />
+              </div>
+            </div>
+          </div>
+          <!-- ///// -->
+          <div class="item row va-middle">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+              <label class="label required">{{'Město' | translate}}:</label>
+            </div>
+            <div class="col-xs-12 col-lg-5">
+              <div class="input">
+                <input type="text" name="city" [(ngModel)]="user.city" required />
+              </div>
+            </div>
+          </div>
+          <!-- ///// -->
+          <div class="item row va-middle">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+              <label class="label required">{{'PSČ' | translate}}:</label>
+            </div>
+            <div class="col-xs-12 col-lg-5">
+              <div class="input">
+                <input type="text" name="zip" [(ngModel)]="user.zip" required />
+              </div>
+            </div>
+          </div>
+          <!-- ///// -->
+          <div class="item row va-middle">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+              <label class="label">{{'Stát' | translate}}:</label>
+            </div>
+            <div class="col-xs-12 col-lg-5">
+              <div class="input">
+                <div class="n-select" select-box [items]="countries" [disabled]="true" [firstEmpty]="false" [defaultItem]="(countries && countries[0] ? countries[0] : {id: user.country, name: '', val: ''})" (onSelectItem)="onSelectState($event, 'country')"></div>
+              </div>
+            </div>
+          </div>
+          <!-- ///// -->
+          <br />
+
+        </div>
+        <!-- ///// -->
+
+        <!-- ///// -->
+        <div class="item row va-middle"> <!--formGroupName="deliveryGroupForm"-->
+          <div class="col-xs-12">
+            <div class="item_opens as_form_item border_top">
+              <input type="checkbox" id="delivery_different" name="deliveryIsNotInvoice" [(ngModel)]="user.deliveryIsNotInvoice">
+              <label for="delivery_different" class="secondary">
+                {{'Dodací adresa je jiná než fakturační' | translate}}
+              </label>
+              <div class="content">
+                <!-- ///// -->
+                <div class="item row va-middle" *ngIf="type==2">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                    <label class="label" [ngClass]="{required: user.deliveryIsNotInvoice}">{{'Jméno' | translate}}:</label>
+                  </div>
+                  <div class="col-xs-12 col-lg-5">
+                    <div class="input">
+                      <input type="text" name="delivery[firstName]" [(ngModel)]="user.firstNameDelivery" [required]="user.deliveryIsNotInvoice" />
+                    </div>
+                  </div>
+                </div>
+                <!-- ///// -->
+                <div class="item row va-middle" *ngIf="type==2">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                    <label class="label" [ngClass]="{required: user.deliveryIsNotInvoice}">{{'Příjmení' | translate}}:</label>
+                  </div>
+                  <div class="col-xs-12 col-lg-5">
+                    <div class="input">
+                      <input type="text" name="delivery[lastName]" [(ngModel)]="user.lastNameDelivery" [required]="user.deliveryIsNotInvoice" />
+                    </div>
+                  </div>
+                </div>
+                <!-- ///// -->
+                <div class="item row va-middle">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                    <label class="label">{{'Firma' | translate}}:</label>
+                  </div>
+                  <div class="col-xs-12 col-lg-5">
+                    <div class="input">
+                      <input type="text" name="delivery[companyName]" [(ngModel)]="user.companyNameDelivery" />
+                    </div>
+                  </div>
+                </div>
+                <!-- ///// -->
+                <div class="item row va-middle">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                    <label class="label" [ngClass]="{required: user.deliveryIsNotInvoice}">{{'Ulice' | translate}}:</label>
+                  </div>
+                  <div class="col-xs-12 col-lg-5">
+                    <div class="input">
+                      <input type="text" name="delivery[street]" [(ngModel)]="user.streetDelivery" [required]="user.deliveryIsNotInvoice" />
+                    </div>
+                  </div>
+                </div>
+                <!-- ///// -->
+                <div class="item row va-middle">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                    <label class="label" [ngClass]="{required: user.deliveryIsNotInvoice}">{{'Město' | translate}}:</label>
+                  </div>
+                  <div class="col-xs-12 col-lg-5">
+                    <div class="input">
+                      <input type="text" name="delivery[city]" [(ngModel)]="user.cityDelivery" [required]="user.deliveryIsNotInvoice" />
+                    </div>
+                  </div>
+                </div>
+                <!-- ///// -->
+                <div class="item row va-middle">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                    <label class="label" [ngClass]="{required: user.deliveryIsNotInvoice}">{{'PSČ' | translate}}:</label>
+                  </div>
+                  <div class="col-xs-12 col-lg-5">
+                    <div class="input">
+                      <input type="text" name="delivery[postal]" [(ngModel)]="user.zipDelivery" [required]="user.deliveryIsNotInvoice" />
+                    </div>
+                  </div>
+                </div>
+                <!-- ///// -->
+                <div class="item row va-middle">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                    <label class="label">{{'Stát' | translate}}:</label>
+                  </div>
+                  <div class="col-xs-12 col-lg-5">
+                    <div class="input">
+                      <div class="select" select-box [disabled]="true" [items]="countriesDelivery" [firstEmpty]="false" [defaultItem]="(countriesDelivery && countriesDelivery[0] ? countriesDelivery[0] : {id: user.country, name: '', val: ''})" (onSelectItem)="onSelectState($event, 'countryDelivery')"></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- ///// -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ///// -->
+        <div class="item row va-middle">
+          <div class="col-xs-12">
+            <div class="item_opens as_form_item border_top">
+              <input type="checkbox" id="newsletter_list" class="newsletter_cats_toggle" name="newsletter" [(ngModel)]="user.newsletter" />
+
+              <label for="newsletter_list" class="secondary">
+                {{'Souhlasím se zasíláním novinek' | translate}}
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- ///// -->
+        <!-- ///// -->
+        <div class="item row va-middle" *ngIf="type==1">
+          <div class="col-12">
+            <button type="submit" class="lui_button warning" *ngIf="!user.isLogged" [disabled]="inProcess">{{'Registrovat' | translate}}</button>
+            <button type="submit" class="lui_button warning" *ngIf="user.isLogged" [disabled]="inProcess">{{'Uložit' | translate}}</button>
+            <div class="required_label_info inline">{{'Položky označené' | translate}} <span>*</span> {{'je nutné vyplnit' | translate}}</div>
+          </div>
+        </div>
+      </div>
+      <!-- ///// -->
+    </section>
+    <section *ngIf="type==2">
+      <h2 class="noborder">{{'Poznámka' | translate}}</h2>
+      <div class="lui_form">
+        <div class="item row va-middle">
+          <div class="col-xs-12 col-lg-12">
+            <div class="input">
+              <textarea cols="40" rows="10" name="order[note]" [(ngModel)]="user.note"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section *ngIf="type==2">
+      <div class="required_label_info">{{'Položky označené' | translate}} <span>*</span> {{'je nutné vyplnit' | translate}}</div>
+    </section>
+  </form>
+
+  <!--DIALOG CONDITIONS-->
+  <div class="registration_form_popup" [ngClass]="{opened: isOpenConditions}"> <!--opened-->
+    <div class="bgr event_close_img_popup" (click)="closeDialogConditions()"></div>
+    <div class="window">
+      <div class="container">
+<!--        <div class="">
+          <div class="col-xs-12 col-xl-8 image">
+            <button class="close fa_b_times event_close_img_popup" (click)="close()"></button>
+          </div>
+        </div>-->
+        <div class="">
+          <div class="hidden-xs hidden-sm col-md-1 col-lg-2">&nbsp;</div>
+          <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8">
+            <h1 class="page_title">{{'Nákupní podmínky' | translate}}</h1>
+
+          </div>
+          <div class="hidden-xs hidden-sm col-md-1 col-lg-2">&nbsp;</div>
+        </div>
+        <div>
+          <h2 >{{'Váš požadavek byl odeslán.' | translate}}</h2>
+          <br>
+          {{'Děkujeme Vám, že máte zájem stát se našimi B2B obchodními partnery.' | translate}}<br>
+          {{'Nejpozději do 24h Vás bude kontaktovat naše obchodní oddělení.' | translate}}<br>
+          {{'V případě zájmu jej neváhejte sami kontaktovat:' | translate}}<br>
+          {{'+420 220 184 828, +420 220 184 820' | translate}}<br>
+          <a href="mailto:{{'sales@mcled.cz' | translate}}">{{'sales@mcled.cz' | translate}}</a><br>
+          <br>
+        </div>
+        <div class="item row">
+          <div class="button">
+            <button class="lui_button info" (click)="closeDialogConditions()">{{'Zavřít' | translate}}</button>
+          </div>
+        </div>
+        <div class="">&nbsp;</div>
+      </div>
+    </div>
+  </div>
+
+</div>

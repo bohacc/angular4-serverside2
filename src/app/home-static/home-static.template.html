@@ -1,0 +1,89 @@
+<div app-width style="width: 100%; display: none">&nbsp;</div>
+<div style="visibility: hidden; width: 100px; overflow: scroll; position: absolute; z-index: -1">
+  <div scroll-bar-width style="width: 100%;"></div>
+</div>
+<div [ngClass]="{'full_width': bodyClass}">
+  <div id="item_eshop_body_loc" (window:resize)="onResize($event)">
+
+    <!--TOP HEADER 91-->
+    <!--<section pos="91" [objects]="objects"></section>-->
+
+    <div class="eshop_all">
+
+      <!--HEADER-->
+      <div class="portlets_definition_header">
+        <page-header></page-header>
+      </div>
+
+      <div class="cleaner"></div>
+
+      <!--TOP-->
+      <div class="portlets_definition_top">
+        <!--<section pos="4" [objects]="objects"></section>-->
+      </div>
+
+      <div class="cleaner"></div>
+
+
+      <!--MIDDLE-->
+      <div class="portlets_definition_middle">
+
+        <!--WITHOUT DATA-->
+        <div class="portlets_definition_middle_top"></div>
+
+        <div class="portlets_definition_middle_data">
+
+          <!--LEFT-->
+          <div class="portlets_definition_left">
+            <!--<section pos="1" [objects]="objects"></section>-->
+            <shop-categories [typeShowing]="'showCats'"></shop-categories>
+            <login-newsletter></login-newsletter>
+            <delivery-free></delivery-free>
+          </div>
+
+          <!--MIDDLE-->
+          <div class="redir_page">
+            <div class="vnorena_procedura">
+              <!--<section pos="3" [objects]="objects"></section>-->
+              <!--<html-outlet></html-outlet>-->
+              <banner-mcled></banner-mcled>
+              <products-homepage></products-homepage>
+              <articles-homepage></articles-homepage>
+            </div>
+          </div>
+
+          <!--RIGHT-->
+          <div class="portlets_definition_right">
+            <!--<section pos="0" [objects]="objects"></section>-->
+          </div>
+
+        </div>
+
+        <!--WITHOUT DATA-->
+        <div class="portlets_definition_middle_bottom"></div>
+
+      </div>
+
+
+      <div class="cleaner"></div>
+
+      <!--BOTTOM-->
+      <div class="portlets_definition_bottom">
+        <!--<section pos="5" [objects]="objects"></section>-->
+      </div>
+
+      <div class="cleaner"></div>
+
+      <!--FOOT-->
+      <div class="portlets_definition_foot">
+        <!--<section pos="7" [objects]="objects"></section>-->
+        <partners></partners>
+        <footer></footer>
+        <copyright></copyright>
+      </div>
+    </div>
+
+    <!--BOTTOM FOOT 92-->
+    <!--<section pos="92" [objects]="objects"></section>-->
+  </div>
+</div>
