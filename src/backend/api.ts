@@ -2267,10 +2267,12 @@ export function createPartnerCookie (req, res, obj) {
 
 export function productBuy (req, res) {
   let sql, vals, sessionid, sqlProps, loginName;
-
+  console.log('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX000000000000000000000000000000');
   loginName = Tools.getCookieId(req, Constants.AUTH_TOKEN_CODE);
 
   sessionid = Tools.getSessionId(req);
+  console.log('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX');
+  console.log(sessionid);
   if (!sessionid) {
     res.json({});
     return;
@@ -3562,6 +3564,7 @@ export function cart (req, res) {
   loginName = (Tools.getCookieId(req, Constants.AUTH_TOKEN_CODE) || '');
 
   sessionid = Tools.getSessionId(req);
+  console.log(sessionid);
   if (!sessionid) {
     res.json({});
     return;

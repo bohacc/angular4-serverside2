@@ -100,11 +100,14 @@ app.use(interceptor((req, res)=>({
 app.use(morgan('dev'));
 
 function cacheControl(req, res, next) {
-  res.header('Cache-Control', 'max-age=60');
+  //res.header('Cache-Control', 'max-age=60');
+  res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+  res.header('Expires', '-1');
+  res.header('Pragma', 'no-cache');
   next();
 }
 
-//app.use(cacheControl, express.static(path.join(ROOT, 'dist/client'), { index: false }));
+app.use(cacheControl, express.static(path.join(ROOT, 'dist/client'), { index: false }));
 
 process.on('uncaughtException', function (err) {
   console.error('Catching uncaught errors to avoid process crash', err);
@@ -119,12 +122,16 @@ function ngApp(req, res) {
   }
 
   Zone.current.fork({ name: 'CSR fallback', onHandleError }).run(() => {
-    console.time(`GET: ${req.originalUrl}`);
+    //console.time(`GET: ${req.originalUrl}`);
     res.render('index', {
       req: req,
-      res: res
+      res: res,
+      //preboot: false, //{ appRoot: ['app'], uglify: true },
+      baseUrl: '/',
+      requestUrl: req.originalUrl,
+      originUrl: req.hostname,
     });
-    console.timeEnd(`GET: ${req.originalUrl}`);
+    //console.timeEnd(`GET: ${req.originalUrl}`);
   });
 
 }

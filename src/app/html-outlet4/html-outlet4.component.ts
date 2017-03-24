@@ -8,6 +8,15 @@ import {AppService} from "../app.service";
 import {BrowserModule} from "@angular/platform-browser";
 import {AppRoutingModule} from "../app-routing.module";
 import {COMPILER_PROVIDERS} from "@angular/compiler";
+import { AppModule } from '../';
+import {APP_BASE_HREF} from "@angular/common";
+import {CommonAppModule} from "../_platform/app.common.module";
+import {Home} from "../home/home.component";
+import {SectionSW} from "../section-sw/section-sw.component";
+import {SectionObject} from "../section-object/section-object.component";
+import {MyFilterArray} from "../pipes/my-filter-array.pipe";
+import {HtmlOutlet3} from "../html-outlet3/html-outlet3.component";
+import {RouterModule} from "@angular/router";
 let Constants = require('../../backend/constants');
 
 declare var $: any;
@@ -110,12 +119,21 @@ export class HtmlOutlet4 {
     }
     @NgModule({
       declarations: [
-        TemplateComponent
+        TemplateComponent,
+        Home,
+        SectionSW,
+        SectionObject,
+        MyFilterArray,
+        HtmlOutlet3,
+        HtmlOutlet4
       ],
       imports: [
         BrowserModule,
         FormsModule,
-        AppRoutingModule
+        AppRoutingModule,
+        RouterModule
+        //AppModule,
+        //CommonAppModule
       ],
       providers: [
         { provide: 'isBrowser', useValue: this.isBrowser },
